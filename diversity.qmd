@@ -1,0 +1,25 @@
+---
+title: "Diversity estimation"
+---
+
+## Table (Data format)
+
+```{r}
+
+library(data.table)
+library(reactable)
+
+df = fread("inst/data/diversity1.txt")
+
+reactable(df)
+```
+
+## Boxplot
+
+### Boxplot 1
+
+plot for boxplot
+
+### Boxplot 2
+
+plot for boxplot

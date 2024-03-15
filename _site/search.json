@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Overview",
+    "section": "",
+    "text": "This is a website for immunoiformatics visualizations.\n\nDiversity estimation\nblaolhdofisaoidfasdufhiuahsdf\n\n\nGene repertoire"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Overview",
+    "section": "Overview",
+    "text": "Overview\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "diversity.html",
+    "href": "diversity.html",
+    "title": "Diversity estimation",
+    "section": "",
+    "text": "library(data.table)\nlibrary(reactable)\n\ndf = fread(\"inst/data/diversity1.txt\")\n\nreactable(df)"
+  },
+  {
+    "objectID": "color_palette.html",
+    "href": "color_palette.html",
+    "title": "Color palettes",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "diversity.html#table-data-format",
+    "href": "diversity.html#table-data-format",
+    "title": "Diversity estimation",
+    "section": "",
+    "text": "library(data.table)\nlibrary(reactable)\n\ndf = fread(\"inst/data/diversity1.txt\")\n\nreactable(df)"
+  },
+  {
+    "objectID": "diversity.html#boxplot",
+    "href": "diversity.html#boxplot",
+    "title": "Diversity estimation",
+    "section": "Boxplot",
+    "text": "Boxplot\n\nBoxplot 1\nplot for boxplot\n\n\nBoxplot 2\nplot for boxplot"
+  }
+]
