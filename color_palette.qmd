@@ -2,8 +2,6 @@
 title: "Color palettes"
 ---
 
-About this site
+### Links with color palettes
 
-```{r}
-1 + 1
-```
+<https://r-charts.com/color-palettes/>

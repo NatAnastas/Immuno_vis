@@ -1,0 +1,18 @@
+---
+title: "Gene repertoire"
+format:
+  html:
+    code-fold: true
+---
+
+## Table (Data format)
+
+```{r}
+
+library(data.table)
+library(reactable)
+
+df = fread("inst/data/diversity1.txt")
+
+reactable(df)
+```

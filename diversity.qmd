@@ -1,5 +1,8 @@
 ---
 title: "Diversity estimation"
+format:
+  html:
+    code-fold: true
 ---
 
 ## Table (Data format)
@@ -20,6 +23,50 @@ reactable(df)
 
 plot for boxplot
 
+```{r}
+library(ggplot2)
+library(ggforce)
+
+# plot 1 ---------------------
+
+df |>
+    ggplot(aes(Group, Shannon)) +
+    
+    geom_point(
+        position = position_jitternormal(sd_y = 0, sd_x = .035),
+        shape = 21, size = 2, stroke = .15, color = "white", fill = "grey10"
+    ) +
+    
+    geom_boxplot(alpha = .5, width = .5) +
+    
+    theme_minimal() +
+    
+    theme(
+        plot.margin = margin(20, 20, 20, 20)
+    )
+```
+
 ### Boxplot 2
 
-plot for boxplot
+plot for boxplot 2
+
+```{r}
+# plot 2 ---------------------
+
+df |>
+    ggplot(aes(Group, Shannon)) +
+    
+    geom_point(
+        aes(fill = Patient),
+        position = position_jitterdodge(jitter.width = .15, dodge.width = .5),
+        shape = 21, size = 2, stroke = .15, color = "white"
+    ) +
+    
+    geom_boxplot(aes(fill = Patient), alpha = .5, width = .5) +
+    
+    theme_minimal() +
+    
+    theme(
+        plot.margin = margin(20, 20, 20, 20)
+    )
+```

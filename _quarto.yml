@@ -9,7 +9,10 @@ website:
         text: Home
       - href: diversity.qmd
         text: Diversity
-      - color_palette.qmd
+      - href: gene_repertoire.qmd
+        text: Gene repertoire
+      - href: color_palette.qmd
+        text: Color palettes
 
 format:
   html:
