@@ -2,7 +2,9 @@
 title: "Overview"
 ---
 
-This is a website for immunoiformatics visualizations.
+Welcome to immunoinformatics visualizations.
+
+This is a website with all the available visualizations.
 
 ### [Diversity estimation](./diversity.qmd)
 

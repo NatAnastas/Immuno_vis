@@ -2,23 +2,33 @@ project:
   type: website
 
 website:
-  # title: "Immunoinformatics visualizations"
+  
+  title: "Immunoinformatics visualizations"
   navbar:
+    background: "#cfe1ed"
     left:
       - href: index.qmd
-        text: Home
+        text: Overview
       - href: diversity.qmd
-        text: Diversity
+        text: Diversity estimation
       - href: gene_repertoire.qmd
         text: Gene repertoire
       - href: color_palette.qmd
         text: Color palettes
+
+
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+    linkcolor: "#5184a7"
+   
+    
+    
+    
+    
 
 editor: visual
 
