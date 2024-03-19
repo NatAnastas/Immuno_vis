@@ -4,4 +4,6 @@ title: "Color palettes"
 
 ### Links with color palettes
 
-<https://r-charts.com/color-palettes/>
+1.  <https://r-charts.com/color-palettes/>
+
+2.  <https://gka.github.io/palettes>
