@@ -6,14 +6,14 @@ Welcome to immunoinformatics visualizations.
 
 This is a website with all the available visualizations.
 
-### [Diversity estimation](./diversity.qmd)
+### [Diversity estimation](diversity.qmd)
 
 Available plots for Diversity estimation.
 
-### [Gene repertoire](./gene_repertoire.qmd)
+### [Gene repertoire](gene_repertoire.qmd)
 
 Available plots for Gene repertoire.
 
-### [Color palletes](.color_palette.qmd)
+### [Color palletes](color_palette.qmd)
 
 Available color palettes.
