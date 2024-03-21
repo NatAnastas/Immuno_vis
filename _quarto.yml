@@ -26,7 +26,7 @@ website:
   page-footer: 
     background: "#cfe1ed"
     foreground: "#5184a7"
-    left: "Copyright 2024 Natasa Anastasiadou."
+    left: "Author Natasa Anastasiadou."
     right: "This page is built with Quarto."
 
     
