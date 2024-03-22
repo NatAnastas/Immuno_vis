@@ -24,8 +24,7 @@ website:
         href: https://github.com/NatAnastas/immunovisual
 
   page-footer: 
-    background: "#cfe1ed"
-    foreground: "#5184a7"
+    border: true
     left: "Author **Natasa Anastasiadou**"
     right: "This page is built with [Quarto](https://quarto.org/)"
 
