@@ -2,12 +2,13 @@ project:
   type: website
   output-dir: docs
 
-css:
-    - styles.css
+# css:
+#     - styles.css
 
 website:
-  
+
   title: "Immunoinformatics visualizations"
+  
   navbar:
     background: "#cfe1ed"
     left:
@@ -19,13 +20,14 @@ website:
         text: Gene repertoire
       - href: color_palette.qmd
         text: Color palettes
-    tools:    
+    right:    
       - icon: github
         href: https://github.com/NatAnastas/immunovisual
 
-  page-footer: 
+  page-footer:
     background: "#cfe1ed"
     foreground: "#5184a7"
+    border: false
     left: "Author **Natasa Anastasiadou**"
     right: "This page is built with [Quarto](https://quarto.org/)"
 
@@ -35,17 +37,17 @@ website:
 
 
 
-format:
-  html:
-    theme: cosmo
-    css: styles.css
-    toc: true
-    linkcolor: "#5184a7"
+# format:
+#   html:
+#     theme: cosmo
+#     # css: styles.css
+#     toc: true
+#     linkcolor: "#5184a7"
    
     
     
     
     
 
-editor: visual
+editor: source
 

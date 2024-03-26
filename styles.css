@@ -1,8 +1,8 @@
 /* css styles */
 footer {
-   bottom : 2px;  
+   /* bottom : 2px;   */
    height : 40px;  
-   margin-top : 40px;  
+   /* margin-top : 40px;   */
    text-align: center;  
    vertical-align: middle; 
    position:fixed;
