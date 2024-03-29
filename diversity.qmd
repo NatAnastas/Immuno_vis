@@ -5,6 +5,11 @@ format:
     code-fold: true
 ---
 
+Diversity estimation within immune cell populations is a fundamental analysis in immunoinformatics. Diversity estimation refers to the process of analyzing and quantifying the diversity of immune cells, such as T cells or B cells. 
+
+One commonly utilized method for this analysis is the Shannon index, which effectively measures the diversity of cell types present within a sample. By considering both the abundance and evenness of various immune cell subsets, higher Shannon index values indicate a more diverse immune cell population.
+disjfiosujfo
+
 ## Table (Data format)
 
 ```{r}

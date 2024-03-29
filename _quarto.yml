@@ -20,32 +20,28 @@ website:
         text: Gene repertoire
       - href: color_palette.qmd
         text: Color palettes
-    right:    
+    right: 
       - icon: github
         href: https://github.com/NatAnastas/immunovisual
 
-  page-footer:
-    background: "#cfe1ed"
-    foreground: "#5184a7"
-    border: false
+  page-footer: 
+    border: true
     left: "Author **Natasa Anastasiadou**"
     right: "This page is built with [Quarto](https://quarto.org/)"
 
-    
+
 
       # right: "This page is built with Quarto."
 
 
 
-# format:
-#   html:
-#     theme: cosmo
-#     # css: styles.css
-#     toc: true
-#     linkcolor: "#5184a7"
-   
-    
-    
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    linkcolor: "#5184a7"
+
     
     
 

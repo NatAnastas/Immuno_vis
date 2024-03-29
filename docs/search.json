@@ -25,21 +25,21 @@
     "href": "color_palette.html",
     "title": "Color palettes",
     "section": "",
-    "text": "Links with color palettes\n\nhttps://r-charts.com/color-palettes/\nhttps://gka.github.io/palettes"
+    "text": "Links with color palettes\n\nThe first site (https://r-charts.com/color-palettes/) has three distinct categories of color palettes. Continuous palettes offer smooth transitions between colors, providing a wide spectrum of possibilities. Discrete palettes contain a set number of colors, while dynamic palettes, a subset of discrete palettes, can generate a variable number of colors as required.\nThe second site (https://gka.github.io/palettes) offers more manual options. Users can select their preferred palette type (sequential or diverging), then choose and arrange the input colors. They can subsequently review and adjust the resulting palette before exporting the color codes."
   },
   {
     "objectID": "diversity.html",
     "href": "diversity.html",
     "title": "Diversity estimation",
     "section": "",
-    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"inst/data/diversity1.txt\")\n\nreactable(df)"
+    "text": "Diversity estimation within immune cell populations is a fundamental analysis in immunoinformatics. Diversity estimation refers to the process of analyzing and quantifying the diversity of immune cells, such as T cells or B cells.\nOne commonly utilized method for this analysis is the Shannon index, which effectively measures the diversity of cell types present within a sample. By considering both the abundance and evenness of various immune cell subsets, higher Shannon index values indicate a more diverse immune cell population. disjfiosujfo"
   },
   {
     "objectID": "diversity.html#table-data-format",
     "href": "diversity.html#table-data-format",
     "title": "Diversity estimation",
-    "section": "",
-    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"inst/data/diversity1.txt\")\n\nreactable(df)"
+    "section": "Table (Data format)",
+    "text": "Table (Data format)\n\n\nCode\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"inst/data/diversity1.txt\")\n\nreactable(df)"
   },
   {
     "objectID": "diversity.html#boxplot",
