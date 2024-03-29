@@ -7,7 +7,7 @@ website:
   title: "Immunoinformatics visualizations"
   
   navbar:
-    background: "#cfe1ed"
+    # background: "#cfe1ed"
     left:
       - href: index.qmd
         text: Overview
@@ -24,6 +24,13 @@ website:
   page-footer: 
     border: true
     left: "Author **Natasa Anastasiadou**"
-    right: "This page is built with [Quarto](https://quarto.org/)"
+    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)"
 
 editor: source
+
+format:
+  html:
+    theme: [morph, theme-light.scss]
+    fig-format: svg
+    code-fold: true
+    code-block-border-left: "#5f646a"

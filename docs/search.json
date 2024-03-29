@@ -11,21 +11,21 @@
     "href": "diversity.html",
     "title": "Diversity estimation",
     "section": "",
-    "text": "Diversity estimation within immune cell populations is a fundamental analysis in immunoinformatics. Diversity estimation refers to the process of analyzing and quantifying the diversity of immune cells, such as T cells or B cells.\nOne commonly utilized method for this analysis is the Shannon index, which effectively measures the diversity of cell types present within a sample. By considering both the abundance and evenness of various immune cell subsets, higher Shannon index values indicate a more diverse immune cell population. disjfiosujfo"
+    "text": "Diversity estimation within immune cell populations is a fundamental analysis in immunoinformatics. Diversity estimation refers to the process of analyzing and quantifying the diversity of immune cells, such as T cells or B cells.\nOne commonly utilized method for this analysis is the Shannon index, which effectively measures the diversity of cell types present within a sample. By considering both the abundance and evenness of various immune cell subsets, higher Shannon index values indicate a more diverse immune cell population."
   },
   {
     "objectID": "diversity.html#table-data-format",
     "href": "diversity.html#table-data-format",
     "title": "Diversity estimation",
     "section": "Table (Data format)",
-    "text": "Table (Data format)\n\n\nCode\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"inst/data/diversity1.txt\")\n\nreactable(df)"
+    "text": "Table (Data format)\n\n\nCode\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"inst/data/diversity1.txt\")\n\nreactable(\n  \n  df, \n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
   },
   {
     "objectID": "diversity.html#boxplot",
     "href": "diversity.html#boxplot",
     "title": "Diversity estimation",
     "section": "Boxplot",
-    "text": "Boxplot\n\nBoxplot 1\nplot for boxplot\n\n\nCode\nlibrary(ggplot2)\nlibrary(ggforce)\n\n# plot 1 ---------------------\n\ndf |>\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        position = position_jitternormal(sd_y = 0, sd_x = .035),\n        shape = 21, size = 2, stroke = .15, color = \"white\", fill = \"grey10\"\n    ) +\n    \n    geom_boxplot(alpha = .5, width = .5) +\n    \n    theme_minimal() +\n    \n    theme(\n        plot.margin = margin(20, 20, 20, 20)\n    )\n\n\n\n\n\n\n\nBoxplot 2\nplot for boxplot 2\n\n\nCode\n# plot 2 ---------------------\n\ndf |>\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Patient),\n        position = position_jitterdodge(jitter.width = .15, dodge.width = .5),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n    \n    geom_boxplot(aes(fill = Patient), alpha = .5, width = .5) +\n    \n    theme_minimal() +\n    \n    theme(\n        plot.margin = margin(20, 20, 20, 20)\n    )"
+    "text": "Boxplot\n\nBoxplot 1\nplot for boxplot\n\n\nCode\nlibrary(ggplot2)\nlibrary(ggforce)\n\nlibrary(ggnewscale)\nlibrary(paletteer)\n\nlibrary(colorspace)\n# plot 1 ---------------------\n\ndf |>\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Group),\n        position = position_jitternormal(sd_y = 0, sd_x = .08),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n  \n    scale_fill_manual(values = paletteer_d(\"ggsci::hallmarks_light_cosmic\")) +\n    \n    geom_boxplot(width = .15, outlier.shape = NA) +\n    \n    theme_minimal() +\n    \n    theme(\n        legend.position = \"none\",\n        \n        axis.line = element_line(linewidth = .55),\n        axis.ticks = element_line(linewidth = .55),\n        \n        panel.grid.major = element_line(linewidth = .55),\n        panel.grid.minor = element_line(linewidth = .45, linetype = \"dashed\"),\n        \n        plot.background = element_rect(fill = \"#d9e3f1\", color = NA),\n        plot.margin = margin(20, 20, 20, 20)\n    )\n\n\n\n\n\n\n\nBoxplot 2\nplot for boxplot 2\n\n\nCode\n# plot 2 ---------------------\n\ndf |>\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Patient),\n        position = position_jitterdodge(jitter.width = .15, dodge.width = .5),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n    \n    geom_boxplot(aes(fill = Patient), alpha = .5, width = .5) +\n    \n    theme_minimal() +\n    \n    theme(\n        plot.margin = margin(20, 20, 20, 20)\n    )"
   },
   {
     "objectID": "gene_repertoire.html",
