@@ -1,26 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Overview",
-    "section": "",
-    "text": "Welcome to immunoinformatics visualizations.\nThis is a website with all the available visualizations.\n\nDiversity estimation\nAvailable plots for Diversity estimation.\n\n\nGene repertoire\nAvailable plots for Gene repertoire.\n\n\nColor palletes\nAvailable color palettes."
-  },
-  {
-    "objectID": "gene_repertoire.html",
-    "href": "gene_repertoire.html",
-    "title": "Gene repertoire",
-    "section": "",
-    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"inst/data/diversity1.txt\")\n\nreactable(df)"
-  },
-  {
-    "objectID": "gene_repertoire.html#table-data-format",
-    "href": "gene_repertoire.html#table-data-format",
-    "title": "Gene repertoire",
-    "section": "",
-    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"inst/data/diversity1.txt\")\n\nreactable(df)"
-  },
-  {
     "objectID": "color_palette.html",
     "href": "color_palette.html",
     "title": "Color palettes",
@@ -46,6 +25,20 @@
     "href": "diversity.html#boxplot",
     "title": "Diversity estimation",
     "section": "Boxplot",
-    "text": "Boxplot\n\nBoxplot 1\nplot for boxplot\n\n\nCode\nlibrary(ggplot2)\nlibrary(ggforce)\n\n# plot 1 ---------------------\n\ndf |&gt;\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        position = position_jitternormal(sd_y = 0, sd_x = .035),\n        shape = 21, size = 2, stroke = .15, color = \"white\", fill = \"grey10\"\n    ) +\n    \n    geom_boxplot(alpha = .5, width = .5) +\n    \n    theme_minimal() +\n    \n    theme(\n        plot.margin = margin(20, 20, 20, 20)\n    )\n\n\n\n\n\n\n\nBoxplot 2\nplot for boxplot 2\n\n\nCode\n# plot 2 ---------------------\n\ndf |&gt;\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Patient),\n        position = position_jitterdodge(jitter.width = .15, dodge.width = .5),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n    \n    geom_boxplot(aes(fill = Patient), alpha = .5, width = .5) +\n    \n    theme_minimal() +\n    \n    theme(\n        plot.margin = margin(20, 20, 20, 20)\n    )"
+    "text": "Boxplot\n\nBoxplot 1\nplot for boxplot\n\n\nCode\nlibrary(ggplot2)\nlibrary(ggforce)\n\n# plot 1 ---------------------\n\ndf |>\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        position = position_jitternormal(sd_y = 0, sd_x = .035),\n        shape = 21, size = 2, stroke = .15, color = \"white\", fill = \"grey10\"\n    ) +\n    \n    geom_boxplot(alpha = .5, width = .5) +\n    \n    theme_minimal() +\n    \n    theme(\n        plot.margin = margin(20, 20, 20, 20)\n    )\n\n\n\n\n\n\n\nBoxplot 2\nplot for boxplot 2\n\n\nCode\n# plot 2 ---------------------\n\ndf |>\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Patient),\n        position = position_jitterdodge(jitter.width = .15, dodge.width = .5),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n    \n    geom_boxplot(aes(fill = Patient), alpha = .5, width = .5) +\n    \n    theme_minimal() +\n    \n    theme(\n        plot.margin = margin(20, 20, 20, 20)\n    )"
+  },
+  {
+    "objectID": "gene_repertoire.html",
+    "href": "gene_repertoire.html",
+    "title": "Gene repertoire",
+    "section": "",
+    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"inst/data/diversity1.txt\")\n\nreactable(df)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Welcome to immunoinformatics visualizations.\nThis is a website with all the available visualizations.\n\nDiversity estimation\nAvailable plots for Diversity estimation.\n\n\nGene repertoire\nAvailable plots for Gene repertoire.\n\n\nColor palletes\nAvailable color palettes."
   }
 ]

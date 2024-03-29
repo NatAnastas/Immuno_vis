@@ -2,12 +2,13 @@ project:
   type: website
   output-dir: docs
 
-css:
-    - styles.css
+# css:
+#     - styles.css
 
 website:
-  
+
   title: "Immunoinformatics visualizations"
+  
   navbar:
     background: "#cfe1ed"
     left:
@@ -30,6 +31,9 @@ website:
 
 
 
+      # right: "This page is built with Quarto."
+
+
 
 format:
   html:
@@ -41,5 +45,5 @@ format:
     
     
 
-editor: visual
+editor: source
 
