@@ -1,14 +1,10 @@
 ---
 title: "Diversity estimation"
-format:
-  html:
-    code-fold: true
 ---
 
 Diversity estimation within immune cell populations is a fundamental analysis in immunoinformatics. Diversity estimation refers to the process of analyzing and quantifying the diversity of immune cells, such as T cells or B cells. 
 
 One commonly utilized method for this analysis is the Shannon index, which effectively measures the diversity of cell types present within a sample. By considering both the abundance and evenness of various immune cell subsets, higher Shannon index values indicate a more diverse immune cell population.
-disjfiosujfo
 
 ## Table (Data format)
 
@@ -19,7 +15,13 @@ library(reactable)
 
 df = fread("inst/data/diversity1.txt")
 
-reactable(df)
+reactable(
+  
+  df, 
+  theme = reactableTheme(
+    backgroundColor  = "#d9e3f1"
+  )
+)
 ```
 
 ## Boxplot
@@ -32,21 +34,37 @@ plot for boxplot
 library(ggplot2)
 library(ggforce)
 
+library(ggnewscale)
+library(paletteer)
+
+library(colorspace)
 # plot 1 ---------------------
 
 df |>
     ggplot(aes(Group, Shannon)) +
     
     geom_point(
-        position = position_jitternormal(sd_y = 0, sd_x = .035),
-        shape = 21, size = 2, stroke = .15, color = "white", fill = "grey10"
+        aes(fill = Group),
+        position = position_jitternormal(sd_y = 0, sd_x = .08),
+        shape = 21, size = 2, stroke = .15, color = "white"
     ) +
+  
+    scale_fill_manual(values = paletteer_d("ggsci::hallmarks_light_cosmic")) +
     
-    geom_boxplot(alpha = .5, width = .5) +
+    geom_boxplot(width = .15, outlier.shape = NA) +
     
     theme_minimal() +
     
     theme(
+        legend.position = "none",
+        
+        axis.line = element_line(linewidth = .55),
+        axis.ticks = element_line(linewidth = .55),
+        
+        panel.grid.major = element_line(linewidth = .55),
+        panel.grid.minor = element_line(linewidth = .45, linetype = "dashed"),
+        
+        plot.background = element_rect(fill = "#d9e3f1", color = NA),
         plot.margin = margin(20, 20, 20, 20)
     )
 ```
