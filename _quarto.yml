@@ -2,9 +2,6 @@ project:
   type: website
   output-dir: docs
 
-# css:
-#     - styles.css
-
 website:
 
   title: "Immunoinformatics visualizations"
@@ -29,21 +26,4 @@ website:
     left: "Author **Natasa Anastasiadou**"
     right: "This page is built with [Quarto](https://quarto.org/)"
 
-
-
-      # right: "This page is built with Quarto."
-
-
-
-format:
-  html:
-    theme: cosmo
-    css: styles.css
-    toc: true
-    linkcolor: "#5184a7"
-
-    
-    
-
 editor: source
-
