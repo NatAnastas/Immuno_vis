@@ -1,44 +1,93 @@
 [
   {
-    "objectID": "color_palette.html",
-    "href": "color_palette.html",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to immunovisual, a collection of charts made with the R programming language, focusing on immunogenetics analyses. Different charts types are being organized into multiple sections, each accompanied by its reproducible code. The gallery spotlights the utilization of prominent R packages such as tidyverse, data.table, and ggplot2."
+  },
+  {
+    "objectID": "index.html#who-is-the-site-intended-for",
+    "href": "index.html#who-is-the-site-intended-for",
+    "title": "Welcome",
+    "section": "Who is the site intended for?",
+    "text": "Who is the site intended for?\n\nbioscientists who try to find ideas of how to visualize their datasets\nbioinformaticians looking for visualization ideas, code or tricks\n??"
+  },
+  {
+    "objectID": "index.html#who-is-the-site-νοτ-intended-for",
+    "href": "index.html#who-is-the-site-νοτ-intended-for",
+    "title": "Welcome",
+    "section": "Who is the site ΝΟΤ intended for?",
+    "text": "Who is the site ΝΟΤ intended for?\n\nbioscientists/bioinformaticians who are trying to process their datasets\nbioscientists who are trying to visualize their datasets via an online platform\n??"
+  },
+  {
+    "objectID": "index.html#contributing",
+    "href": "index.html#contributing",
+    "title": "Welcome",
+    "section": "Contributing",
+    "text": "Contributing\nYour input is invaluable - whether it’s suggesting a new chart or reporting a bug, we welcome and greatly appreciate your feedback!\nFeel free to open a GitHub issue or contact us via inab.bioinformatics@lists.certh.gr."
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Welcome",
+    "section": "License",
+    "text": "License\nThis work, as a whole, is licensed under the MIT license.\nThe code contained in this website is simultaneously available under the MIT license; this means that you are free to use it in your own packages, as long as you cite the source."
+  },
+  {
+    "objectID": "index.html#authors",
+    "href": "index.html#authors",
+    "title": "Welcome",
+    "section": "Authors",
+    "text": "Authors\n Natasa Anastasiadou    Nikos Pechlivanis"
+  },
+  {
+    "objectID": "qmd/color_palette.html",
+    "href": "qmd/color_palette.html",
     "title": "Color palettes",
     "section": "",
-    "text": "Links with color palettes\n\nThe first site (https://r-charts.com/color-palettes/) has three distinct categories of color palettes. Continuous palettes offer smooth transitions between colors, providing a wide spectrum of possibilities. Discrete palettes contain a set number of colors, while dynamic palettes, a subset of discrete palettes, can generate a variable number of colors as required.\nThe second site (https://gka.github.io/palettes) offers more manual options. Users can select their preferred palette type (sequential or diverging), then choose and arrange the input colors. They can subsequently review and adjust the resulting palette before exporting the color codes."
+    "text": "Below you can find a list of website helping you to find out different color palettes."
   },
   {
-    "objectID": "diversity.html",
-    "href": "diversity.html",
+    "objectID": "qmd/diversity.html",
+    "href": "qmd/diversity.html",
     "title": "Diversity estimation",
     "section": "",
-    "text": "Diversity estimation within immune cell populations is a fundamental analysis in immunoinformatics. Diversity estimation refers to the process of analyzing and quantifying the diversity of immune cells, such as T cells or B cells.\nOne commonly utilized method for this analysis is the Shannon index, which effectively measures the diversity of cell types present within a sample. By considering both the abundance and evenness of various immune cell subsets, higher Shannon index values indicate a more diverse immune cell population."
+    "text": "Diversity estimation within immune cell populations is a fundamental analysis in immunoinformatics. Diversity estimation refers to the process of analyzing and quantifying the diversity of immune cells, such as T cells or B cells."
   },
   {
-    "objectID": "diversity.html#table-data-format",
-    "href": "diversity.html#table-data-format",
+    "objectID": "qmd/diversity.html#table-data-format",
+    "href": "qmd/diversity.html#table-data-format",
     "title": "Diversity estimation",
     "section": "Table (Data format)",
-    "text": "Table (Data format)\n\n\nCode\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"inst/data/diversity1.txt\")\n\nreactable(\n  \n  df, \n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
+    "text": "Table (Data format)\n\n\nCode\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(\n  \n  df, \n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
   },
   {
-    "objectID": "diversity.html#boxplot",
-    "href": "diversity.html#boxplot",
+    "objectID": "qmd/diversity.html#boxplot",
+    "href": "qmd/diversity.html#boxplot",
     "title": "Diversity estimation",
     "section": "Boxplot",
     "text": "Boxplot\n\nBoxplot 1\nplot for boxplot\n\n\nCode\nlibrary(ggplot2)\nlibrary(ggforce)\n\nlibrary(ggnewscale)\nlibrary(paletteer)\n\nlibrary(colorspace)\n# plot 1 ---------------------\n\ndf |>\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Group),\n        position = position_jitternormal(sd_y = 0, sd_x = .08),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n  \n    scale_fill_manual(values = paletteer_d(\"ggsci::hallmarks_light_cosmic\")) +\n    \n    geom_boxplot(width = .15, outlier.shape = NA) +\n    \n    theme_minimal() +\n    \n    theme(\n        legend.position = \"none\",\n        \n        axis.line = element_line(linewidth = .55),\n        axis.ticks = element_line(linewidth = .55),\n        \n        panel.grid.major = element_line(linewidth = .55),\n        panel.grid.minor = element_line(linewidth = .45, linetype = \"dashed\"),\n        \n        plot.background = element_rect(fill = \"#d9e3f1\", color = NA),\n        plot.margin = margin(20, 20, 20, 20)\n    )\n\n\n\n\n\n\n\nBoxplot 2\nplot for boxplot 2\n\n\nCode\n# plot 2 ---------------------\n\ndf |>\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Patient),\n        position = position_jitterdodge(jitter.width = .15, dodge.width = .5),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n    \n    geom_boxplot(aes(fill = Patient), alpha = .5, width = .5) +\n    \n    theme_minimal() +\n    \n    theme(\n        plot.margin = margin(20, 20, 20, 20)\n    )"
   },
   {
-    "objectID": "gene_repertoire.html",
-    "href": "gene_repertoire.html",
+    "objectID": "qmd/gene_repertoire.html",
+    "href": "qmd/gene_repertoire.html",
     "title": "Gene repertoire",
     "section": "",
-    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"inst/data/diversity1.txt\")\n\nreactable(df)"
+    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(df)"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Overview",
-    "section": "",
-    "text": "Welcome to immunoinformatics visualizations.\nThis is a website with all the available visualizations.\n\nDiversity estimation\nAvailable plots for Diversity estimation.\n\n\nGene repertoire\nAvailable plots for Gene repertoire.\n\n\nColor palletes\nAvailable color palettes."
+    "objectID": "qmd/diversity.html#diversity-indeces",
+    "href": "qmd/diversity.html#diversity-indeces",
+    "title": "Diversity estimation",
+    "section": "Diversity indeces",
+    "text": "Diversity indeces\nThere are several approaches to the estimation of repertoire diversity implemented in the repDiversity function. The .method parameter similarly to above mentioned functions sets the means for diversity estimation. You can choose one of the following methods:\n\nshannon ???\nchao1 is a nonparameteric asymptotic estimator of species richness (number of species in a population).\nhill Hill numbers are a mathematically unified family of diversity indices (differing only by an exponent q).\ndiv true diversity, or the effective number of types, refers to the number of equally abundant types needed for the average proportional abundance of the types to equal that observed in the dataset of interest where all types may not be equally abundant.\ngini.simp The Gini-Simpson index is the probability of interspecific encounter, i.e., probability that two entities represent different types.\ninv.simp Inverse Simpson index is the effective number of types that is obtained when the weighted arithmetic mean is used to quantify average proportional abundance of types in the dataset of interest.\ngini The Gini coefficient measures the inequality among values of a frequency distribution (for example levels of income). A Gini coefficient of zero expresses perfect equality, where all values are the same (for example, where everyone has the same income). A Gini coefficient of one (or 100 percents ) expresses maximal inequality among values (for example where only one person has all the income).\nraref Rarefaction is a technique to assess species richness from the results of sampling through extrapolation."
+  },
+  {
+    "objectID": "qmd/color_palette.html#r-color-paletters",
+    "href": "qmd/color_palette.html#r-color-paletters",
+    "title": "Color palettes",
+    "section": "R color paletters",
+    "text": "R color paletters\nThe site has three distinct categories of color palettes. Continuous palettes offer smooth transitions between colors, providing a wide spectrum of possibilities. Discrete palettes contain a set number of colors, while dynamic palettes, a subset of discrete palettes, can generate a variable number of colors as required.\n\nThe second site (https://gka.github.io/palettes) offers more manual options. Users can select their preferred palette type (sequential or diverging), then choose and arrange the input colors. They can subsequently review and adjust the resulting palette before exporting the color codes."
   }
 ]

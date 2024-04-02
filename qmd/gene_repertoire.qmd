@@ -12,7 +12,7 @@ format:
 library(data.table)
 library(reactable)
 
-df = fread("inst/data/diversity1.txt")
+df = fread("../inst/data/diversity1.txt")
 
 reactable(df)
 ```
