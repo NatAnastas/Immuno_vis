@@ -4,7 +4,17 @@ title: "Diversity estimation"
 
 Diversity estimation within immune cell populations is a fundamental analysis in immunoinformatics. Diversity estimation refers to the process of analyzing and quantifying the diversity of immune cells, such as T cells or B cells. 
 
-One commonly utilized method for this analysis is the Shannon index, which effectively measures the diversity of cell types present within a sample. By considering both the abundance and evenness of various immune cell subsets, higher Shannon index values indicate a more diverse immune cell population.
+## Diversity indeces
+There are several approaches to the estimation of repertoire diversity implemented in the repDiversity function. The .method parameter similarly to above mentioned functions sets the means for diversity estimation. You can choose one of the following methods:
+
+- **shannon** ???
+- **chao1** is a nonparameteric asymptotic estimator of species richness (number of species in a population).
+- **hill** Hill numbers are a mathematically unified family of diversity indices (differing only by an exponent q).
+- **div** true diversity, or the effective number of types, refers to the number of equally abundant types needed for the average proportional abundance of the types to equal that observed in the dataset of interest where all types may not be equally abundant.
+- **gini.simp** The Gini-Simpson index is the probability of interspecific encounter, i.e., probability that two entities represent different types.
+- **inv.simp** Inverse Simpson index is the effective number of types that is obtained when the weighted arithmetic mean is used to quantify average proportional abundance of types in the dataset of interest.
+- **gini** The Gini coefficient measures the inequality among values of a frequency distribution (for example levels of income). A Gini coefficient of zero expresses perfect equality, where all values are the same (for example, where everyone has the same income). A Gini coefficient of one (or 100 percents ) expresses maximal inequality among values (for example where only one person has all the income).
+- **raref** Rarefaction is a technique to assess species richness from the results of sampling through extrapolation.
 
 ## Table (Data format)
 
@@ -13,7 +23,7 @@ One commonly utilized method for this analysis is the Shannon index, which effec
 library(data.table)
 library(reactable)
 
-df = fread("inst/data/diversity1.txt")
+df = fread("../inst/data/diversity1.txt")
 
 reactable(
   

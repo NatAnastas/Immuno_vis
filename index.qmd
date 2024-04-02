@@ -1,19 +1,30 @@
 ---
-title: "Overview"
+title: "Welcome"
 ---
 
-Welcome to immunoinformatics visualizations.
+Welcome to `immunovisual`, a collection of charts made with the [R programming language](https://www.r-project.org/about.html), focusing on immunogenetics analyses. Different charts types are being organized into multiple sections, each accompanied by its reproducible code. The gallery spotlights the utilization of prominent R packages such as `tidyverse`, `data.table`, and `ggplot2`. 
 
-This is a website with all the available visualizations.
+## Who is the site intended for?
+- bioscientists who try to find ideas of how to visualize their datasets
+- bioinformaticians looking for visualization ideas, code or tricks
+- ??
 
-### [Diversity estimation](./diversity.qmd)
+## Who is the site ΝΟΤ intended for?
+- bioscientists/bioinformaticians who are trying to process their datasets
+- bioscientists who are trying to visualize their datasets via an online platform
+- ??
 
-Available plots for Diversity estimation.
+## Contributing
+Your input is invaluable - whether it's suggesting a new chart or reporting a bug, we welcome and greatly appreciate your feedback! 
 
-### [Gene repertoire](./gene_repertoire.qmd)
+Feel free to open a [GitHub issue](https://github.com/NatAnastas/immunovisual/issues) or contact us via `inab.bioinformatics@lists.certh.gr`.
 
-Available plots for Gene repertoire.
 
-### [Color palletes](./color_palette.qmd)
+## License
+This work, as a whole, is licensed under the [MIT license](https://github.com/NatAnastas/immunovisual/blob/main/LICENSE).
 
-Available color palettes.
+The code contained in this website is simultaneously available under the MIT license; this means that you are free to use it in your own packages, as long as you cite the source.
+
+## Authors
+`r fontawesome::fa("github", "black")` [Natasa Anastasiadou](https://github.com/NatAnastas) &nbsp;
+`r fontawesome::fa("github", "black")` [Nikos Pechlivanis](https://github.com/npechl)

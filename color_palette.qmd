@@ -1,9 +1,0 @@
----
-title: "Color palettes"
----
-
-### Links with color palettes
-
-1.  The first site (<https://r-charts.com/color-palettes/>) has three distinct categories of color palettes. Continuous palettes offer smooth transitions between colors, providing a wide spectrum of possibilities. Discrete palettes contain a set number of colors, while dynamic palettes, a subset of discrete palettes, can generate a variable number of colors as required.
-
-2.  The second site (<https://gka.github.io/palettes>) offers more manual options. Users can select their preferred palette type (sequential or diverging), then choose and arrange the input colors. They can subsequently review and adjust the resulting palette before exporting the color codes.
