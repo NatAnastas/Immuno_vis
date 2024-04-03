@@ -5,7 +5,17 @@ title: "Color palettes"
 Below you can find a list of website helping you to find out different color palettes.
 
 ## [R color paletters](https://r-charts.com/color-palettes/)
+The website features a collection of 497 palettes sourced from 16 R packages, categorized into continuous (30 samples), discrete, and dynamic palettes.
 
-The site has three distinct categories of color palettes. Continuous palettes offer smooth transitions between colors, providing a wide spectrum of possibilities. Discrete palettes contain a set number of colors, while dynamic palettes, a subset of discrete palettes, can generate a variable number of colors as required.
+These palettes can be utilized with the paletteer package, as outlined in each palette's description, or with their corresponding package. To select a specific color, users can copy the code by simply clicking on the desired color.
 
-2.  The second site (<https://gka.github.io/palettes>) offers more manual options. Users can select their preferred palette type (sequential or diverging), then choose and arrange the input colors. They can subsequently review and adjust the resulting palette before exporting the color codes.
+Continuous palettes enable smooth transitions between colors, offering a diverse range of options. Discrete palettes consist of a fixed number of colors, whereas dynamic palettes, a subset of discrete palettes, can adapt to generate a variable number of colors as needed.
+
+
+
+## [Color Palette Helper](https://gka.github.io/palettes)
+The website is designed to assist users in creating custom color palettes.
+
+With manual options available, users have the freedom to design their palettes according to their specific needs and preferences. They can select their preferred palette type, whether sequential or diverging, and adjust the number of colors to their needs. Following this, users have the option to choose and arrange the input colors. Τhen, they can subsequently review and adjust the resulting palette before exporting the color codes.
+
+Additionally, the website provides information on whether the palette is colorblind-safe, ensuring inclusivity and accessibility in design choices.

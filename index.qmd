@@ -2,29 +2,30 @@
 title: "Welcome"
 ---
 
-Welcome to `immunovisual`, a collection of charts made with the [R programming language](https://www.r-project.org/about.html), focusing on immunogenetics analyses. Different charts types are being organized into multiple sections, each accompanied by its reproducible code. The gallery spotlights the utilization of prominent R packages such as `tidyverse`, `data.table`, and `ggplot2`. 
+Welcome to `immunovisual`, a collection of charts made with the [R programming language](https://www.r-project.org/about.html), focusing on immunogenetics analyses. Different charts types are being organized into multiple sections, each accompanied by its reproducible code. The gallery spotlights the utilization of prominent R packages such as `tidyverse`, `data.table`, and `ggplot2`.
 
 ## Who is the site intended for?
-- bioscientists who try to find ideas of how to visualize their datasets
-- bioinformaticians looking for visualization ideas, code or tricks
-- ??
+
+-   Bioscientists who try to find ideas of how to visualize their datasets
+-   Bioinformaticians looking for visualization ideas, code or tricks
 
 ## Who is the site ΝΟΤ intended for?
-- bioscientists/bioinformaticians who are trying to process their datasets
-- bioscientists who are trying to visualize their datasets via an online platform
-- ??
+
+-   Bioscientists/bioinformaticians who are trying to process their datasets
+-   Bioscientists who are trying to visualize their datasets via an online platform
 
 ## Contributing
-Your input is invaluable - whether it's suggesting a new chart or reporting a bug, we welcome and greatly appreciate your feedback! 
+
+Your input is invaluable - whether it's suggesting a new chart or reporting a bug, we welcome and greatly appreciate your feedback!
 
 Feel free to open a [GitHub issue](https://github.com/NatAnastas/immunovisual/issues) or contact us via `inab.bioinformatics@lists.certh.gr`.
 
-
 ## License
+
 This work, as a whole, is licensed under the [MIT license](https://github.com/NatAnastas/immunovisual/blob/main/LICENSE).
 
 The code contained in this website is simultaneously available under the MIT license; this means that you are free to use it in your own packages, as long as you cite the source.
 
 ## Authors
-`r fontawesome::fa("github", "black")` [Natasa Anastasiadou](https://github.com/NatAnastas) &nbsp;
-`r fontawesome::fa("github", "black")` [Nikos Pechlivanis](https://github.com/npechl)
+
+`r fontawesome::fa("github", "black")` [Natasa Anastasiadou](https://github.com/NatAnastas)   `r fontawesome::fa("github", "black")` [Nikos Pechlivanis](https://github.com/npechl)
