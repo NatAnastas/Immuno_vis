@@ -6,13 +6,15 @@ Welcome to `immunovisual`, a collection of charts made with the [R programming l
 
 ## Who is the site intended for?
 
--   Bioscientists who try to find ideas of how to visualize their datasets
--   Bioinformaticians looking for visualization ideas, code or tricks
+-   Βioscientists who try to find ideas of how to visualize their datasets
+-   Βioinformaticians looking for visualization ideas, code or tricks
+-   
 
 ## Who is the site ΝΟΤ intended for?
 
--   Bioscientists/bioinformaticians who are trying to process their datasets
--   Bioscientists who are trying to visualize their datasets via an online platform
+-   Βioscientists/bioinformaticians who are trying to process their datasets
+-   Βioscientists who are trying to visualize their datasets via an online platform
+-   ??
 
 ## Contributing
 
