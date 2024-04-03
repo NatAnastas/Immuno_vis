@@ -5,9 +5,7 @@ project:
 website:
 
   title: "Immunoinformatics visualizations"
-  sidebar:
-    style: "docked"
-    
+
   navbar:
     # background: "#cfe1ed"
     left:
