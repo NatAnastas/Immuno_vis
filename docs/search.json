@@ -11,14 +11,14 @@
     "href": "index.html#who-is-the-site-intended-for",
     "title": "Welcome",
     "section": "Who is the site intended for?",
-    "text": "Who is the site intended for?\n\nΒioscientists who try to find ideas of how to visualize their datasets\nΒioinformaticians looking for visualization ideas, code or tricks"
+    "text": "Who is the site intended for?\n\nBioscientists who try to find ideas of how to visualize their datasets\nBioinformaticians looking for visualization ideas, code or tricks"
   },
   {
     "objectID": "index.html#who-is-the-site-νοτ-intended-for",
     "href": "index.html#who-is-the-site-νοτ-intended-for",
     "title": "Welcome",
     "section": "Who is the site ΝΟΤ intended for?",
-    "text": "Who is the site ΝΟΤ intended for?\n\nΒioscientists/bioinformaticians who are trying to process their datasets\nΒioscientists who are trying to visualize their datasets via an online platform\n??"
+    "text": "Who is the site ΝΟΤ intended for?\n\nBioscientists/bioinformaticians who are trying to process their datasets\nBioscientists who are trying to visualize their datasets via an online platform"
   },
   {
     "objectID": "index.html#contributing",
@@ -39,7 +39,7 @@
     "href": "index.html#authors",
     "title": "Welcome",
     "section": "Authors",
-    "text": "Authors\nr fontawesome::fa(\"github\", \"black\") Natasa Anastasiadou   r fontawesome::fa(\"github\", \"black\") Nikos Pechlivanis"
+    "text": "Authors\n Natasa Anastasiadou    Nikos Pechlivanis"
   },
   {
     "objectID": "qmd/color_palette.html",

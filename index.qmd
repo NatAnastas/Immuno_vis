@@ -6,15 +6,13 @@ Welcome to `immunovisual`, a collection of charts made with the [R programming l
 
 ## Who is the site intended for?
 
--   Βioscientists who try to find ideas of how to visualize their datasets
--   Βioinformaticians looking for visualization ideas, code or tricks
--   
+-   Bioscientists who try to find ideas of how to visualize their datasets
+-   Bioinformaticians looking for visualization ideas, code or tricks
 
 ## Who is the site ΝΟΤ intended for?
 
--   Βioscientists/bioinformaticians who are trying to process their datasets
--   Βioscientists who are trying to visualize their datasets via an online platform
--   ??
+-   Bioscientists/bioinformaticians who are trying to process their datasets
+-   Bioscientists who are trying to visualize their datasets via an online platform
 
 ## Contributing
 
@@ -29,5 +27,9 @@ This work, as a whole, is licensed under the [MIT license](https://github.com/Na
 The code contained in this website is simultaneously available under the MIT license; this means that you are free to use it in your own packages, as long as you cite the source.
 
 ## Authors
+
+```{r}
+
+```
 
 `r fontawesome::fa("github", "black")` [Natasa Anastasiadou](https://github.com/NatAnastas)   `r fontawesome::fa("github", "black")` [Nikos Pechlivanis](https://github.com/npechl)
