@@ -29,6 +29,7 @@ website:
     right: 
       - icon: github
         href: https://github.com/NatAnastas/immunovisual
+        
 
   page-footer: 
     border: true
@@ -41,5 +42,6 @@ format:
   html:
     theme: [morph, sass/theme-light.scss]
     fig-format: svg
+    toc: true
     code-fold: true
     code-block-border-left: "#5f646a"
