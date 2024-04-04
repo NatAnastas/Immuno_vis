@@ -36,18 +36,20 @@ reactable(
 
 ## Boxplot
 
+A boxplot is a standardized way of displaying the dataset based on the five-number summary: the **minimum**, the **maximum**, the **sample median**, and the **first and third quartiles**.
+
 ### Boxplot 1
 
-plot for boxplot
+The box plot visually displays the Shannon index on the y-axis against distinct groups represented on the x-axis. Each group is uniquely differentiated by a specific color.
 
 ```{r}
+# libraries -------
+
 library(ggplot2)
 library(ggforce)
 
-library(ggnewscale)
 library(paletteer)
 
-library(colorspace)
 # plot 1 ---------------------
 
 df |>
@@ -81,25 +83,49 @@ df |>
 
 ### Boxplot 2
 
-plot for boxplot 2
+The box plot illustrates the Shannon index on the y-axis with distinct patient groups depicted along the x-axis. Different colors are employed to distinguish between the two patient groups.
 
 ```{r}
-# plot 2 ---------------------
+# libraries ------------
+
+library(ggnewscale)
+library(colorspace)
+
+# plot 2 ------------
 
 df |>
-    ggplot(aes(Group, Shannon)) +
+  ggplot(aes(Group, Shannon)) +
     
-    geom_point(
-        aes(fill = Patient),
-        position = position_jitterdodge(jitter.width = .15, dodge.width = .5),
-        shape = 21, size = 2, stroke = .15, color = "white"
-    ) +
-    
-    geom_boxplot(aes(fill = Patient), alpha = .5, width = .5) +
-    
-    theme_minimal() +
-    
-    theme(
-        plot.margin = margin(20, 20, 20, 20)
-    )
+  geom_point(
+      aes(fill = Patient),
+      position = position_jitterdodge(jitter.width = .15, dodge.width = .5),
+      shape = 21, size = 2, stroke = .15, color = "white"
+  ) +
+
+  scale_fill_manual(values = paletteer_d("ggsci::hallmarks_light_cosmic") |> lighten(.25)) +
+
+  geom_boxplot(
+    aes(color = Patient),
+    position = position_dodge(width = .5),
+    width = .2, outlier.shape = NA
+  ) +
+  
+  scale_color_manual(values = paletteer_d("ggsci::hallmarks_light_cosmic") |> darken(.25)) +
+  
+  theme_minimal() +
+  
+  theme(
+      legend.position = "bottom",
+      legend.justification = "left",
+      legend.title = element_blank(),
+      
+      axis.line = element_line(linewidth = .55),
+      axis.ticks = element_line(linewidth = .55),
+      
+      panel.grid.major = element_line(linewidth = .55),
+      panel.grid.minor = element_line(linewidth = .45, linetype = "dashed"),
+      
+      plot.background = element_rect(fill = "#d9e3f1", color = NA),
+      plot.margin = margin(20, 20, 20, 20)
+  )
 ```

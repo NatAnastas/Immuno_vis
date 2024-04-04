@@ -39,7 +39,7 @@
     "href": "index.html#authors",
     "title": "Welcome",
     "section": "Authors",
-    "text": "Authors\n Natasa Anastasiadou    Nikos Pechlivanis"
+    "text": "Authors\n\n\n\n Natasa Anastasiadou    Nikos Pechlivanis"
   },
   {
     "objectID": "qmd/color_palette.html",
@@ -49,11 +49,32 @@
     "text": "Below you can find a list of website helping you to find out different color palettes."
   },
   {
+    "objectID": "qmd/color_palette.html#r-color-paletters",
+    "href": "qmd/color_palette.html#r-color-paletters",
+    "title": "Color palettes",
+    "section": "R color paletters",
+    "text": "R color paletters\nThe website features a collection of 497 palettes sourced from 16 R packages, categorized into continuous (30 samples), discrete, and dynamic palettes.\nThese palettes can be utilized with the paletteer package, as outlined in each palette’s description, or with their corresponding package. To select a specific color, users can copy the code by simply clicking on the desired color.\nContinuous palettes enable smooth transitions between colors, offering a diverse range of options. Discrete palettes consist of a fixed number of colors, whereas dynamic palettes, a subset of discrete palettes, can adapt to generate a variable number of colors as needed."
+  },
+  {
+    "objectID": "qmd/color_palette.html#color-palette-helper",
+    "href": "qmd/color_palette.html#color-palette-helper",
+    "title": "Color palettes",
+    "section": "Color Palette Helper",
+    "text": "Color Palette Helper\nThe website is designed to assist users in creating custom color palettes.\nWith manual options available, users have the freedom to design their palettes according to their specific needs and preferences. They can select their preferred palette type, whether sequential or diverging, and adjust the number of colors to their needs. Following this, users have the option to choose and arrange the input colors. Τhen, they can subsequently review and adjust the resulting palette before exporting the color codes.\nAdditionally, the website provides information on whether the palette is colorblind-safe, ensuring inclusivity and accessibility in design choices."
+  },
+  {
     "objectID": "qmd/diversity.html",
     "href": "qmd/diversity.html",
     "title": "Diversity estimation",
     "section": "",
     "text": "Diversity estimation within immune cell populations is a fundamental analysis in immunoinformatics. Diversity estimation refers to the process of analyzing and quantifying the diversity of immune cells, such as T cells or B cells."
+  },
+  {
+    "objectID": "qmd/diversity.html#diversity-indeces",
+    "href": "qmd/diversity.html#diversity-indeces",
+    "title": "Diversity estimation",
+    "section": "Diversity indeces",
+    "text": "Diversity indeces\nThere are several approaches to the estimation of repertoire diversity implemented in the repDiversity function. The method parameter similarly to above mentioned functions sets the means for diversity estimation. You can choose one of the following methods:\n\nshannon Shannon index takes into account both the number of different species and the distribution of individuals among those species, providing a single numerical value that reflects the diversity within a community. Higher Shannon index values indicate greater diversity.\nchao1 Chao is a nonparameteric asymptotic estimator of species richness (number of species in a population).\nhill Hill numbers are a mathematically unified family of diversity indices (differing only by an exponent q).\ndiv true diversity, or the effective number of types, refers to the number of equally abundant types needed for the average proportional abundance of the types to equal that observed in the dataset of interest where all types may not be equally abundant.\ngini.simp The Gini-Simpson index is the probability of interspecific encounter, i.e., probability that two entities represent different types.\ninv.simp Inverse Simpson index is the effective number of types that is obtained when the weighted arithmetic mean is used to quantify average proportional abundance of types in the dataset of interest.\ngini The Gini coefficient measures the inequality among values of a frequency distribution (for example levels of income). A Gini coefficient of zero expresses perfect equality, where all values are the same (for example, where everyone has the same income). A Gini coefficient of one (or 100 percents ) expresses maximal inequality among values (for example where only one person has all the income).\nraref Rarefaction is a technique to assess species richness from the results of sampling through extrapolation."
   },
   {
     "objectID": "qmd/diversity.html#table-data-format",
@@ -67,7 +88,7 @@
     "href": "qmd/diversity.html#boxplot",
     "title": "Diversity estimation",
     "section": "Boxplot",
-    "text": "Boxplot\n\nBoxplot 1\nplot for boxplot\n\n\nCode\nlibrary(ggplot2)\nlibrary(ggforce)\n\nlibrary(ggnewscale)\nlibrary(paletteer)\n\nlibrary(colorspace)\n# plot 1 ---------------------\n\ndf |&gt;\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Group),\n        position = position_jitternormal(sd_y = 0, sd_x = .08),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n  \n    scale_fill_manual(values = paletteer_d(\"ggsci::hallmarks_light_cosmic\")) +\n    \n    geom_boxplot(width = .15, outlier.shape = NA) +\n    \n    theme_minimal() +\n    \n    theme(\n        legend.position = \"none\",\n        \n        axis.line = element_line(linewidth = .55),\n        axis.ticks = element_line(linewidth = .55),\n        \n        panel.grid.major = element_line(linewidth = .55),\n        panel.grid.minor = element_line(linewidth = .45, linetype = \"dashed\"),\n        \n        plot.background = element_rect(fill = \"#d9e3f1\", color = NA),\n        plot.margin = margin(20, 20, 20, 20)\n    )\n\n\n\n\n\n\n\nBoxplot 2\nplot for boxplot 2\n\n\nCode\n# plot 2 ---------------------\n\ndf |&gt;\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Patient),\n        position = position_jitterdodge(jitter.width = .15, dodge.width = .5),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n    \n    geom_boxplot(aes(fill = Patient), alpha = .5, width = .5) +\n    \n    theme_minimal() +\n    \n    theme(\n        plot.margin = margin(20, 20, 20, 20)\n    )"
+    "text": "Boxplot\nA boxplot is a standardized way of displaying the dataset based on the five-number summary: the minimum, the maximum, the sample median, and the first and third quartiles.\n\nBoxplot 1\nThe box plot visually displays the Shannon index on the y-axis against distinct groups represented on the x-axis. Each group is uniquely differentiated by a specific color.\n\n\nCode\n# libraries -------\n\nlibrary(ggplot2)\nlibrary(ggforce)\n\nlibrary(paletteer)\n\n# plot 1 ---------------------\n\ndf |>\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Group),\n        position = position_jitternormal(sd_y = 0, sd_x = .08),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n  \n    scale_fill_manual(values = paletteer_d(\"ggsci::hallmarks_light_cosmic\")) +\n    \n    geom_boxplot(width = .15, outlier.shape = NA) +\n    \n    theme_minimal() +\n    \n    theme(\n        legend.position = \"none\",\n        \n        axis.line = element_line(linewidth = .55),\n        axis.ticks = element_line(linewidth = .55),\n        \n        panel.grid.major = element_line(linewidth = .55),\n        panel.grid.minor = element_line(linewidth = .45, linetype = \"dashed\"),\n        \n        plot.background = element_rect(fill = \"#d9e3f1\", color = NA),\n        plot.margin = margin(20, 20, 20, 20)\n    )\n\n\n\n\n\n\n\nBoxplot 2\nThe box plot illustrates the Shannon index on the y-axis with distinct patient groups depicted along the x-axis. Different colors are employed to distinguish between the two patient groups.\n\n\nCode\n# libraries ------------\n\nlibrary(ggnewscale)\nlibrary(colorspace)\n\n# plot 2 ------------\n\ndf |>\n  ggplot(aes(Group, Shannon)) +\n    \n  geom_point(\n      aes(fill = Patient),\n      position = position_jitterdodge(jitter.width = .15, dodge.width = .5),\n      shape = 21, size = 2, stroke = .15, color = \"white\"\n  ) +\n\n  scale_fill_manual(values = paletteer_d(\"ggsci::hallmarks_light_cosmic\") |> lighten(.25)) +\n\n  geom_boxplot(\n    aes(color = Patient),\n    position = position_dodge(width = .5),\n    width = .2, outlier.shape = NA\n  ) +\n  \n  scale_color_manual(values = paletteer_d(\"ggsci::hallmarks_light_cosmic\") |> darken(.25)) +\n  \n  theme_minimal() +\n  \n  theme(\n      legend.position = \"bottom\",\n      legend.justification = \"left\",\n      legend.title = element_blank(),\n      \n      axis.line = element_line(linewidth = .55),\n      axis.ticks = element_line(linewidth = .55),\n      \n      panel.grid.major = element_line(linewidth = .55),\n      panel.grid.minor = element_line(linewidth = .45, linetype = \"dashed\"),\n      \n      plot.background = element_rect(fill = \"#d9e3f1\", color = NA),\n      plot.margin = margin(20, 20, 20, 20)\n  )"
   },
   {
     "objectID": "qmd/gene_repertoire.html",
@@ -75,40 +96,5 @@
     "title": "Gene repertoire",
     "section": "",
     "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(df)"
-  },
-  {
-    "objectID": "qmd/diversity.html#diversity-indeces",
-    "href": "qmd/diversity.html#diversity-indeces",
-    "title": "Diversity estimation",
-    "section": "Diversity indeces",
-    "text": "Diversity indeces\nThere are several approaches to the estimation of repertoire diversity implemented in the repDiversity function. The method parameter similarly to above mentioned functions sets the means for diversity estimation. You can choose one of the following methods:\n\nshannon Shannon index takes into account both the number of different species and the distribution of individuals among those species, providing a single numerical value that reflects the diversity within a community. Higher Shannon index values indicate greater diversity.\nchao1 Chao is a nonparameteric asymptotic estimator of species richness (number of species in a population).\nhill Hill numbers are a mathematically unified family of diversity indices (differing only by an exponent q).\ndiv true diversity, or the effective number of types, refers to the number of equally abundant types needed for the average proportional abundance of the types to equal that observed in the dataset of interest where all types may not be equally abundant.\ngini.simp The Gini-Simpson index is the probability of interspecific encounter, i.e., probability that two entities represent different types.\ninv.simp Inverse Simpson index is the effective number of types that is obtained when the weighted arithmetic mean is used to quantify average proportional abundance of types in the dataset of interest.\ngini The Gini coefficient measures the inequality among values of a frequency distribution (for example levels of income). A Gini coefficient of zero expresses perfect equality, where all values are the same (for example, where everyone has the same income). A Gini coefficient of one (or 100 percents ) expresses maximal inequality among values (for example where only one person has all the income).\nraref Rarefaction is a technique to assess species richness from the results of sampling through extrapolation."
-  },
-  {
-    "objectID": "qmd/color_palette.html#r-color-paletters",
-    "href": "qmd/color_palette.html#r-color-paletters",
-    "title": "Color palettes",
-    "section": "R color paletters",
-    "text": "R color paletters\nThe website features a collection of 497 palettes sourced from 16 R packages, categorized into continuous (30 samples), discrete, and dynamic palettes.\nThese palettes can be utilized with the paletteer package, as outlined in each palette’s description, or with their corresponding package. To select a specific color, users can copy the code by simply clicking on the desired color.\nContinuous palettes enable smooth transitions between colors, offering a diverse range of options. Discrete palettes consist of a fixed number of colors, whereas dynamic palettes, a subset of discrete palettes, can adapt to generate a variable number of colors as needed."
-  },
-  {
-    "objectID": "qmd/color_palette.html#chroma.js-color-palette-helper",
-    "href": "qmd/color_palette.html#chroma.js-color-palette-helper",
-    "title": "Color palettes",
-    "section": "Chroma.js-Color Palette Helper",
-    "text": "Chroma.js-Color Palette Helper\nThe site offers more manual options. Users can select their preferred palette type (sequential or diverging), then choose and arrange the input colors. They can subsequently review and adjust the resulting palette before exporting the color codes."
-  },
-  {
-    "objectID": "qmd/gene_repertoire.html#table-data-format",
-    "href": "qmd/gene_repertoire.html#table-data-format",
-    "title": "Gene repertoire",
-    "section": "",
-    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(df)"
-  },
-  {
-    "objectID": "qmd/color_palette.html#color-palette-helper",
-    "href": "qmd/color_palette.html#color-palette-helper",
-    "title": "Color palettes",
-    "section": "Color Palette Helper",
-    "text": "Color Palette Helper\nThe website is designed to assist users in creating custom color palettes.\nWith manual options available, users have the freedom to design their palettes according to their specific needs and preferences. They can select their preferred palette type, whether sequential or diverging, and adjust the number of colors to their needs. Following this, users have the option to choose and arrange the input colors. Τhen, they can subsequently review and adjust the resulting palette before exporting the color codes.\nAdditionally, the website provides information on whether the palette is colorblind-safe, ensuring inclusivity and accessibility in design choices."
   }
 ]
