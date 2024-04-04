@@ -4,6 +4,7 @@ Immuno_vis is a collection of charts made with the R programming language, focus
 
 ## Table of Contents
 
+- [Contributing](#contributing)
 - [License](#license)
 - [Authors](#authors)
 
