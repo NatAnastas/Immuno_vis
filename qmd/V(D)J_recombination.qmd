@@ -1,0 +1,44 @@
+---
+title: "V(D)J recombination"
+---
+
+## Table (Data format)
+
+```{r}
+
+library(data.table)
+library(reactable)
+
+df = fread("../inst/data/diversity1.txt")
+
+reactable(
+  
+  df, 
+  theme = reactableTheme(
+    backgroundColor  = "#d9e3f1"
+  )
+)
+```
+
+
+## Chord diagram
+A Chord diagram allows to study flows between a set of entities. Entities (nodes) are displayed all around a circle and connected with arcs (links). 
+In R, the `circlize` package is the best option to build it.
+
+### Chord diagram 1
+
+plot for chord diagram
+
+```{r}
+library(ggplot2)
+library(ggforce)
+
+library(ggnewscale)
+library(paletteer)
+
+library(colorspace)
+
+# plot 1 ---------------------
+
+
+```
