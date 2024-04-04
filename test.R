@@ -1,47 +1,3 @@
----
-title: "V(D)J recombination"
----
-
-V(D)J recombination stands as a fundamental mechanism within the adaptive immune system, crucial for formation  of the immunoglobulins.
-
-## Table (Data format)
-
-This is an example of a data format containing the necessary information for V(D)J recombination visualizations. The table includes mock data specifically generated for this purpose.
-
-```{r}
-
-library(readxl)
-library(reactable)
-
-df <- read_excel("../inst/data/chordDiagram.xlsx") |>
-      as.data.frame()
-
-
-reactable(
-  
-  df, 
-  theme = reactableTheme(
-    backgroundColor  = "#d9e3f1"
-  )
-)
-```
-
-
-## Chord diagram
-
-Chord diagrams provide a circular visualization of relationships between multiple entities (nodes) through interconnected links.
-
-Each entity is represented by a segment on the outer perimeter of the circular layout, with arcs drawn between them to show connections.
-
-The size of each arc corresponds to the significance of the flow between the respective entities.
-
-
-### Chord diagram 1
-
-This chord diagram illustrates the different recobinations between IGLJ genes and IGLV genes.
-
-```{r dev.args=list(bg="transparent")}
-
 library(readxl)
 suppressPackageStartupMessages(library(circlize))
 library(data.table)
@@ -49,7 +5,7 @@ library(data.table)
 
 # import data
 df <- read_excel("../inst/data/chordDiagram.xlsx") |>
-      as.data.frame()
+  as.data.frame()
 
 
 # change df
@@ -109,7 +65,8 @@ chordDiagram(df, grid.col = grid.col1, annotationTrack = c("grid", "names"),
 circos.track(track.index = 1, panel.fun = function(x, y) {
   circos.text(CELL_META$xcenter, CELL_META$ylim[1], CELL_META$sector.index, 
               facing = "clockwise", niceFacing = TRUE, adj = c(0, 0.5),
-              cex = 0.5)
+              cex = 0.4)
 }, bg.border = NA) 
 
-```
+circos.clear()
+

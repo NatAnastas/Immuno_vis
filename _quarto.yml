@@ -18,11 +18,15 @@ website:
           - text: Diversity estimation
             href: qmd/diversity.qmd
           - text: Clonality
+            href: qmd/clonality.qmd         
           - text: Public Clonotypes
+            href: qmd/public_clonotypes.qmd          
       - text: Clonotype-level exploration
         menu: 
           - text: Clonotype evolution
+            href: qmd/clonotype_evolution.qmd           
           - text: Motif visualization
+            href: qmd/motif_visualization.qmd           
       - text: V(D)J recombination
         href: qmd/V(D)J_recombination.qmd
       - text: Color paletters
