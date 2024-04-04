@@ -1,6 +1,6 @@
-# Immuno_vis
+# Immunovisual
 
-Immuno_vis is a collection of charts made with the R programming language, focusing on immunogenetics analyses. 
+Immunovisual is a collection of charts made with the R programming language, focusing on immunogenetics analyses. 
 
 ## Table of Contents
 
