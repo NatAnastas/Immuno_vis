@@ -18,6 +18,10 @@ There are several approaches to the estimation of repertoire diversity implement
 
 ## Table (Data format)
 
+This is an example of a data format containing the necessary information for diversity estimation visualizations. The table includes mock data specifically generated for this purpose.
+
+The "Sample" column contains unique identifiers for each sample, while the "Group" column indicates the different groups to which the samples belong. The "Patient" column provides information about the respective patients associated with each sample. The "Shannon" column corresponds to the Shannon index utilized for the diversity analysis.
+
 ```{r}
 
 library(data.table)
@@ -36,9 +40,17 @@ reactable(
 
 ## Boxplot
 
+Boxplot is one of the most commonly used chart types for comparing the distribution of a numeric variable across multiple groups.
+
+In a boxplot, the central line within the box represents the median of the data, dividing it into two equal parts. The edges of the box represent the upper and lower quartiles, while the extreme lines extend to the the highest and lowest values within the data range, excluding outliers.
+
+Boxplots are created using the `geom_boxplot()` function from the `ggplot2` package.
+
 ### Boxplot 1
 
-plot for boxplot
+It's important to note that while boxplots provide a summary of data distribution for each group, they may hide the underlying distribution details. 
+
+To address this concern, a common practice is to overlay individual data points using `geom_point()` behind the boxplot, offering a clearer visualization of the dataset's distribution.
 
 ```{r}
 library(ggplot2)
@@ -48,6 +60,7 @@ library(ggnewscale)
 library(paletteer)
 
 library(colorspace)
+
 # plot 1 ---------------------
 
 df |>
@@ -58,7 +71,7 @@ df |>
         position = position_jitternormal(sd_y = 0, sd_x = .08),
         shape = 21, size = 2, stroke = .15, color = "white"
     ) +
-  
+
     scale_fill_manual(values = paletteer_d("ggsci::hallmarks_light_cosmic")) +
     
     geom_boxplot(width = .15, outlier.shape = NA) +

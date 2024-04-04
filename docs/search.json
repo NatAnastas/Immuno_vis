@@ -60,14 +60,14 @@
     "href": "qmd/diversity.html#table-data-format",
     "title": "Diversity estimation",
     "section": "Table (Data format)",
-    "text": "Table (Data format)\n\n\nCode\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(\n  \n  df, \n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
+    "text": "Table (Data format)\nThis is an example of a data format containing the necessary information for diversity estimation visualizations. The table includes mock data specifically generated for this purpose.\nThe “Sample” column contains unique identifiers for each sample, while the “Group” column indicates the different groups to which the samples belong. The “Patient” column provides information about the respective patients associated with each sample. The “Shannon” column corresponds to the Shannon index utilized for the diversity analysis.\n\n\nCode\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(\n  \n  df, \n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
   },
   {
     "objectID": "qmd/diversity.html#boxplot",
     "href": "qmd/diversity.html#boxplot",
     "title": "Diversity estimation",
     "section": "Boxplot",
-    "text": "Boxplot\n\nBoxplot 1\nplot for boxplot\n\n\nCode\nlibrary(ggplot2)\nlibrary(ggforce)\n\nlibrary(ggnewscale)\nlibrary(paletteer)\n\nlibrary(colorspace)\n# plot 1 ---------------------\n\ndf |&gt;\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Group),\n        position = position_jitternormal(sd_y = 0, sd_x = .08),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n  \n    scale_fill_manual(values = paletteer_d(\"ggsci::hallmarks_light_cosmic\")) +\n    \n    geom_boxplot(width = .15, outlier.shape = NA) +\n    \n    theme_minimal() +\n    \n    theme(\n        legend.position = \"none\",\n        \n        axis.line = element_line(linewidth = .55),\n        axis.ticks = element_line(linewidth = .55),\n        \n        panel.grid.major = element_line(linewidth = .55),\n        panel.grid.minor = element_line(linewidth = .45, linetype = \"dashed\"),\n        \n        plot.background = element_rect(fill = \"#d9e3f1\", color = NA),\n        plot.margin = margin(20, 20, 20, 20)\n    )\n\n\n\n\n\n\n\nBoxplot 2\nplot for boxplot 2\n\n\nCode\n# plot 2 ---------------------\n\ndf |&gt;\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Patient),\n        position = position_jitterdodge(jitter.width = .15, dodge.width = .5),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n    \n    geom_boxplot(aes(fill = Patient), alpha = .5, width = .5) +\n    \n    theme_minimal() +\n    \n    theme(\n        plot.margin = margin(20, 20, 20, 20)\n    )"
+    "text": "Boxplot\nBoxplot is one of the most commonly used chart types for comparing the distribution of a numeric variable across multiple groups.\nIn a boxplot, the central line within the box represents the median of the data, dividing it into two equal parts. The edges of the box represent the upper and lower quartiles, while the extreme lines extend to the the highest and lowest values within the data range, excluding outliers.\nBoxplots are created using the geom_boxplot() function from the ggplot2 package.\n\nBoxplot 1\nIt’s important to note that while boxplots provide a summary of data distribution for each group, they may hide the underlying distribution details.\nTo address this concern, a common practice is to overlay individual data points using geom_point() behind the boxplot, offering a clearer visualization of the dataset’s distribution.\n\n\nCode\nlibrary(ggplot2)\nlibrary(ggforce)\n\nlibrary(ggnewscale)\nlibrary(paletteer)\n\nlibrary(colorspace)\n\n# plot 1 ---------------------\n\ndf |&gt;\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Group),\n        position = position_jitternormal(sd_y = 0, sd_x = .08),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n\n    scale_fill_manual(values = paletteer_d(\"ggsci::hallmarks_light_cosmic\")) +\n    \n    geom_boxplot(width = .15, outlier.shape = NA) +\n    \n    theme_minimal() +\n    \n    theme(\n        legend.position = \"none\",\n        \n        axis.line = element_line(linewidth = .55),\n        axis.ticks = element_line(linewidth = .55),\n        \n        panel.grid.major = element_line(linewidth = .55),\n        panel.grid.minor = element_line(linewidth = .45, linetype = \"dashed\"),\n        \n        plot.background = element_rect(fill = \"#d9e3f1\", color = NA),\n        plot.margin = margin(20, 20, 20, 20)\n    )\n\n\n\n\n\n\n\nBoxplot 2\nplot for boxplot 2\n\n\nCode\n# plot 2 ---------------------\n\ndf |&gt;\n    ggplot(aes(Group, Shannon)) +\n    \n    geom_point(\n        aes(fill = Patient),\n        position = position_jitterdodge(jitter.width = .15, dodge.width = .5),\n        shape = 21, size = 2, stroke = .15, color = \"white\"\n    ) +\n    \n    geom_boxplot(aes(fill = Patient), alpha = .5, width = .5) +\n    \n    theme_minimal() +\n    \n    theme(\n        plot.margin = margin(20, 20, 20, 20)\n    )"
   },
   {
     "objectID": "qmd/gene_repertoire.html",
@@ -110,5 +110,26 @@
     "title": "Color palettes",
     "section": "Color Palette Helper",
     "text": "Color Palette Helper\nThe website is designed to assist users in creating custom color palettes.\nWith manual options available, users have the freedom to design their palettes according to their specific needs and preferences. They can select their preferred palette type, whether sequential or diverging, and adjust the number of colors to their needs. Following this, users have the option to choose and arrange the input colors. Τhen, they can subsequently review and adjust the resulting palette before exporting the color codes.\nAdditionally, the website provides information on whether the palette is colorblind-safe, ensuring inclusivity and accessibility in design choices."
+  },
+  {
+    "objectID": "qmd/V(D)J_recombination.html",
+    "href": "qmd/V(D)J_recombination.html",
+    "title": "V(D)J recombination",
+    "section": "",
+    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(\n  \n  df, \n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
+  },
+  {
+    "objectID": "qmd/V(D)J_recombination.html#table-data-format",
+    "href": "qmd/V(D)J_recombination.html#table-data-format",
+    "title": "V(D)J recombination",
+    "section": "",
+    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(\n  \n  df, \n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
+  },
+  {
+    "objectID": "qmd/V(D)J_recombination.html#chord-diagram",
+    "href": "qmd/V(D)J_recombination.html#chord-diagram",
+    "title": "V(D)J recombination",
+    "section": "Chord diagram",
+    "text": "Chord diagram\nA Chord diagram allows to study flows between a set of entities. Entities (nodes) are displayed all around a circle and connected with arcs (links). In R, the circlize package is the best option to build it.\n\nChord diagram 1\nplot for chord diagram\n\n\nCode\nlibrary(ggplot2)\nlibrary(ggforce)\n\nlibrary(ggnewscale)\nlibrary(paletteer)\n\nlibrary(colorspace)\n\n# plot 1 ---------------------"
   }
 ]

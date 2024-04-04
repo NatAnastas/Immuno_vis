@@ -23,6 +23,8 @@ website:
         menu: 
           - text: Clonotype evolution
           - text: Motif visualization
+      - text: V(D)J recombination
+        href: qmd/V(D)J_recombination.qmd
       - text: Color paletters
         href: qmd/color_palette.qmd
         
