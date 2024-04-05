@@ -8,6 +8,8 @@ V(D)J recombination stands as a fundamental mechanism within the adaptive immune
 
 This is an example of a data format containing the necessary information for V(D)J recombination visualizations. The table includes mock data specifically generated for this purpose.
 
+The "IGLJ" column contains the different IGLJ genes, while all the other columns correspond to the various IGLV genes.
+
 ```{r}
 
 library(readxl)
