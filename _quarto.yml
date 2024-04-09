@@ -13,7 +13,7 @@ website:
         text: Welcome
       - text: Repertoire-level exploration
         menu:
-          - text: Gene usage
+          - text: Gene repertoire
             href: qmd/gene_repertoire.qmd
           - text: Diversity estimation
             href: qmd/diversity.qmd
@@ -48,6 +48,8 @@ format:
   html:
     theme: [morph, sass/theme-light.scss]
     fig-format: svg
+    fig-width: 9
+    fig-height: 7
     toc: true
     code-fold: true
     code-block-border-left: "#5f646a"
