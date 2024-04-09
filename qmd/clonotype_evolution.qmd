@@ -1,3 +1,105 @@
 ---
 title: "Clonotype evolution"
 ---
+
+Clonotype evolution refers to the dynamic changes that occur in the composition and characteristics of clonotypes over time or in response to selective pressures within a biological system, such as the immune repertoire.
+
+## Table (Data format)
+
+This is an example of a data format containing the necessary information for diversity estimation visualizations. The table includes mock data specifically generated for this purpose.
+
+The "patient" column identifies specific patients within the dataset. The "sample" column contains unique identifiers for each sample, while the "time" column indicates the different timepoint which each sample was taken. The "response" column provides information regarding the outcome associated with each sample. In the "vgene" column, various V genes are listed, while "CDR3" column contains  the corresponding CDR3 sequences. The "clonotype" column represents different clonotypes, the "N" indicates the number of times each clonotype was detected and "Freq" column displays to the frequency of each clonotype.
+
+
+```{r}
+
+library(stringr)
+library(data.table)
+library(reactable)
+
+
+d0 = fread("../inst/data/clonotype-evolution-1.tsv")
+
+d0$time = d0$time |> factor(levels = c("PRE", "6M", "12M", "18M", "24M"))
+
+d1 = d0[which(patient == 13)]
+
+cl = d1[which(time == "PRE"), head(.SD, 10)]$clonotype
+
+d1 = d1[which(clonotype %in% cl)] 
+
+
+reactable(
+
+  d1,
+  defaultPageSize = 5,
+  theme = reactableTheme(
+    backgroundColor  = "#d9e3f1"
+  )
+)
+```
+
+## Stream graph
+
+A Stream graph is a variant of a stacked area chart that illustrates the progression of a numeric value (Y-axis) over another numeric value (X-axis). It visualizes this evolution across multiple groups, each distinguished by a unique color.
+
+### Stream graph
+
+The following example shows the evolution of each colonotype through time within a single patient.
+
+```{r}
+# libraries -------
+
+library(ggplot2)
+library(ggstream)
+library(paletteer)
+
+
+# plot 1 ---------------------
+
+d1 |> 
+    ggplot(aes(time, Freq, fill = clonotype)) +
+    
+    geom_stream(
+        type = "mirror",
+        color = "grey96",
+        linewidth = .05,
+        bw = .75,
+        extra_span = .75,
+        true_range = "both",
+        sorting = "inside_out"
+    ) +
+    
+    geom_vline(
+        data = data.table(x = c(1, 2, 3, 4, 5)),
+        aes(xintercept = x),
+        color = "white", 
+        linewidth = 1,
+        linetype = "dotted"
+    ) +
+    
+    scale_x_discrete(expand = c(0, 0)) +
+    scale_fill_manual(
+        values = paletteer_d("ggsci::hallmarks_light_cosmic"),
+        guide = guide_legend(nrow = 4)
+    ) +
+    
+    theme_minimal() +
+    
+    theme(
+        legend.position = "bottom",
+        legend.title.position = "top",
+        
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(face = "bold"),
+        
+        panel.grid = element_blank(),
+        
+        plot.margin = margin(20, 20, 20, 20),
+        
+        plot.background = element_rect(fill = "#d9e3f1", color = NA)
+    )
+  
+
+
+```

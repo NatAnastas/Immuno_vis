@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -59,6 +93,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+
+<script src="../site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="../site_libs/react-18.2.0/react.min.js"></script>
+<script src="../site_libs/react-18.2.0/react-dom.min.js"></script>
+<script src="../site_libs/reactwidget-1.0.0/react-tools.js"></script>
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+<script src="../site_libs/reactable-binding-0.4.4/reactable.js"></script>
 
 
 </head>
@@ -149,7 +191,17 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#table-data-format" id="toc-table-data-format" class="nav-link active" data-scroll-target="#table-data-format">Table (Data format)</a></li>
+  <li><a href="#stream-graph" id="toc-stream-graph" class="nav-link" data-scroll-target="#stream-graph">Stream graph</a>
+  <ul class="collapse">
+  <li><a href="#stream-graph-1" id="toc-stream-graph-1" class="nav-link" data-scroll-target="#stream-graph-1">Stream graph</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -171,8 +223,115 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Clonotype evolution refers to the dynamic changes that occur in the composition and characteristics of clonotypes over time or in response to selective pressures within a biological system, such as the immune repertoire.</p>
+<section id="table-data-format" class="level2">
+<h2 class="anchored" data-anchor-id="table-data-format">Table (Data format)</h2>
+<p>This is an example of a data format containing the necessary information for diversity estimation visualizations. The table includes mock data specifically generated for this purpose.</p>
+<p>The “patient” column identifies specific patients within the dataset. The “sample” column contains unique identifiers for each sample, while the “time” column indicates the different timepoint which each sample was taken. The “response” column provides information regarding the outcome associated with each sample. In the “vgene” column, various V genes are listed, while “CDR3” column contains the corresponding CDR3 sequences. The “clonotype” column represents different clonotypes, the “N” indicates the number of times each clonotype was detected and “Freq” column displays to the frequency of each clonotype.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reactable)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>d0 <span class="ot">=</span> <span class="fu">fread</span>(<span class="st">"../inst/data/clonotype-evolution-1.tsv"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>d0<span class="sc">$</span>time <span class="ot">=</span> d0<span class="sc">$</span>time <span class="sc">|&gt;</span> <span class="fu">factor</span>(<span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"PRE"</span>, <span class="st">"6M"</span>, <span class="st">"12M"</span>, <span class="st">"18M"</span>, <span class="st">"24M"</span>))</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>d1 <span class="ot">=</span> d0[<span class="fu">which</span>(patient <span class="sc">==</span> <span class="dv">13</span>)]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>cl <span class="ot">=</span> d1[<span class="fu">which</span>(time <span class="sc">==</span> <span class="st">"PRE"</span>), <span class="fu">head</span>(.SD, <span class="dv">10</span>)]<span class="sc">$</span>clonotype</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>d1 <span class="ot">=</span> d1[<span class="fu">which</span>(clonotype <span class="sc">%in%</span> cl)] </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">reactable</span>(</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  d1,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">defaultPageSize =</span> <span class="dv">5</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">theme =</span> <span class="fu">reactableTheme</span>(</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundColor  =</span> <span class="st">"#d9e3f1"</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div class="reactable html-widget html-fill-item" id="htmlwidget-65b3221a7b4532fd656f" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-65b3221a7b4532fd656f">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"patient":[13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13],"sample":["MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR26","MSTR26","MSTR26","MSTR26","MSTR26","MSTR26","MSTR77","MSTR77","MSTR77","MSTR77","MSTR77","MSTR77","MSTR77","MSTR77","MSTR88","MSTR88","MSTR101","MSTR101","MSTR101","MSTR101","MSTR101","MSTR101","MSTR101","MSTR101"],"time":["PRE","PRE","PRE","PRE","PRE","PRE","PRE","PRE","PRE","PRE","6M","6M","6M","6M","6M","6M","12M","12M","12M","12M","12M","12M","12M","12M","18M","18M","24M","24M","24M","24M","24M","24M","24M","24M"],"response":["Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder"],"vgene":["TRBV30","TRBV6-1","TRBV29-1","TRBV19","TRBV12-3","TRBV5-4","TRBV4-1","TRBV29-1","TRBV27","TRBV7-8","TRBV12-3","TRBV30","TRBV4-1","TRBV6-1","TRBV19","TRBV29-1","TRBV6-1","TRBV30","TRBV12-3","TRBV19","TRBV29-1","TRBV4-1","TRBV29-1","TRBV5-4","TRBV30","TRBV4-1","TRBV30","TRBV6-1","TRBV12-3","TRBV29-1","TRBV19","TRBV4-1","TRBV7-8","TRBV29-1"],"CDR3":["CAWSVNPLNGYTF","CASNSGPESGPQHF","CSVGRSGGTGELFF","CASSNYRQGLGYTF","CASSFFDTGELFF","CASSLIQGAGANVLTF","CASSQEVHQGYEQYF","CSVGEGLYGYTF","CASSLVGGSGANVLTF","CASSPLTPGANVLTF","CASSFFDTGELFF","CAWSVNPLNGYTF","CASSQEVHQGYEQYF","CASNSGPESGPQHF","CASSNYRQGLGYTF","CSVGRSGGTGELFF","CASNSGPESGPQHF","CAWSVNPLNGYTF","CASSFFDTGELFF","CASSNYRQGLGYTF","CSVGEGLYGYTF","CASSQEVHQGYEQYF","CSVGRSGGTGELFF","CASSLIQGAGANVLTF","CAWSVNPLNGYTF","CASSQEVHQGYEQYF","CAWSVNPLNGYTF","CASNSGPESGPQHF","CASSFFDTGELFF","CSVGRSGGTGELFF","CASSNYRQGLGYTF","CASSQEVHQGYEQYF","CASSPLTPGANVLTF","CSVGEGLYGYTF"],"clonotype":["TRBV30 - CAWSVNPLNGYTF","TRBV6-1 - CASNSGPESGPQHF","TRBV29-1 - CSVGRSGGTGELFF","TRBV19 - CASSNYRQGLGYTF","TRBV12-3 - CASSFFDTGELFF","TRBV5-4 - CASSLIQGAGANVLTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV29-1 - CSVGEGLYGYTF","TRBV27 - CASSLVGGSGANVLTF","TRBV7-8 - CASSPLTPGANVLTF","TRBV12-3 - CASSFFDTGELFF","TRBV30 - CAWSVNPLNGYTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV6-1 - CASNSGPESGPQHF","TRBV19 - CASSNYRQGLGYTF","TRBV29-1 - CSVGRSGGTGELFF","TRBV6-1 - CASNSGPESGPQHF","TRBV30 - CAWSVNPLNGYTF","TRBV12-3 - CASSFFDTGELFF","TRBV19 - CASSNYRQGLGYTF","TRBV29-1 - CSVGEGLYGYTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV29-1 - CSVGRSGGTGELFF","TRBV5-4 - CASSLIQGAGANVLTF","TRBV30 - CAWSVNPLNGYTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV30 - CAWSVNPLNGYTF","TRBV6-1 - CASNSGPESGPQHF","TRBV12-3 - CASSFFDTGELFF","TRBV29-1 - CSVGRSGGTGELFF","TRBV19 - CASSNYRQGLGYTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV7-8 - CASSPLTPGANVLTF","TRBV29-1 - CSVGEGLYGYTF"],"N":[1733,1113,497,425,389,384,376,343,335,305,4351,3022,836,769,259,254,637,456,255,85,62,49,37,9,5017,23,2493,666,219,160,75,50,41,21],"Freq":[1.24128841870026,0.797203698795958,0.355984041600711,0.30441291283763,0.278627348456089,0.275046020069764,0.269315894651644,0.245679127301899,0.239949001883779,0.218461031565828,2.68683076239054,1.86614630290605,0.516246958712594,0.474873099581321,0.159937753955217,0.156850152527511,0.976110574786619,0.698754194823703,0.390750701052728,0.130250233684243,0.0950060528049771,0.07508542882974,0.0566971605449057,0.0137912012136257,4.17352965643457,0.0191331835953748,1.32120768876099,0.352958010715932,0.116062769289473,0.0847947172891129,0.0397475237292717,0.0264983491528478,0.0217286463053352,0.0111293066441961]},"columns":[{"id":"patient","name":"patient","type":"numeric"},{"id":"sample","name":"sample","type":"character"},{"id":"time","name":"time","type":"factor"},{"id":"response","name":"response","type":"character"},{"id":"vgene","name":"vgene","type":"character"},{"id":"CDR3","name":"CDR3","type":"character"},{"id":"clonotype","name":"clonotype","type":"character"},{"id":"N","name":"N","type":"numeric"},{"id":"Freq","name":"Freq","type":"numeric"}],"defaultPageSize":5,"theme":{"backgroundColor":"#d9e3f1"},"dataKey":"0d89cff69b0d79f2638526a05df456a1"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="stream-graph" class="level2">
+<h2 class="anchored" data-anchor-id="stream-graph">Stream graph</h2>
+<p>A Stream graph is a variant of a stacked area chart that illustrates the progression of a numeric value (Y-axis) over another numeric value (X-axis). It visualizes this evolution across multiple groups, each distinguished by a unique color.</p>
+<section id="stream-graph-1" class="level3">
+<h3 class="anchored" data-anchor-id="stream-graph-1">Stream graph</h3>
+<p>The following example shows the evolution of each colonotype through time within a single patient.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># libraries -------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggstream)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(paletteer)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># plot 1 ---------------------</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>d1 <span class="sc">|&gt;</span> </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(time, Freq, <span class="at">fill =</span> clonotype)) <span class="sc">+</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_stream</span>(</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">type =</span> <span class="st">"mirror"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"grey96"</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">linewidth =</span> .<span class="dv">05</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">bw =</span> .<span class="dv">75</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">extra_span =</span> .<span class="dv">75</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">true_range =</span> <span class="st">"both"</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">sorting =</span> <span class="st">"inside_out"</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">data =</span> <span class="fu">data.table</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)),</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">xintercept =</span> x),</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"white"</span>, </span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>        <span class="at">linewidth =</span> <span class="dv">1</span>,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">linetype =</span> <span class="st">"dotted"</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_discrete</span>(<span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">values =</span> <span class="fu">paletteer_d</span>(<span class="st">"ggsci::hallmarks_light_cosmic"</span>),</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>        <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">4</span>)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>),</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#d9e3f1"</span>, <span class="at">color =</span> <span class="cn">NA</span>)</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="clonotype_evolution_files/figure-html/unnamed-chunk-2-1.svg" class="img-fluid"></p>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

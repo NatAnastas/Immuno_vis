@@ -2,19 +2,20 @@
 title: "Diversity estimation"
 ---
 
-Diversity estimation within immune cell populations is a fundamental analysis in immunoinformatics. Diversity estimation refers to the process of analyzing and quantifying the diversity of immune cells, such as T cells or B cells. 
+Diversity estimation within immune cell populations is a fundamental analysis in immunoinformatics. Diversity estimation refers to the process of analyzing and quantifying the diversity of immune cells, such as T cells or B cells.
 
 ## Diversity indeces
+
 The repDiversity function offers various approaches for estimating repertoire diversity. The method parameter allows users to specify the means for diversity estimation. Users can select one of the following methods to set the means for diversity estimation:
 
-- **shannon** Shannon index takes into account both the number of different species and the distribution of individuals among those species, providing a single numerical value that reflects the diversity within a community. Higher Shannon index values indicate greater diversity.
-- **chao1** Chao1 is a nonparametric asymptotic estimator used to estimate species richness, which refers to the total number of species present in a population or community.
-- **hill** Hill numbers represent a unified family of diversity indices characterized by a mathematical framework, with the only variation being the exponent q.
-- **div** Div, known as true diversity or the effective number of types, represents the count of equally abundant types required for the average proportional abundance of the types to match that observed in the dataset of interest, where all types may not be equally abundant.
-- **gini.simp** The Gini-Simpson index quantifies the probability of interspecific encounter, indicating the likelihood that two randomly selected entities within a community represent different types or species.
-- **inv.simp** Inverse Simpson index represents the effective number of types achieved when the weighted arithmetic mean is utilized to quantify the average proportional abundance of types within the dataset of interest.
-- **gini** The Gini coefficient measures the inequality among values in a frequency distribution, such as income levels. A Gini coefficient of zero signifies complete equality, where all values are identical (e.g., everyone has the same income). Conversely, a Gini coefficient of one, or 100%, represents maximum inequality among values (e.g., where one person possesses all the income).
-- **raref** Rarefaction is a statistical technique used to estimate species richness based on sampled data by extrapolating the expected number of species in a population.
+-   **shannon** Shannon index takes into account both the number of different species and the distribution of individuals among those species, providing a single numerical value that reflects the diversity within a community. Higher Shannon index values indicate greater diversity.
+-   **chao1** Chao1 is a nonparametric asymptotic estimator used to estimate species richness, which refers to the total number of species present in a population or community.
+-   **hill** Hill numbers represent a unified family of diversity indices characterized by a mathematical framework, with the only variation being the exponent q.
+-   **div** Div, known as true diversity or the effective number of types, represents the count of equally abundant types required for the average proportional abundance of the types to match that observed in the dataset of interest, where all types may not be equally abundant.
+-   **gini.simp** The Gini-Simpson index quantifies the probability of interspecific encounter, indicating the likelihood that two randomly selected entities within a community represent different types or species.
+-   **inv.simp** Inverse Simpson index represents the effective number of types achieved when the weighted arithmetic mean is utilized to quantify the average proportional abundance of types within the dataset of interest.
+-   **gini** The Gini coefficient measures the inequality among values in a frequency distribution, such as income levels. A Gini coefficient of zero signifies complete equality, where all values are identical (e.g., everyone has the same income). Conversely, a Gini coefficient of one, or 100%, represents maximum inequality among values (e.g., where one person possesses all the income).
+-   **raref** Rarefaction is a statistical technique used to estimate species richness based on sampled data by extrapolating the expected number of species in a population.
 
 ## Table (Data format)
 
@@ -48,7 +49,7 @@ Boxplots are created using the `geom_boxplot()` function from the `ggplot2` pack
 
 ### Boxplot 1
 
-It's important to note that while boxplots provide a summary of data distribution for each group, they may hide the underlying distribution details. 
+It's important to note that while boxplots provide a summary of data distribution for each group, they may hide the underlying distribution details.
 
 To address this concern, a common practice is to overlay individual data points using `geom_point()` behind the boxplot, offering a clearer visualization of the dataset's distribution.
 
