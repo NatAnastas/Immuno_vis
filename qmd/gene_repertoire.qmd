@@ -14,5 +14,11 @@ library(reactable)
 
 df = fread("../inst/data/diversity1.txt")
 
-reactable(df)
+reactable(
+  
+  df, 
+  theme = reactableTheme(
+    backgroundColor  = "#d9e3f1"
+  )
+)
 ```

@@ -95,7 +95,7 @@
     "href": "qmd/gene_repertoire.html",
     "title": "Gene repertoire",
     "section": "",
-    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(df)"
+    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(\n  \n  df, \n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
   },
   {
     "objectID": "qmd/diversity.html#diversity-indeces",
@@ -123,7 +123,7 @@
     "href": "qmd/gene_repertoire.html#table-data-format",
     "title": "Gene repertoire",
     "section": "",
-    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(df)"
+    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(\n  \n  df, \n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
   },
   {
     "objectID": "qmd/color_palette.html#color-palette-helper",
