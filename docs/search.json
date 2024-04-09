@@ -95,7 +95,7 @@
     "href": "qmd/gene_repertoire.html",
     "title": "Gene repertoire",
     "section": "",
-    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(\n  \n  df, \n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
+    "text": "This are examples of a tables containing the necessary informations for diversity estimation visualizations. The tables includes mock data specifically generated for this purpose."
   },
   {
     "objectID": "qmd/diversity.html#diversity-indeces",
@@ -123,7 +123,7 @@
     "href": "qmd/gene_repertoire.html#table-data-format",
     "title": "Gene repertoire",
     "section": "",
-    "text": "Code\nlibrary(data.table)\nlibrary(reactable)\n\ndf = fread(\"../inst/data/diversity1.txt\")\n\nreactable(\n  \n  df, \n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
+    "text": "This are examples of a tables containing the necessary informations for diversity estimation visualizations. The tables includes mock data specifically generated for this purpose."
   },
   {
     "objectID": "qmd/color_palette.html#color-palette-helper",
@@ -201,5 +201,33 @@
     "title": "Clonotype evolution",
     "section": "Heatmap",
     "text": "Heatmap\nA heatmap is a graphical representation of data where the individual values contained in a matrix are represented as colors.\n\n\nCode\nsuppressPackageStartupMessages(library(ComplexHeatmap))\n\nlibrary(data.table)\nlibrary(stringr)\n\nexpr = readRDS(system.file(package = \"ComplexHeatmap\", \"extdata\", \"gene_expression.rds\"))\n\nc_s = data.table(\n    \"sample\" = expr[, 1:24] |&gt; colnames(),\n    \"cell\" = expr[, 1:24] |&gt; colnames() |&gt; str_split_i(\"_\", 2)\n)\n\nm = expr[, 1:24] |&gt; as.matrix() |&gt; t() |&gt; scale(scale = TRUE, center = TRUE) |&gt; t()\nr_s = expr[, c(25, 26, 27)]\n\ncol_ann = HeatmapAnnotation(\n    \"cell\" = c_s$cell,\n    simple_anno_size = unit(.75, \"lines\"),\n    col = list(\n        cell = c(\n            \"cell01\" = \"#358DB9\", \n            \"cell02\" = \"#CF4E9C\", \n            \"cell03\" = \"#2E2A2B\"\n        )\n    )\n)\n\nrow_ann = rowAnnotation(\n    \"Type\" = r_s$type,\n    simple_anno_size = unit(.75, \"lines\"),\n    col = list(\n        Type = c(\n            \"protein_coding\" = \"#358DB9\", \n            \"antisense\" = \"#CF4E9C\", \n            \"pseudogene\" = \"#2E2A2B\",\n            \"others\" = \"#2F509E\"\n        )\n    )\n)\n\n\nht = Heatmap(\n    m, name = \"Repertoire\",\n    \n    border = TRUE,\n    \n    left_annotation = row_ann,\n    top_annotation = col_ann,\n    \n    row_split = 3, column_split = 3,\n    \n    clustering_distance_rows = \"euclidean\", \n    clustering_distance_columns = \"euclidean\",\n    \n    clustering_method_rows = \"ward.D2\",\n    clustering_method_columns = \"ward.D2\",\n    \n    row_names_gp = gpar(fontsize = 6)\n    \n) \n\n  \ndraw(ht, merge_legends = TRUE, background = \"#d9e3f1\")"
+  },
+  {
+    "objectID": "qmd/gene_repertoire.html#heatmap",
+    "href": "qmd/gene_repertoire.html#heatmap",
+    "title": "Gene repertoire",
+    "section": "Heatmap",
+    "text": "Heatmap\nA heatmap is a graphical representation of data where the individual values contained in a matrix are represented as colors.\n\n\nCode\nsuppressPackageStartupMessages(library(ComplexHeatmap))\n\nlibrary(data.table)\nlibrary(stringr)\n\ncol_ann = HeatmapAnnotation(\n    \"cell\" = c_s$cell,\n    simple_anno_size = unit(.75, \"lines\"),\n    col = list(\n        cell = c(\n            \"cell01\" = \"#358DB9\", \n            \"cell02\" = \"#CF4E9C\", \n            \"cell03\" = \"#2E2A2B\"\n        )\n    )\n)\n\nrow_ann = rowAnnotation(\n    \"Type\" = r_s$type,\n    simple_anno_size = unit(.75, \"lines\"),\n    col = list(\n        Type = c(\n            \"protein_coding\" = \"#358DB9\", \n            \"antisense\" = \"#CF4E9C\", \n            \"pseudogene\" = \"#2E2A2B\",\n            \"others\" = \"#2F509E\"\n        )\n    )\n)\n\n\nHeatmap(\n    m, name = \"Repertoire\",\n    \n    border = TRUE,\n    \n    left_annotation = row_ann,\n    top_annotation = col_ann,\n    \n    row_split = 3, column_split = 3,\n    \n    clustering_distance_rows = \"euclidean\", \n    clustering_distance_columns = \"euclidean\",\n    \n    clustering_method_rows = \"ward.D2\",\n    clustering_method_columns = \"ward.D2\",\n    \n    row_names_gp = gpar(fontsize = 6)\n    \n) |&gt; \n  draw(merge_legends = TRUE, background = \"#d9e3f1\")"
+  },
+  {
+    "objectID": "qmd/gene_repertoire.html#table-1",
+    "href": "qmd/gene_repertoire.html#table-1",
+    "title": "Gene repertoire",
+    "section": "Table 1",
+    "text": "Table 1\n\n\nCode\nlibrary(stringr)\nlibrary(data.table)\nlibrary(reactable)\n\n\nc_s = fread(\"../inst/data/c_s.txt\")\n\nreactable(\n\n  c_s,\n  defaultPageSize = 5,\n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
+  },
+  {
+    "objectID": "qmd/gene_repertoire.html#table-2",
+    "href": "qmd/gene_repertoire.html#table-2",
+    "title": "Gene repertoire",
+    "section": "Table 2",
+    "text": "Table 2\n\n\nCode\nm = fread(\"../inst/data/m.txt\") |&gt; as.matrix()\n\n\nreactable(\n\n  m,\n  defaultPageSize = 5,\n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
+  },
+  {
+    "objectID": "qmd/gene_repertoire.html#table-3",
+    "href": "qmd/gene_repertoire.html#table-3",
+    "title": "Gene repertoire",
+    "section": "Table 3",
+    "text": "Table 3\n\n\nCode\nr_s = fread(\"../inst/data/r_s.txt\")\n\n\nreactable(\n\n  r_s,\n  defaultPageSize = 5,\n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
   }
 ]
