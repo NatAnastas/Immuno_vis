@@ -98,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/react-18.2.0/react.min.js"></script>
 <script src="../site_libs/react-18.2.0/react-dom.min.js"></script>
 <script src="../site_libs/reactwidget-1.0.0/react-tools.js"></script>
+<link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <link href="../site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
 <script src="../site_libs/reactable-binding-0.4.4/reactable.js"></script>
@@ -196,10 +197,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#table-data-format" id="toc-table-data-format" class="nav-link active" data-scroll-target="#table-data-format">Table (Data format)</a></li>
-  <li><a href="#stream-graph" id="toc-stream-graph" class="nav-link" data-scroll-target="#stream-graph">Stream graph</a>
-  <ul class="collapse">
-  <li><a href="#stream-graph-1" id="toc-stream-graph-1" class="nav-link" data-scroll-target="#stream-graph-1">Stream graph</a></li>
-  </ul></li>
+  <li><a href="#stream-graph" id="toc-stream-graph" class="nav-link" data-scroll-target="#stream-graph">Stream graph</a></li>
+  <li><a href="#heatmap" id="toc-heatmap" class="nav-link" data-scroll-target="#heatmap">Heatmap</a></li>
   </ul>
 </nav>
     </div>
@@ -258,16 +257,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 <div class="cell-output-display">
 
-<div class="reactable html-widget html-fill-item" id="htmlwidget-65b3221a7b4532fd656f" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-65b3221a7b4532fd656f">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"patient":[13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13],"sample":["MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR26","MSTR26","MSTR26","MSTR26","MSTR26","MSTR26","MSTR77","MSTR77","MSTR77","MSTR77","MSTR77","MSTR77","MSTR77","MSTR77","MSTR88","MSTR88","MSTR101","MSTR101","MSTR101","MSTR101","MSTR101","MSTR101","MSTR101","MSTR101"],"time":["PRE","PRE","PRE","PRE","PRE","PRE","PRE","PRE","PRE","PRE","6M","6M","6M","6M","6M","6M","12M","12M","12M","12M","12M","12M","12M","12M","18M","18M","24M","24M","24M","24M","24M","24M","24M","24M"],"response":["Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder"],"vgene":["TRBV30","TRBV6-1","TRBV29-1","TRBV19","TRBV12-3","TRBV5-4","TRBV4-1","TRBV29-1","TRBV27","TRBV7-8","TRBV12-3","TRBV30","TRBV4-1","TRBV6-1","TRBV19","TRBV29-1","TRBV6-1","TRBV30","TRBV12-3","TRBV19","TRBV29-1","TRBV4-1","TRBV29-1","TRBV5-4","TRBV30","TRBV4-1","TRBV30","TRBV6-1","TRBV12-3","TRBV29-1","TRBV19","TRBV4-1","TRBV7-8","TRBV29-1"],"CDR3":["CAWSVNPLNGYTF","CASNSGPESGPQHF","CSVGRSGGTGELFF","CASSNYRQGLGYTF","CASSFFDTGELFF","CASSLIQGAGANVLTF","CASSQEVHQGYEQYF","CSVGEGLYGYTF","CASSLVGGSGANVLTF","CASSPLTPGANVLTF","CASSFFDTGELFF","CAWSVNPLNGYTF","CASSQEVHQGYEQYF","CASNSGPESGPQHF","CASSNYRQGLGYTF","CSVGRSGGTGELFF","CASNSGPESGPQHF","CAWSVNPLNGYTF","CASSFFDTGELFF","CASSNYRQGLGYTF","CSVGEGLYGYTF","CASSQEVHQGYEQYF","CSVGRSGGTGELFF","CASSLIQGAGANVLTF","CAWSVNPLNGYTF","CASSQEVHQGYEQYF","CAWSVNPLNGYTF","CASNSGPESGPQHF","CASSFFDTGELFF","CSVGRSGGTGELFF","CASSNYRQGLGYTF","CASSQEVHQGYEQYF","CASSPLTPGANVLTF","CSVGEGLYGYTF"],"clonotype":["TRBV30 - CAWSVNPLNGYTF","TRBV6-1 - CASNSGPESGPQHF","TRBV29-1 - CSVGRSGGTGELFF","TRBV19 - CASSNYRQGLGYTF","TRBV12-3 - CASSFFDTGELFF","TRBV5-4 - CASSLIQGAGANVLTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV29-1 - CSVGEGLYGYTF","TRBV27 - CASSLVGGSGANVLTF","TRBV7-8 - CASSPLTPGANVLTF","TRBV12-3 - CASSFFDTGELFF","TRBV30 - CAWSVNPLNGYTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV6-1 - CASNSGPESGPQHF","TRBV19 - CASSNYRQGLGYTF","TRBV29-1 - CSVGRSGGTGELFF","TRBV6-1 - CASNSGPESGPQHF","TRBV30 - CAWSVNPLNGYTF","TRBV12-3 - CASSFFDTGELFF","TRBV19 - CASSNYRQGLGYTF","TRBV29-1 - CSVGEGLYGYTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV29-1 - CSVGRSGGTGELFF","TRBV5-4 - CASSLIQGAGANVLTF","TRBV30 - CAWSVNPLNGYTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV30 - CAWSVNPLNGYTF","TRBV6-1 - CASNSGPESGPQHF","TRBV12-3 - CASSFFDTGELFF","TRBV29-1 - CSVGRSGGTGELFF","TRBV19 - CASSNYRQGLGYTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV7-8 - CASSPLTPGANVLTF","TRBV29-1 - CSVGEGLYGYTF"],"N":[1733,1113,497,425,389,384,376,343,335,305,4351,3022,836,769,259,254,637,456,255,85,62,49,37,9,5017,23,2493,666,219,160,75,50,41,21],"Freq":[1.24128841870026,0.797203698795958,0.355984041600711,0.30441291283763,0.278627348456089,0.275046020069764,0.269315894651644,0.245679127301899,0.239949001883779,0.218461031565828,2.68683076239054,1.86614630290605,0.516246958712594,0.474873099581321,0.159937753955217,0.156850152527511,0.976110574786619,0.698754194823703,0.390750701052728,0.130250233684243,0.0950060528049771,0.07508542882974,0.0566971605449057,0.0137912012136257,4.17352965643457,0.0191331835953748,1.32120768876099,0.352958010715932,0.116062769289473,0.0847947172891129,0.0397475237292717,0.0264983491528478,0.0217286463053352,0.0111293066441961]},"columns":[{"id":"patient","name":"patient","type":"numeric"},{"id":"sample","name":"sample","type":"character"},{"id":"time","name":"time","type":"factor"},{"id":"response","name":"response","type":"character"},{"id":"vgene","name":"vgene","type":"character"},{"id":"CDR3","name":"CDR3","type":"character"},{"id":"clonotype","name":"clonotype","type":"character"},{"id":"N","name":"N","type":"numeric"},{"id":"Freq","name":"Freq","type":"numeric"}],"defaultPageSize":5,"theme":{"backgroundColor":"#d9e3f1"},"dataKey":"0d89cff69b0d79f2638526a05df456a1"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-161c4a5a78122950d05e" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-161c4a5a78122950d05e">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"patient":[13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13],"sample":["MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR12","MSTR26","MSTR26","MSTR26","MSTR26","MSTR26","MSTR26","MSTR77","MSTR77","MSTR77","MSTR77","MSTR77","MSTR77","MSTR77","MSTR77","MSTR88","MSTR88","MSTR101","MSTR101","MSTR101","MSTR101","MSTR101","MSTR101","MSTR101","MSTR101"],"time":["PRE","PRE","PRE","PRE","PRE","PRE","PRE","PRE","PRE","PRE","6M","6M","6M","6M","6M","6M","12M","12M","12M","12M","12M","12M","12M","12M","18M","18M","24M","24M","24M","24M","24M","24M","24M","24M"],"response":["Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder","Responder"],"vgene":["TRBV30","TRBV6-1","TRBV29-1","TRBV19","TRBV12-3","TRBV5-4","TRBV4-1","TRBV29-1","TRBV27","TRBV7-8","TRBV12-3","TRBV30","TRBV4-1","TRBV6-1","TRBV19","TRBV29-1","TRBV6-1","TRBV30","TRBV12-3","TRBV19","TRBV29-1","TRBV4-1","TRBV29-1","TRBV5-4","TRBV30","TRBV4-1","TRBV30","TRBV6-1","TRBV12-3","TRBV29-1","TRBV19","TRBV4-1","TRBV7-8","TRBV29-1"],"CDR3":["CAWSVNPLNGYTF","CASNSGPESGPQHF","CSVGRSGGTGELFF","CASSNYRQGLGYTF","CASSFFDTGELFF","CASSLIQGAGANVLTF","CASSQEVHQGYEQYF","CSVGEGLYGYTF","CASSLVGGSGANVLTF","CASSPLTPGANVLTF","CASSFFDTGELFF","CAWSVNPLNGYTF","CASSQEVHQGYEQYF","CASNSGPESGPQHF","CASSNYRQGLGYTF","CSVGRSGGTGELFF","CASNSGPESGPQHF","CAWSVNPLNGYTF","CASSFFDTGELFF","CASSNYRQGLGYTF","CSVGEGLYGYTF","CASSQEVHQGYEQYF","CSVGRSGGTGELFF","CASSLIQGAGANVLTF","CAWSVNPLNGYTF","CASSQEVHQGYEQYF","CAWSVNPLNGYTF","CASNSGPESGPQHF","CASSFFDTGELFF","CSVGRSGGTGELFF","CASSNYRQGLGYTF","CASSQEVHQGYEQYF","CASSPLTPGANVLTF","CSVGEGLYGYTF"],"clonotype":["TRBV30 - CAWSVNPLNGYTF","TRBV6-1 - CASNSGPESGPQHF","TRBV29-1 - CSVGRSGGTGELFF","TRBV19 - CASSNYRQGLGYTF","TRBV12-3 - CASSFFDTGELFF","TRBV5-4 - CASSLIQGAGANVLTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV29-1 - CSVGEGLYGYTF","TRBV27 - CASSLVGGSGANVLTF","TRBV7-8 - CASSPLTPGANVLTF","TRBV12-3 - CASSFFDTGELFF","TRBV30 - CAWSVNPLNGYTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV6-1 - CASNSGPESGPQHF","TRBV19 - CASSNYRQGLGYTF","TRBV29-1 - CSVGRSGGTGELFF","TRBV6-1 - CASNSGPESGPQHF","TRBV30 - CAWSVNPLNGYTF","TRBV12-3 - CASSFFDTGELFF","TRBV19 - CASSNYRQGLGYTF","TRBV29-1 - CSVGEGLYGYTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV29-1 - CSVGRSGGTGELFF","TRBV5-4 - CASSLIQGAGANVLTF","TRBV30 - CAWSVNPLNGYTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV30 - CAWSVNPLNGYTF","TRBV6-1 - CASNSGPESGPQHF","TRBV12-3 - CASSFFDTGELFF","TRBV29-1 - CSVGRSGGTGELFF","TRBV19 - CASSNYRQGLGYTF","TRBV4-1 - CASSQEVHQGYEQYF","TRBV7-8 - CASSPLTPGANVLTF","TRBV29-1 - CSVGEGLYGYTF"],"N":[1733,1113,497,425,389,384,376,343,335,305,4351,3022,836,769,259,254,637,456,255,85,62,49,37,9,5017,23,2493,666,219,160,75,50,41,21],"Freq":[1.24128841870026,0.797203698795958,0.355984041600711,0.30441291283763,0.278627348456089,0.275046020069764,0.269315894651644,0.245679127301899,0.239949001883779,0.218461031565828,2.68683076239054,1.86614630290605,0.516246958712594,0.474873099581321,0.159937753955217,0.156850152527511,0.976110574786619,0.698754194823703,0.390750701052728,0.130250233684243,0.0950060528049771,0.07508542882974,0.0566971605449057,0.0137912012136257,4.17352965643457,0.0191331835953748,1.32120768876099,0.352958010715932,0.116062769289473,0.0847947172891129,0.0397475237292717,0.0264983491528478,0.0217286463053352,0.0111293066441961]},"columns":[{"id":"patient","name":"patient","type":"numeric"},{"id":"sample","name":"sample","type":"character"},{"id":"time","name":"time","type":"factor"},{"id":"response","name":"response","type":"character"},{"id":"vgene","name":"vgene","type":"character"},{"id":"CDR3","name":"CDR3","type":"character"},{"id":"clonotype","name":"clonotype","type":"character"},{"id":"N","name":"N","type":"numeric"},{"id":"Freq","name":"Freq","type":"numeric"}],"defaultPageSize":5,"theme":{"backgroundColor":"#d9e3f1"},"dataKey":"0d89cff69b0d79f2638526a05df456a1"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
 <section id="stream-graph" class="level2">
 <h2 class="anchored" data-anchor-id="stream-graph">Stream graph</h2>
 <p>A Stream graph is a variant of a stacked area chart that illustrates the progression of a numeric value (Y-axis) over another numeric value (X-axis). It visualizes this evolution across multiple groups, each distinguished by a unique color.</p>
-<section id="stream-graph-1" class="level3">
-<h3 class="anchored" data-anchor-id="stream-graph-1">Stream graph</h3>
 <p>The following example shows the evolution of each colonotype through time within a single patient.</p>
 <div class="cell">
 <details>
@@ -328,9 +325,83 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="clonotype_evolution_files/figure-html/unnamed-chunk-2-1.svg" class="img-fluid"></p>
 </div>
 </div>
-
-
 </section>
+<section id="heatmap" class="level2">
+<h2 class="anchored" data-anchor-id="heatmap">Heatmap</h2>
+<p>A heatmap is a graphical representation of data where the individual values contained in a matrix are represented as colors.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">library</span>(ComplexHeatmap))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>expr <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="fu">system.file</span>(<span class="at">package =</span> <span class="st">"ComplexHeatmap"</span>, <span class="st">"extdata"</span>, <span class="st">"gene_expression.rds"</span>))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>c_s <span class="ot">=</span> <span class="fu">data.table</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sample"</span> <span class="ot">=</span> expr[, <span class="dv">1</span><span class="sc">:</span><span class="dv">24</span>] <span class="sc">|&gt;</span> <span class="fu">colnames</span>(),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cell"</span> <span class="ot">=</span> expr[, <span class="dv">1</span><span class="sc">:</span><span class="dv">24</span>] <span class="sc">|&gt;</span> <span class="fu">colnames</span>() <span class="sc">|&gt;</span> <span class="fu">str_split_i</span>(<span class="st">"_"</span>, <span class="dv">2</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>m <span class="ot">=</span> expr[, <span class="dv">1</span><span class="sc">:</span><span class="dv">24</span>] <span class="sc">|&gt;</span> <span class="fu">as.matrix</span>() <span class="sc">|&gt;</span> <span class="fu">t</span>() <span class="sc">|&gt;</span> <span class="fu">scale</span>(<span class="at">scale =</span> <span class="cn">TRUE</span>, <span class="at">center =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> <span class="fu">t</span>()</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>r_s <span class="ot">=</span> expr[, <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">26</span>, <span class="dv">27</span>)]</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>col_ann <span class="ot">=</span> <span class="fu">HeatmapAnnotation</span>(</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"cell"</span> <span class="ot">=</span> c_s<span class="sc">$</span>cell,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">simple_anno_size =</span> <span class="fu">unit</span>(.<span class="dv">75</span>, <span class="st">"lines"</span>),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">list</span>(</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">cell =</span> <span class="fu">c</span>(</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>            <span class="st">"cell01"</span> <span class="ot">=</span> <span class="st">"#358DB9"</span>, </span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>            <span class="st">"cell02"</span> <span class="ot">=</span> <span class="st">"#CF4E9C"</span>, </span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>            <span class="st">"cell03"</span> <span class="ot">=</span> <span class="st">"#2E2A2B"</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>row_ann <span class="ot">=</span> <span class="fu">rowAnnotation</span>(</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Type"</span> <span class="ot">=</span> r_s<span class="sc">$</span>type,</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">simple_anno_size =</span> <span class="fu">unit</span>(.<span class="dv">75</span>, <span class="st">"lines"</span>),</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">list</span>(</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        <span class="at">Type =</span> <span class="fu">c</span>(</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>            <span class="st">"protein_coding"</span> <span class="ot">=</span> <span class="st">"#358DB9"</span>, </span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>            <span class="st">"antisense"</span> <span class="ot">=</span> <span class="st">"#CF4E9C"</span>, </span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>            <span class="st">"pseudogene"</span> <span class="ot">=</span> <span class="st">"#2E2A2B"</span>,</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>            <span class="st">"others"</span> <span class="ot">=</span> <span class="st">"#2F509E"</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>ht <span class="ot">=</span> <span class="fu">Heatmap</span>(</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    m, <span class="at">name =</span> <span class="st">"Repertoire"</span>,</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">border =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">left_annotation =</span> row_ann,</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">top_annotation =</span> col_ann,</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">row_split =</span> <span class="dv">3</span>, <span class="at">column_split =</span> <span class="dv">3</span>,</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">clustering_distance_rows =</span> <span class="st">"euclidean"</span>, </span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">clustering_distance_columns =</span> <span class="st">"euclidean"</span>,</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">clustering_method_rows =</span> <span class="st">"ward.D2"</span>,</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">clustering_method_columns =</span> <span class="st">"ward.D2"</span>,</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">row_names_gp =</span> <span class="fu">gpar</span>(<span class="at">fontsize =</span> <span class="dv">6</span>)</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>) </span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>, <span class="at">background =</span> <span class="st">"#d9e3f1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="clonotype_evolution_files/figure-html/unnamed-chunk-3-1.svg" class="img-fluid"></p>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->

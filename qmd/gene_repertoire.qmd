@@ -21,4 +21,5 @@ reactable(
     backgroundColor  = "#d9e3f1"
   )
 )
+
 ```
