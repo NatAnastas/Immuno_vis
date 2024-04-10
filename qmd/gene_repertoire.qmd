@@ -1,12 +1,16 @@
 ---
 title: "Gene repertoire"
-format:
-  html:
-    code-fold: true
+# format:
+#   html:
+    # fig-width: 10
+    # fig-height: 8
+    
 ---
+The typical Ig repertoire comprises one immunoglobulin heavy chain (IGH) and two light chains, κ (IGK) and λ (IGL). Immunoglobulins undergo diversification through somatic recombination, randomly combining variable (V), diversity (D), and joining (J) gene segments.
+
 ## Table (Data format)
 
-This are examples of a tables containing the necessary informations for diversity estimation visualizations. The tables includes mock data specifically generated for this purpose.
+These are examples of a tables containing the necessary informations for diversity estimation visualizations. The tables includes mock data specifically generated for this purpose.
 
 ## Table 1
 
@@ -71,6 +75,9 @@ reactable(
 ## Heatmap
 
 A heatmap is a graphical representation of data where the individual values contained in a matrix are represented as colors.
+
+
+The `heatmap()` function is a built-in feature of R, providing a powerful tool for generating high-quality heatmaps from matrices. It includes statistical functionalities to normalize input data, perform clustering algorithms and visualize the results 
 
 
 ```{r}

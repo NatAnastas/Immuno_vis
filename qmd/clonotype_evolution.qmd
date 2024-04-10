@@ -40,9 +40,11 @@ reactable(
 
 ```
 
-## Stream graph
+## Stream plot
 
-A Stream graph is a variant of a stacked area chart that illustrates the progression of a numeric value (Y-axis) over another numeric value (X-axis). It visualizes this evolution across multiple groups, each distinguished by a unique color.
+A Stream plot is a variant of a stacked area chart that illustrates the progression of a numeric value (Y-axis) over another numeric value (X-axis). It visualizes this evolution across multiple groups, each distinguished by a unique color.
+
+Stream plots are created using the `ggstream` package. The `geom_stream()` function allows creating streamplots in `ggplot2`.
 
 The following example shows the evolution of each colonotype through time within a single patient.
 

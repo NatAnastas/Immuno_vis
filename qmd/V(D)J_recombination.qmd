@@ -1,5 +1,10 @@
 ---
 title: "V(D)J recombination"
+# format:
+#   html:
+    # fig-width: 10
+    # fig-height: 8
+
 ---
 
 V(D)J recombination stands as a fundamental mechanism within the adaptive immune system, crucial for formation  of the immunoglobulins.
@@ -37,6 +42,7 @@ Each entity is represented by a segment on the outer perimeter of the circular l
 
 The size of each arc corresponds to the significance of the flow between the respective entities.
 
+Chord diagrams can be constructed using the `chordDiagram()` function from the `circlize` package.
 
 ### Chord diagram 1
 
@@ -111,7 +117,7 @@ chordDiagram(df, grid.col = grid.col1, annotationTrack = c("grid", "names"),
 circos.track(track.index = 1, panel.fun = function(x, y) {
   circos.text(CELL_META$xcenter, CELL_META$ylim[1], CELL_META$sector.index, 
               facing = "clockwise", niceFacing = TRUE, adj = c(0, 0.5),
-              cex = 0.5)
+              cex = 0.8)
 }, bg.border = NA) 
 
 ```

@@ -48,8 +48,8 @@ format:
   html:
     theme: [morph, sass/theme-light.scss]
     fig-format: svg
-    fig-width: 9
-    fig-height: 7
+    fig-width: 10
+    fig-height: 8
     toc: true
     code-fold: true
     code-block-border-left: "#5f646a"
