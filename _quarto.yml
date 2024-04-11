@@ -20,15 +20,23 @@ website:
           - text: Clonality
             href: qmd/clonality.qmd         
           - text: Public Clonotypes
-            href: qmd/public_clonotypes.qmd          
+            href: qmd/public_clonotypes.qmd
+          - text: V(D)J recombination
+            href: qmd/V(D)J_recombination.qmd
       - text: Clonotype-level exploration
         menu: 
           - text: Clonotype evolution
             href: qmd/clonotype_evolution.qmd           
           - text: Motif visualization
             href: qmd/motif_visualization.qmd           
-      - text: V(D)J recombination
-        href: qmd/V(D)J_recombination.qmd
+      - text: RNAseq
+        menu: 
+          - text: Volcano plots
+            href: qmd/volcano_plot.qmd
+          - text: Heatmap
+            href: qmd/heatmap.qmd 
+          - text: PCA
+            href: qmd/PCA.qmd
       - text: Color paletters
         href: qmd/color_palette.qmd
         
@@ -48,8 +56,6 @@ format:
   html:
     theme: [morph, sass/theme-light.scss]
     fig-format: svg
-    fig-width: 10
-    fig-height: 8
     toc: true
     code-fold: true
     code-block-border-left: "#5f646a"

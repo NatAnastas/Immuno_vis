@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -59,6 +93,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+
+<script src="../site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="../site_libs/react-18.2.0/react.min.js"></script>
+<script src="../site_libs/react-18.2.0/react-dom.min.js"></script>
+<script src="../site_libs/reactwidget-1.0.0/react-tools.js"></script>
+<link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+<script src="../site_libs/reactable-binding-0.4.4/reactable.js"></script>
 
 
 </head>
@@ -105,6 +148,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../qmd/public_clonotypes.html" rel="" target="">
  <span class="dropdown-text">Public Clonotypes</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../qmd/V(D)J_recombination.html" rel="" target="">
+ <span class="dropdown-text">V(D)J recombination</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -122,10 +169,25 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../qmd/V(D)J_recombination.html" rel="" target="">
- <span class="menu-text">V(D)J recombination</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rnaseq" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">RNAseq</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-rnaseq">    
+        <li>
+    <a class="dropdown-item" href="../qmd/volcano_plot.html" rel="" target="">
+ <span class="dropdown-text">Volcano plots</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../qmd/heatmap.html" rel="" target="">
+ <span class="dropdown-text">Heatmap</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../qmd/PCA.html" rel="" target="">
+ <span class="dropdown-text">PCA</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="../qmd/color_palette.html" rel="" target="">
  <span class="menu-text">Color paletters</span></a>
@@ -149,7 +211,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#table-data-format" id="toc-table-data-format" class="nav-link active" data-scroll-target="#table-data-format">Table (Data format)</a></li>
+  <li><a href="#circular-packing" id="toc-circular-packing" class="nav-link" data-scroll-target="#circular-packing">Circular Packing</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -171,8 +240,132 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="table-data-format" class="level2">
+<h2 class="anchored" data-anchor-id="table-data-format">Table (Data format)</h2>
+<p>This is an example of a data format containing the necessary information for clonality visualizations. The table includes mock data specifically generated for this purpose.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reactable)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">"../inst/data/clonality1.txt"</span>) </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">reactable</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  df1, </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">theme =</span> <span class="fu">reactableTheme</span>(</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundColor  =</span> <span class="st">"#d9e3f1"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div class="reactable html-widget html-fill-item" id="htmlwidget-e36bf782fd3a8ea430d5" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-e36bf782fd3a8ea430d5">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"sample":["1766PBCD4","1951PBCD4","2124PBCD4","2231PBCD4","1197PBCD4","1575PBCD4","1672PBCD4","1818PBCD4","2052PBCD4","2121PBCD4","2239PBCD4","2382PBCD4","3598PBCD4","710PBCD4","719PBCD4","IN003008CD4","IN003104PBCD4","IN003277CD4","IN003315CD4","IN003606CD4","IN000719CD4","IN001197CD4","IN002121CD4","IN002124CD4","IN002382CD4","IN003008CD4","IN003598CD4","IN003606CD4","IN000710CD4","IN001575CD4","IN001672CD4","IN001766CD4","IN001818CD4","IN001951CD4","IN002052CD4","IN002231CD4","IN002239CD4","IN003104CD4","IN003277CD4","IN003315CD4","1197PBCD8","1575PBCD8","1672PBCD8","1766PBCD8","1818PBCD8","1951PBCD8","2052PBCD8","2121PBCD8","2124PBCD8","2231PBCD8","2239PBCD8","2382PBCD8","710PBCD8","719PBCD8","IN003008PBCD8","IN003104PBCD8","IN003277CD8","IN003315CD8","IN003598CD8","IN003606CD8","IN000719CD8","IN001197CD8","IN002121CD8","IN002124CD8","IN002382CD8","IN003008CD8","IN003598CD8","IN003606CD8","IN000710CD8","IN001575CD8","IN001672CD8","IN001766CD8","IN001818CD8","IN001951CD8","IN002052CD8","IN002231CD8","IN002239CD8","IN003104CD8","IN003277CD8","IN003315CD8"],"group1":["cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8"],"group2":["PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ"],"clonality":[11.605957912,2.823214847,17.164601751,42.013369252,30.380377491,10.671756952,21.292947557,12.6734459367625,13.5483042550118,19.9655010916959,2.450162599,5.111027575,52.7996089822987,3.500273399,31.534384435,2.048200452,3.160633384,34.414554372,3.10561119,5.017918221,34.071209233,35.324541521,16.241733803,37.638257786,23.867964451,4.897739504,17.643117549,20.090882921,28.6582795629195,12.076753389,18.774883071,11.199454519,12.094356067,14.766561118,19.377895908,26.502694136,19.483944795,5.675701603,23.990822398,2.98297887,69.3623851483657,61.382693407,65.539157879,39.265208493,55.711086600488,30.365572366,61.9066021234187,90.1334773665597,42.458919486,83.109494264,36.899131799,27.269609049,32.226757772,17.89912138,42.630742095,48.942330698,67.192508939,28.076583717,39.448814658,68.861643991,34.379855971,79.32941353,62.745542031,59.394078846,31.708242264,31.393565752,60.733184787,59.063174343,48.207326578332,64.799796755,47.314774224,40.389328973,53.8342223735483,38.321321261,20.898504245,55.878669818,54.606389051,40.213206985,40.834352026,17.05690878]},"columns":[{"id":"sample","name":"sample","type":"character"},{"id":"group1","name":"group1","type":"character"},{"id":"group2","name":"group2","type":"character"},{"id":"clonality","name":"clonality","type":"numeric"}],"theme":{"backgroundColor":"#d9e3f1"},"dataKey":"98a644c52840abca737ff397f6f3a6e2"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="circular-packing" class="level2">
+<h2 class="anchored" data-anchor-id="circular-packing">Circular Packing</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># libraries -------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(packcircles)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(shadowtext)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">=</span> df1 <span class="sc">|&gt;</span> <span class="fu">split</span>(<span class="at">by =</span> <span class="fu">c</span>(<span class="st">"group1"</span>, <span class="st">"group2"</span>))</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>df_plot <span class="ot">=</span> df1 <span class="sc">|&gt;</span> </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(<span class="cf">function</span>(q) {</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    dat.egg <span class="ot">&lt;-</span> q<span class="sc">$</span>clonality <span class="sc">|&gt;</span> </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">circleProgressiveLayout</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">circleLayoutVertices</span>(<span class="at">npoints =</span> <span class="dv">100</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    dat.egg <span class="ot">&lt;-</span> <span class="fu">cbind</span>(dat.egg, q[dat.egg<span class="sc">$</span>id]) </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(dat.egg)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  }) <span class="sc">|&gt;</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbindlist</span>()</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>df_plot<span class="sc">$</span>group1 <span class="ot">=</span> df_plot<span class="sc">$</span>group1 <span class="sc">|&gt;</span> <span class="fu">str_to_upper</span>()</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>df_plot_l <span class="ot">=</span> df_plot[, by <span class="ot">=</span> .(sample, group1, group2, clonality, id), .(</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> ( <span class="fu">min</span>(x) <span class="sc">+</span> <span class="fu">max</span>(x) ) <span class="sc">/</span> <span class="dv">2</span>,</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> ( <span class="fu">min</span>(y) <span class="sc">+</span> <span class="fu">max</span>(y) ) <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>)]</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>df_plot_l<span class="sc">$</span>lbl <span class="ot">=</span> df_plot_l<span class="sc">$</span>clonality <span class="sc">|&gt;</span> <span class="fu">round</span>(<span class="at">digits =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> <span class="fu">paste0</span>(<span class="st">"%"</span>)</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>df_plot <span class="sc">|&gt;</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y, <span class="at">group =</span> id)) <span class="sc">+</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> clonality), <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">linewidth =</span> .<span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_shadowtext</span>(</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df_plot_l[<span class="fu">which</span>(clonality <span class="sc">&gt;=</span> <span class="dv">10</span>)], <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(x, y, <span class="at">label =</span> lbl, <span class="at">size =</span> clonality),  </span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"grey1"</span>, <span class="at">bg.color =</span> <span class="st">"#d9e3f1"</span>, <span class="at">bg.r =</span> .<span class="dv">15</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_stepsn</span>(</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">colors =</span> <span class="fu">c</span>(<span class="st">'#00429d'</span>, <span class="st">'#73a2c6'</span>, <span class="st">'#ffffe0'</span>, <span class="st">'#f4777f'</span>, <span class="st">'#93003a'</span>),</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">guide =</span> <span class="fu">guide_colorbar</span>(</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>      <span class="at">title.position =</span> <span class="st">"left"</span>,</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>      <span class="at">title.theme =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>      <span class="at">barheight =</span> <span class="fu">unit</span>(<span class="dv">10</span>, <span class="st">"lines"</span>),</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>      <span class="at">barwidth =</span> <span class="fu">unit</span>(.<span class="dv">5</span>, <span class="st">"lines"</span>)</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">guide =</span> <span class="st">"none"</span>, <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(group2), <span class="at">cols =</span> <span class="fu">vars</span>(group1), <span class="at">switch =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text.x.top =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">10</span>)),</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text.y.left =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">10</span>)),</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"lines"</span>),</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">35</span>),</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">25</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>),</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>),</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#d9e3f1"</span>, <span class="at">color =</span> <span class="cn">NA</span>)</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="clonality_files/figure-html/unnamed-chunk-2-1.svg" class="img-fluid"></p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

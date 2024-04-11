@@ -6,7 +6,7 @@ Clonotype evolution refers to the dynamic changes that occur in the composition 
 
 ## Table (Data format)
 
-This is an example of a data format containing the necessary information for diversity estimation visualizations. The table includes mock data specifically generated for this purpose.
+This is an example of a data format containing the necessary information for clonotype evolution visualizations. The table includes mock data specifically generated for this purpose.
 
 The "patient" column identifies specific patients within the dataset. The "sample" column contains unique identifiers for each sample, while the "time" column indicates the different timepoint which each sample was taken. The "response" column provides information regarding the outcome associated with each sample. In the "vgene" column, various V genes are listed, while "CDR3" column contains  the corresponding CDR3 sequences. The "clonotype" column represents different clonotypes, the "N" indicates the number of times each clonotype was detected and "Freq" column displays to the frequency of each clonotype.
 

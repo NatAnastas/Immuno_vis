@@ -1,16 +1,16 @@
 ---
 title: "Gene repertoire"
-# format:
-#   html:
-    # fig-width: 10
-    # fig-height: 8
+format:
+  html:
+   fig-width: 11
+   fig-height: 11
     
 ---
 The typical Ig repertoire comprises one immunoglobulin heavy chain (IGH) and two light chains, κ (IGK) and λ (IGL). Immunoglobulins undergo diversification through somatic recombination, randomly combining variable (V), diversity (D), and joining (J) gene segments.
 
 ## Table (Data format)
 
-These are examples of a tables containing the necessary informations for diversity estimation visualizations. The tables includes mock data specifically generated for this purpose.
+These are examples of a tables containing the necessary informations for gene repertoire visualizations. The tables includes mock data specifically generated for this purpose.
 
 ## Table 1
 

@@ -1,10 +1,9 @@
 ---
 title: "V(D)J recombination"
-# format:
-#   html:
-    # fig-width: 10
-    # fig-height: 8
-
+format:
+  html:
+    fig-width: 9
+    fig-height: 6
 ---
 
 V(D)J recombination stands as a fundamental mechanism within the adaptive immune system, crucial for formation  of the immunoglobulins.
@@ -117,7 +116,7 @@ chordDiagram(df, grid.col = grid.col1, annotationTrack = c("grid", "names"),
 circos.track(track.index = 1, panel.fun = function(x, y) {
   circos.text(CELL_META$xcenter, CELL_META$ylim[1], CELL_META$sector.index, 
               facing = "clockwise", niceFacing = TRUE, adj = c(0, 0.5),
-              cex = 0.8)
+              cex = 0.6)
 }, bg.border = NA) 
 
 ```
