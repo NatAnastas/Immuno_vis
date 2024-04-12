@@ -264,5 +264,54 @@
     "title": "Clonality",
     "section": "Circular Packing",
     "text": "Circular Packing\n\n\nCode\n# libraries -------\nlibrary(packcircles)\nlibrary(ggplot2)\nlibrary(shadowtext)\n\n\n\ndf1 = df1 |&gt; split(by = c(\"group1\", \"group2\"))\n\n\n\ndf_plot = df1 |&gt; \n  lapply(function(q) {\n    \n    dat.egg &lt;- q$clonality |&gt; \n      circleProgressiveLayout() |&gt; \n      circleLayoutVertices(npoints = 100)\n    \n    dat.egg &lt;- cbind(dat.egg, q[dat.egg$id]) \n    \n    return(dat.egg)\n    \n  }) |&gt;\n  \n  rbindlist()\n\n\n\ndf_plot$group1 = df_plot$group1 |&gt; str_to_upper()\n\ndf_plot_l = df_plot[, by = .(sample, group1, group2, clonality, id), .(\n  x = ( min(x) + max(x) ) / 2,\n  y = ( min(y) + max(y) ) / 2\n)]\n\ndf_plot_l$lbl = df_plot_l$clonality |&gt; round(digits = 2) |&gt; paste0(\"%\")\n\n\n\ndf_plot |&gt;\n  ggplot(aes(x, y, group = id)) +\n  geom_polygon(aes(fill = clonality), color = \"grey30\", linewidth = .25) +\n  \n  geom_shadowtext(\n    data = df_plot_l[which(clonality &gt;= 10)], inherit.aes = FALSE,\n    aes(x, y, label = lbl, size = clonality),  \n    color = \"grey1\", bg.color = \"#d9e3f1\", bg.r = .15\n  ) +\n  \n  scale_fill_stepsn(\n    colors = c('#00429d', '#73a2c6', '#ffffe0', '#f4777f', '#93003a'),\n    limits = c(0, 100),\n    guide = guide_colorbar(\n      title.position = \"left\",\n      title.theme = element_text(angle = 90, hjust = 0),\n      barheight = unit(10, \"lines\"),\n      barwidth = unit(.5, \"lines\")\n    )\n  ) +\n  \n  scale_size_continuous(guide = \"none\", range = c(1, 4)) +\n  \n  facet_grid(rows = vars(group2), cols = vars(group1), switch = \"y\") +\n  \n  coord_equal() +\n  \n  theme_minimal() +\n  \n  theme(\n    strip.text.x.top = element_text(face = \"bold\", margin = margin(b = 10)),\n    strip.text.y.left = element_text(face = \"bold\", margin = margin(r = 10)),\n    \n    axis.title = element_blank(),\n    axis.text = element_blank(),\n    \n    panel.spacing = unit(1, \"lines\"),\n    \n    panel.grid.major = element_line(linewidth = .35),\n    panel.grid.minor = element_line(linewidth = .25, linetype = \"dashed\"),\n    \n    plot.margin = margin(20, 20, 20, 20),\n    \n    plot.background = element_rect(fill = \"#d9e3f1\", color = NA)\n    \n  )"
+  },
+  {
+    "objectID": "qmd/volcano_plot.html",
+    "href": "qmd/volcano_plot.html",
+    "title": "Volcano plots",
+    "section": "",
+    "text": "A volcano plot is a specific type of scatter plot used to visualize the differential expression of features, such as genes.\nIn this plot, genes with the highest upregulation are positioned towards the right, those with the most downregulation are towards the left, and the genes with the greatest statistical significance are positioned towards the top."
+  },
+  {
+    "objectID": "qmd/volcano_plot.html#table-data-format",
+    "href": "qmd/volcano_plot.html#table-data-format",
+    "title": "Volcano plots",
+    "section": "Table (Data format)",
+    "text": "Table (Data format)\nThese are examples of tables containing the necessary information for Volcano plot visualizations.\nThese tables include mock data specifically generated for this purpose."
+  },
+  {
+    "objectID": "qmd/volcano_plot.html#volcano-plot",
+    "href": "qmd/volcano_plot.html#volcano-plot",
+    "title": "Volcano plots",
+    "section": "Volcano plot",
+    "text": "Volcano plot\nIn this volcano plot the x-axis represents the fold change, while the y-axis represents the adjusted p-value (padj).\nThe volcano plot can be generated using the ggplot2 package along with the geom_point function.\n\n\nCode\nlibrary(stringr)\nlibrary(ggplot2)\n\nlibrary(ggrepel)\nlibrary(colorspace)\n\n\n#plot\nggplot(data = df) +\n    \n    geom_point(aes(x = log2FoldChange, y = -log10(padj), fill = ann),\n               shape = 21, stroke = NA, size = 2, alpha = .5) +\n    \n    geom_vline(xintercept = c(-1, 1), linewidth = .3, linetype = \"dashed\") +\n    geom_hline(yintercept = -log10(.05), linewidth = .3, linetype = \"dashed\") +\n    \n    geom_point(data = df2, aes(x = log2FoldChange, y = -log10(padj), fill = ann), \n               shape = 21, stroke = .15, size = 2, color = \"white\") +\n    \n    geom_label_repel(\n        data = df2, aes(x = log2FoldChange, y = -log10(padj), label = GeneID),\n        max.overlaps = Inf, label.size = NA, fill = alpha(\"#d9e3f1\", .75),\n        fontface = \"bold\", size = 3\n    ) +\n    \n    scale_fill_manual(\n        values = c(\n            \"Up regulated\" = \"#990000\",\n            \"Up regulated (low)\" = lighten(\"#990000\", 0.5),\n\n            \"Down regulated\" = \"#004d99\",\n            \"Down regulated (low)\" = lighten(\"#004d99\", 0.5),\n\n            \"Not significant\" = \"grey\"\n        ),\n\n        breaks = c(\"Up regulated\", \"Not significant\", \"Down regulated\"),\n\n        guide = guide_legend(\n            override.aes = list(size = 3, alpha = 1)\n        ),\n\n    ) +\n    \n    # scale_x_continuous(trans = scales::pseudo_log_trans()) +\n    scale_y_continuous(expand = c(0, 0), breaks = c(2, 5, 10, 20, 30, 40),\n                       trans = scales::pseudo_log_trans()) +\n    \n    coord_cartesian(clip = \"off\") +\n    \n    theme_minimal() +\n    \n    theme(\n        legend.title = element_blank(),\n        legend.position = \"bottom\",\n        \n        # axis.title = element_text(size = 14),\n        # axis.text = element_text(size = 14),\n        \n        axis.line = element_line(linewidth = .3, color = \"black\"),\n        axis.ticks = element_line(linewidth = .3, color = \"black\"),\n        \n        panel.grid.minor = element_blank(),\n        panel.grid.major = element_line(linewidth = .3, linetype = \"dashed\", color = \"grey85\"),\n        \n        plot.margin = margin(20, 20, 20, 20),\n        \n        plot.background = element_rect(fill = \"#d9e3f1\", color = NA)\n    ) +\n    \n    labs(y = \"-log10(padj)\", x = \"log2(Fold Change)\")"
+  },
+  {
+    "objectID": "qmd/volcano_plot.html#table-1-data-format",
+    "href": "qmd/volcano_plot.html#table-1-data-format",
+    "title": "Volcano plots",
+    "section": "",
+    "text": "This is an example of a data format containing the necessary information for V(D)J recombination visualizations. The table includes mock data specifically generated for this purpose.\n\n\nCode\n#install.packages(\"svglite\")\nlibrary(data.table)\nlibrary(stringr)\n\nlibrary(reactable)\n\ndf &lt;- fread(\"../inst/data/DESeq2_analysis.txt\")\n\n\nreactable(\n  \n  df,\n  defaultPageSize = 5,\n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
+  },
+  {
+    "objectID": "qmd/volcano_plot.html#table-2-data-format",
+    "href": "qmd/volcano_plot.html#table-2-data-format",
+    "title": "Volcano plots",
+    "section": "Table 2 (Data format)",
+    "text": "Table 2 (Data format)\n\n\nCode\n#install.packages(\"svglite\")\nlibrary(data.table)\nlibrary(stringr)\n\nlibrary(reactable)\n\ndf2 &lt;- fread(\"../inst/data/Top_10_up_and_down_regulated.txt\")\n\n\nreactable(\n  \n  df2,\n  defaultPageSize = 5,\n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
+  },
+  {
+    "objectID": "qmd/volcano_plot.html#table-1",
+    "href": "qmd/volcano_plot.html#table-1",
+    "title": "Volcano plots",
+    "section": "Table 1",
+    "text": "Table 1\nThis is a table with the results from the DESeq2 analysis, an R package commonly utilized for differential gene expression analysis from RNA-Seq data. The analysis involves normalization, estimation of dispersion, and statistical testing to identify significantly differentially expressed genes.\n\n\nCode\nlibrary(data.table)\nlibrary(reactable)\n\ndf &lt;- fread(\"../inst/data/DESeq2_analysis.txt\")\ndf = df[, c(\"GeneID\", \"log2FoldChange\", \"padj\", \"-log10(padj)\",  \"ann\")]\n\n\nreactable(\n  \n  df,\n  defaultPageSize = 5,\n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
+  },
+  {
+    "objectID": "qmd/volcano_plot.html#table-2",
+    "href": "qmd/volcano_plot.html#table-2",
+    "title": "Volcano plots",
+    "section": "Table 2",
+    "text": "Table 2\nThis table presents the top 10 upregulated and downregulated genes based on differential expression analysis of the RNA-Seq data provided above.\n\n\nCode\nlibrary(data.table)\nlibrary(reactable)\n\ndf2 &lt;- fread(\"../inst/data/Top_10_up_and_down_regulated.txt\")\n\ndf2 = df2[, c(\"GeneID\", \"log2FoldChange\", \"padj\", \"-log10(padj)\",  \"ann\")]\n\n\nreactable(\n  \n  df2,\n  defaultPageSize = 5,\n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
   }
 ]

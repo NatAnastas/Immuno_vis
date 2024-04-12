@@ -1,3 +1,149 @@
 ---
 title: "Volcano plots"
+format:
+  html:
+   fig-width: 10
+   fig-height: 8
 ---
+
+A volcano plot is a specific type of scatter plot used to visualize the differential expression of features, such as genes.
+
+In this plot, genes with the highest upregulation are positioned towards the right, those with the most downregulation are towards the left, and the genes with the greatest statistical significance are positioned towards the top.
+
+
+## Table (Data format)
+
+These are examples of tables containing the necessary information for Volcano plot visualizations.
+
+These tables include mock data specifically generated for this purpose.
+
+## Table 1
+
+This is a table with the results from the DESeq2 analysis, an R package commonly utilized for differential gene expression analysis from RNA-Seq data. The analysis involves normalization, estimation of dispersion, and statistical testing to identify significantly differentially expressed genes.
+
+```{r}
+
+library(data.table)
+library(reactable)
+
+df <- fread("../inst/data/DESeq2_analysis.txt")
+df = df[, c("GeneID", "log2FoldChange", "padj", "-log10(padj)",  "ann")]
+
+
+reactable(
+  
+  df,
+  defaultPageSize = 5,
+  theme = reactableTheme(
+    backgroundColor  = "#d9e3f1"
+  )
+)
+```
+
+## Table 2
+
+
+This table presents the top 10 upregulated and downregulated genes based on differential expression analysis of the RNA-Seq data provided above. 
+
+```{r}
+
+library(data.table)
+library(reactable)
+
+df2 <- fread("../inst/data/Top_10_up_and_down_regulated.txt")
+
+df2 = df2[, c("GeneID", "log2FoldChange", "padj", "-log10(padj)",  "ann")]
+
+
+reactable(
+  
+  df2,
+  defaultPageSize = 5,
+  theme = reactableTheme(
+    backgroundColor  = "#d9e3f1"
+  )
+)
+```
+
+## Volcano plot
+
+In this volcano plot the x-axis represents the fold change, while the y-axis represents the adjusted p-value (padj). 
+
+The volcano plot can be generated using the `ggplot2` package along with the `geom_point` function.
+
+```{r dev.args=list(bg="transparent")}
+
+library(stringr)
+library(ggplot2)
+
+library(ggrepel)
+library(colorspace)
+
+
+#plot
+ggplot(data = df) +
+    
+    geom_point(aes(x = log2FoldChange, y = -log10(padj), fill = ann),
+               shape = 21, stroke = NA, size = 2, alpha = .5) +
+    
+    geom_vline(xintercept = c(-1, 1), linewidth = .3, linetype = "dashed") +
+    geom_hline(yintercept = -log10(.05), linewidth = .3, linetype = "dashed") +
+    
+    geom_point(data = df2, aes(x = log2FoldChange, y = -log10(padj), fill = ann), 
+               shape = 21, stroke = .15, size = 2, color = "white") +
+    
+    geom_label_repel(
+        data = df2, aes(x = log2FoldChange, y = -log10(padj), label = GeneID),
+        max.overlaps = Inf, label.size = NA, fill = alpha("#d9e3f1", .75),
+        fontface = "bold", size = 3
+    ) +
+    
+    scale_fill_manual(
+        values = c(
+            "Up regulated" = "#990000",
+            "Up regulated (low)" = lighten("#990000", 0.5),
+
+            "Down regulated" = "#004d99",
+            "Down regulated (low)" = lighten("#004d99", 0.5),
+
+            "Not significant" = "grey"
+        ),
+
+        breaks = c("Up regulated", "Not significant", "Down regulated"),
+
+        guide = guide_legend(
+            override.aes = list(size = 3, alpha = 1)
+        ),
+
+
+    ) +
+    
+    # scale_x_continuous(trans = scales::pseudo_log_trans()) +
+    scale_y_continuous(expand = c(0, 0), breaks = c(2, 5, 10, 20, 30, 40),
+                       trans = scales::pseudo_log_trans()) +
+    
+    coord_cartesian(clip = "off") +
+    
+    theme_minimal() +
+    
+    theme(
+        legend.title = element_blank(),
+        legend.position = "bottom",
+        
+        # axis.title = element_text(size = 14),
+        # axis.text = element_text(size = 14),
+        
+        axis.line = element_line(linewidth = .3, color = "black"),
+        axis.ticks = element_line(linewidth = .3, color = "black"),
+        
+        panel.grid.minor = element_blank(),
+        panel.grid.major = element_line(linewidth = .3, linetype = "dashed", color = "grey85"),
+        
+        plot.margin = margin(20, 20, 20, 20),
+        
+        plot.background = element_rect(fill = "#d9e3f1", color = NA)
+    ) +
+    
+    labs(y = "-log10(padj)", x = "log2(Fold Change)")
+
+```
