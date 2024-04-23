@@ -37,6 +37,8 @@ website:
             href: qmd/heatmap.qmd 
           - text: PCA
             href: qmd/PCA.qmd
+          - text: Pathway diagram
+            href: qmd/pathway_diagram.qmd
       - text: Color paletters
         href: qmd/color_palette.qmd
         

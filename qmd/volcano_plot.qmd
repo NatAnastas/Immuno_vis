@@ -2,24 +2,22 @@
 title: "Volcano plots"
 format:
   html:
-   fig-width: 10
-   fig-height: 8
+   fig-width: 11
+   fig-height: 9
+callout-icon: false
 ---
 
 A volcano plot is a specific type of scatter plot used to visualize the differential expression of features, such as genes.
 
 In this plot, genes with the highest upregulation are positioned towards the right, those with the most downregulation are towards the left, and the genes with the greatest statistical significance are positioned towards the top.
 
-
 ## Table (Data format)
 
-These are examples of tables containing the necessary information for Volcano plot visualizations.
+This is an example of table containing the necessary information for Volcano plot visualizations.
 
-These tables include mock data specifically generated for this purpose.
+The table include mock data specifically generated for this purpose.
 
-## Table 1
-
-This is a table with the results from the DESeq2 analysis, an R package commonly utilized for differential gene expression analysis from RNA-Seq data. The analysis involves normalization, estimation of dispersion, and statistical testing to identify significantly differentially expressed genes.
+This is a table with the results from the `DESeq2` analysis, an R package commonly utilized for differential gene expression analysis from RNA-Seq data. The analysis involves normalization, estimation of dispersion, and statistical testing to identify significantly differentially expressed genes.
 
 ```{r}
 
@@ -38,38 +36,25 @@ reactable(
     backgroundColor  = "#d9e3f1"
   )
 )
+
+
 ```
 
-## Table 2
+<!-- ::: {.callout-note collapse="true"} -->
+<!-- ## Expand to see the table -->
 
+<!-- ```{r} -->
 
-This table presents the top 10 upregulated and downregulated genes based on differential expression analysis of the RNA-Seq data provided above. 
+<!-- table -->
 
-```{r}
-
-library(data.table)
-library(reactable)
-
-df2 <- fread("../inst/data/Top_10_up_and_down_regulated.txt")
-
-df2 = df2[, c("GeneID", "log2FoldChange", "padj", "-log10(padj)",  "ann")]
-
-
-reactable(
-  
-  df2,
-  defaultPageSize = 5,
-  theme = reactableTheme(
-    backgroundColor  = "#d9e3f1"
-  )
-)
-```
+<!-- ``` -->
+<!-- ::: -->
 
 ## Volcano plot
 
-In this volcano plot the x-axis represents the fold change, while the y-axis represents the adjusted p-value (padj). 
+In this volcano plot the x-axis represents the fold change, while the y-axis represents the adjusted p-value (padj).
 
-The volcano plot can be generated using the `ggplot2` package along with the `geom_point` function.
+The volcano plot can be generated using the `ggplot2` package along with the `geom_point()` function.
 
 ```{r dev.args=list(bg="transparent")}
 
@@ -79,8 +64,18 @@ library(ggplot2)
 library(ggrepel)
 library(colorspace)
 
+# filter for top10 up and down regelated genes
+df2 = df[which(padj <= .05)]
 
-#plot
+df2 = df2[order( abs(log2FoldChange), decreasing = TRUE )]
+
+df2 = df2[, by = ann, head(.SD, 10) ]
+
+index = df2$ann |> str_detect("low", negate = TRUE) |> which()
+df2 = df2[index]
+
+
+# plot
 ggplot(data = df) +
     
     geom_point(aes(x = log2FoldChange, y = -log10(padj), fill = ann),

@@ -1,0 +1,127 @@
+---
+title: "Pathway diagram"
+format:
+  html:
+    fig-width: 12
+    fig-height: 12
+execute: 
+  warning: false
+---
+
+A biological pathway outlines the sequence of molecular interactions within a cell that result  in a specific outcome or change in the cell.
+
+## Table (Data format)
+
+This is an example of a data format containing the necessary information for pathway diagram visualizations. The table includes mock data specifically generated for this purpose.
+
+The "Description" column contains the names of the pathways and the "geneID" column corresponds to the  various genes associated with each pathway.
+
+```{r}
+
+library(data.table)
+library(stringr)
+library(reactable)
+
+df <- fread("../inst/data/pathway_diagram.txt")
+
+
+reactable(
+  
+  df, 
+  defaultPageSize = 2,
+  theme = reactableTheme(
+    backgroundColor  = "#d9e3f1"
+  )
+)
+```
+
+
+## Pathway diagram
+
+Pathway diagrams visualize the interconnected molecular events.
+
+Each black dot represents a pathway, whereas each orange dot represents the different genes associated with that pathway.
+
+The size of each black dot corresponds to the number of connections within that pathway.
+
+Pathway diagrams can be constructed using the `geom_edge_link()` and `geom_node_point()` functions from the `ggraph` package.
+
+```{r}
+
+library(tidygraph)
+
+library(ggplot2)
+library(ggrepel)
+library(ggraph)
+library(ggnewscale)
+library(shadowtext)
+
+library(extrafont)
+
+
+# plot
+q <- df$geneID |> 
+    str_split("\\/") |> 
+    lapply(function(x) { data.table("to" = x) }) |> 
+    rbindlist(idcol = "from")
+
+q$from <- df[q$from]$Description 
+
+layout <- q |>
+    as_tbl_graph() |> 
+    mutate(Degree = centrality_degree(mode = 'all')) |>
+    create_layout(layout = 'igraph', algorithm = 'kk')
+
+layout$Level <- ifelse(layout$name %in% q$to, "Gene", "Term")
+layout$name <- layout$name |> str_wrap(width = 15)
+
+
+
+ggraph(layout) + 
+    
+    geom_edge_link(color = "#97A1A7", edge_width = .3) + 
+    
+    geom_node_point(
+        aes(size = Degree, fill = Level), shape = 21,
+        stroke = .2, color = "grey96"
+    ) + 
+    
+    scale_size_continuous(
+        range = c(4, 12), 
+        guide = guide_legend(
+            title = "No. of connections",
+            override.aes = list(color = "grey10", stroke = .35)
+        )
+    ) +
+    
+    scale_fill_manual(
+        values = c(
+            "Term" = "#2E2A2B",
+            "Gene" = "#DC9445"
+        ),
+        guide = "none" 
+    ) +
+    
+
+    new_scale("size") +
+    
+    geom_text_repel(
+        aes(x, y, label = name, size = Degree),
+        family = "Calibri", fontface = "bold", 
+        color = "grey10", bg.color = "grey96", bg.r = 0.075,
+        segment.linetype = "dotted", segment.size = .2,
+        max.overlaps = Inf
+    ) +
+
+    scale_size_continuous(range = c(3, 4), guide = "none") +
+    
+    theme_graph(base_family = "Calibri") +
+    
+    theme(
+        legend.position = c(.95, .1),
+        legend.title.position = "top",
+        plot.margin = margin(20, 20, 20, 20),
+        plot.background = element_rect(fill = "#d9e3f1", color = NA)
+    )
+
+```

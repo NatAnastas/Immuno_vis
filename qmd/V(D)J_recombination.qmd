@@ -4,6 +4,8 @@ format:
   html:
     fig-width: 9
     fig-height: 6
+execute: 
+  warning: false
 ---
 
 V(D)J recombination stands as a fundamental mechanism within the adaptive immune system, crucial for formation  of the immunoglobulins.
@@ -50,13 +52,8 @@ This chord diagram illustrates the different recobinations between IGLJ genes an
 ```{r dev.args=list(bg="transparent")}
 
 library(readxl)
-suppressPackageStartupMessages(library(circlize))
+library(circlize)
 library(data.table)
-
-
-# import data
-df <- read_excel("../inst/data/chordDiagram.xlsx") |>
-      as.data.frame()
 
 
 # change df
