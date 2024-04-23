@@ -61,3 +61,8 @@ format:
     toc: true
     code-fold: true
     code-block-border-left: "#5f646a"
+knitr:
+ opts_chunk:
+   dev: svg
+   dev.args: { bg: "transparent" }
+    

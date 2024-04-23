@@ -40,15 +40,6 @@ reactable(
 
 ```
 
-<!-- ::: {.callout-note collapse="true"} -->
-<!-- ## Expand to see the table -->
-
-<!-- ```{r} -->
-
-<!-- table -->
-
-<!-- ``` -->
-<!-- ::: -->
 
 ## Volcano plot
 
@@ -89,7 +80,7 @@ ggplot(data = df) +
     
     geom_label_repel(
         data = df2, aes(x = log2FoldChange, y = -log10(padj), label = GeneID),
-        max.overlaps = Inf, label.size = NA, fill = alpha("#d9e3f1", .75),
+        max.overlaps = Inf, label.size = NA, fill = "transparent",
         fontface = "bold", size = 3
     ) +
     
@@ -136,7 +127,7 @@ ggplot(data = df) +
         
         plot.margin = margin(20, 20, 20, 20),
         
-        plot.background = element_rect(fill = "#d9e3f1", color = NA)
+        plot.background = element_rect(fill = "transparent", color = NA)
     ) +
     
     labs(y = "-log10(padj)", x = "log2(Fold Change)")

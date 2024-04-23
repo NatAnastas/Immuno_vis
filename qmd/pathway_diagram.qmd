@@ -121,7 +121,8 @@ ggraph(layout) +
         legend.position = c(.95, .1),
         legend.title.position = "top",
         plot.margin = margin(20, 20, 20, 20),
-        plot.background = element_rect(fill = "#d9e3f1", color = NA)
+        plot.background = element_rect(fill = "transparent", color = NA)
+        #plot.background = element_rect(fill = "#d9e3f1", color = NA)
     )
 
 ```

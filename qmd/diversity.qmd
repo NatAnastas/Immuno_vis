@@ -1,5 +1,6 @@
 ---
 title: "Diversity estimation"
+
 ---
 
 Diversity estimation within immune cell populations is a fundamental analysis in immunoinformatics. Diversity estimation refers to the process of analyzing and quantifying the diversity of immune cells, such as T cells or B cells.
@@ -86,7 +87,7 @@ df |>
         panel.grid.major = element_line(linewidth = .55),
         panel.grid.minor = element_line(linewidth = .45, linetype = "dashed"),
         
-        plot.background = element_rect(fill = "#d9e3f1", color = NA),
+        plot.background = element_rect(fill = "transparent", color = NA),
         plot.margin = margin(20, 20, 20, 20)
     )
 ```
@@ -135,7 +136,7 @@ df |>
       panel.grid.major = element_line(linewidth = .55),
       panel.grid.minor = element_line(linewidth = .45, linetype = "dashed"),
       
-      plot.background = element_rect(fill = "#d9e3f1", color = NA),
+      plot.background = element_rect(fill = "transparent", color = NA),
       plot.margin = margin(20, 20, 20, 20)
   )
 ```

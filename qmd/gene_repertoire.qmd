@@ -132,7 +132,7 @@ Heatmap(
     row_names_gp = gpar(fontsize = 6)
     
 ) |> 
-  draw(merge_legends = TRUE, background = "#d9e3f1")
+  draw(merge_legends = TRUE, background = "transparent")
 
 
 ```

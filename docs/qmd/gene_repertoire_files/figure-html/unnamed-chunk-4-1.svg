@@ -200,9 +200,6 @@
 </g>
 </defs>
 <g id="surface19">
-<rect x="0" y="0" width="792" height="792" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
-<rect x="0" y="0" width="792" height="792" style="fill:rgb(85.098039%,89.019608%,94.509804%);fill-opacity:1;stroke:none;"/>
-<path style="fill:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(85.098039%,89.019608%,94.509804%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0 792 L 792 792 L 792 0 L 0 0 Z M 0 792 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,57.647059%,46.666667%);fill-opacity:1;" d="M 66.585938 70.785156 L 92.789063 70.785156 L 92.789063 66.582031 L 66.585938 66.582031 Z M 66.585938 70.785156 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,59.215686%,48.235294%);fill-opacity:1;" d="M 66.585938 74.988281 L 92.789063 74.988281 L 92.789063 70.785156 L 66.585938 70.785156 Z M 66.585938 74.988281 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,65.882353%,56.470588%);fill-opacity:1;" d="M 66.585938 79.1875 L 92.789063 79.1875 L 92.789063 74.984375 L 66.585938 74.984375 Z M 66.585938 79.1875 "/>
