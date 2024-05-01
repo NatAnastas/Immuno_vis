@@ -127,7 +127,7 @@ ggplot(data = df) +
         
         plot.margin = margin(20, 20, 20, 20),
         
-        plot.background = element_rect(fill = "transparent", color = NA)
+        #plot.background = element_rect(fill = "transparent", color = NA)
     ) +
     
     labs(y = "-log10(padj)", x = "log2(Fold Change)")
