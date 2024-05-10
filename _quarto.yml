@@ -18,8 +18,6 @@ website:
           - text: Diversity estimation
             href: qmd/diversity.qmd
           - text: Clonality
-            href: qmd/clonality.qmd         
-          - text: Public Clonotypes
             href: qmd/public_clonotypes.qmd
           - text: V(D)J recombination
             href: qmd/V(D)J_recombination.qmd
