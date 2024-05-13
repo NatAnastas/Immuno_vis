@@ -47,7 +47,7 @@ Chord diagrams can be constructed using the `chordDiagram()` function from the `
 
 ### Chord diagram 1
 
-This chord diagram illustrates the different recobinations between IGLJ genes and IGLV genes.
+This chord diagram illustrates the different recombinations between IGLJ genes and IGLV genes.
 
 ```{r}
 

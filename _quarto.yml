@@ -13,12 +13,12 @@ website:
         text: Welcome
       - text: Repertoire-level exploration
         menu:
-          - text: Gene repertoire
-            href: qmd/gene_repertoire.qmd
-          - text: Diversity estimation
-            href: qmd/diversity.qmd
           - text: Clonality
             href: qmd/public_clonotypes.qmd
+          - text: Diversity estimation
+            href: qmd/diversity.qmd
+          - text: Gene repertoire
+            href: qmd/gene_repertoire.qmd
           - text: V(D)J recombination
             href: qmd/V(D)J_recombination.qmd
       - text: Clonotype-level exploration
@@ -28,15 +28,17 @@ website:
           - text: Motif visualization
             href: qmd/motif_visualization.qmd           
       - text: RNAseq
-        menu: 
-          - text: Volcano plots
-            href: qmd/volcano_plot.qmd
+        menu:
+          - text: Bubble plot
+            href: qmd/bubble_plot.qmd
           - text: Heatmap
             href: qmd/heatmap.qmd 
-          - text: PCA
-            href: qmd/PCA.qmd
           - text: Pathway diagram
             href: qmd/pathway_diagram.qmd
+          - text: PCA
+            href: qmd/PCA.qmd
+          - text: Volcano plots
+            href: qmd/volcano_plot.qmd
       - text: Color paletters
         href: qmd/color_palette.qmd
         

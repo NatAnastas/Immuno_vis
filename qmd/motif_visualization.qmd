@@ -1,3 +1,175 @@
 ---
 title: "Motif visualization"
+format:
+  html:
+   fig-width: 11
+   fig-height: 8
+execute: 
+  warning: false
+
 ---
+
+Visualization of motifs aids in identifying distinct patterns and discerning those that are more often, providing valuable insights into immune system dynamics.
+
+## Table (Data format)
+
+This is an example of a data format containing the necessary information for motif visualizations. The table includes mock data specifically generated for this purpose.
+
+The "Sample" column contains unique identifiers for each sample, while the "position" column provides information about the position of each amino acids. The "refAA" column corresponds to the reference amino acid and the "altAA" contains the alterations. "Freq. (clonotypes)" column indicates how often changes occur and "region" column refers to the spot where alteration happend.  In "altChemical" column there are information about the alternative chemical properties of each amino acid and "hotspot" column notes if an amino acid is in a highly mutable area.
+
+```{r}
+
+library(data.table)
+library(reactable)
+
+df <- fread("../inst/data/mutation1.tsv") 
+
+
+reactable(
+  
+  df, 
+  defaultPageSize = 5,
+  theme = reactableTheme(
+    backgroundColor  = "#d9e3f1"
+  )
+)
+```
+
+
+## Motif plot 
+
+Motif plots can be constructed using the `geom_richtext()` and `geom_col()` functions from the `ggplot2` package.
+
+### Motif plot 1
+
+This motif  illustrates the sequence motifs at specific regions.
+
+```{r}
+
+library(stringr)
+
+library(ggplot2)
+library(ggtext)
+
+library(ggh4x)
+
+library(shadowtext)
+library(paletteer)
+
+
+df$altAA_l = ifelse(
+    df$`Freq. (clonotypes)` >= .05,
+    df$altAA, " "
+)
+
+df$refAA = paste0("<span style='color:", df$hotspot, "'>", df$refAA, "</span>") |>
+    str_replace_all("nonhotspot", "grey") |>
+    str_replace_all("hotspot", "red")
+
+q_r = df[, c("position", "region", "refAA"), with = FALSE] |> unique()
+q_r = df[, by = .(position, region), .(refAA = refAA |> paste(collapse = "<br>"))]
+
+
+# plot-----------------
+
+df |>
+    ggplot(aes(position, `Freq. (clonotypes)`, fill = altChemical)) + 
+    
+    geom_richtext(
+        data = q_r, aes(position, -.01, label = refAA),
+        vjust = 1, size = 3.2, inherit.aes = FALSE, 
+        fill = NA, label.size = NA,  fontface = "bold"
+    ) +
+    
+    geom_col(color = "grey75", linewidth = .15, width = 1.2) +
+    
+    geom_shadowtext(
+        aes(label = altAA_l),
+        position = position_stack(vjust = .25),
+        bg.color = "grey96", color = "grey10",
+        fontface = "bold"
+    ) +
+    
+    scale_x_continuous(breaks = seq(1, 108, by = 5)) +
+    
+    scale_y_continuous(
+        expand = c(0, 0), 
+        limits = c(-.06, .6),
+        breaks = c(.05, .15, .25, .5, .75, .95), 
+        minor_breaks = c(.1, .2, .3, .35, .8),
+        labels = scales::percent
+    ) +
+    
+    scale_fill_manual(
+        values = paletteer_d("ggsci::hallmarks_light_cosmic"),
+        guide = guide_legend(nrow = 1)
+    ) +
+    
+    facet_grid2(cols = vars(region), rows = vars(Sample),
+                space = "free_x", scales = "free_x",
+                axes = "x") +
+    
+    theme_minimal() +
+    
+    theme(
+        legend.title = element_blank(),
+        legend.position = "bottom",
+        legend.justification = "left",
+        legend.text = element_text(size = 15),
+
+        axis.title.x = element_blank(),
+        axis.text.y = element_text(size = 12),
+        axis.title.y = element_text(size = 15),
+        axis.line.x = element_line(linewidth = .35),
+        axis.ticks.x = element_line(linewidth = .35),
+        
+        strip.text = element_text(face = "bold", size = 15),
+        
+        panel.spacing = unit(1, "lines"),
+        
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        
+        panel.grid.major.y = element_line(linewidth = .35, color = "grey80"),
+        panel.grid.minor.y = element_line(linewidth = .3, linetype = "dashed", color = "grey80"),
+        
+        plot.margin = margin(20, 20, 20, 20)
+    )
+
+
+
+```
+
+
+### Motif plot 2
+
+An alternative method for creating sequence logos involves using the `ggplot()` function with `geom_logo()`. 
+
+
+```{r}
+
+# Load the required packages
+library(ggplot2)
+library(ggseqlogo)
+
+# Some sample data
+data(ggseqlogo_sample)
+
+
+ggplot() + 
+  
+  geom_logo(seqs_dna$MA0001.1, method = 'prob') + 
+  
+  #labs(size = 100) +
+  
+  
+  theme_logo() +
+  
+  theme(
+    axis.text = element_text(size = 12),
+    axis.title.y = element_text(size = 15),
+    plot.margin = margin(t = 50, r = 5, b = 50, l = 5)
+        )
+
+
+```
