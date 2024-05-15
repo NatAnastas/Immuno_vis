@@ -11,7 +11,7 @@ execute:
 
 ## Table (Data format)
 
-This is an example of a data format containing the necessary information for motif visualizations. The table includes mock data specifically generated for this purpose.
+This is an example of a data format containing the necessary information for bubble plot visualizations. The table includes mock data specifically generated for this purpose.
 
 
 ```{r}
