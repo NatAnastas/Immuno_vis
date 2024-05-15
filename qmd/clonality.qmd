@@ -35,7 +35,7 @@ reactable(
 ## Circular Packing
 
 
-```{r dev.args=list(bg="transparent")}
+```{r}
 
 # libraries -------
 library(packcircles)

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Immunoinformatics visualizations - Clonotype evolution</title>
+<title>Immunoinformatics visualizations - Bubble plot</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -66,6 +100,22 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/core-js-2.5.3/shim.min.js"></script>
+
+<script src="../site_libs/react-18.2.0/react.min.js"></script>
+
+<script src="../site_libs/react-18.2.0/react-dom.min.js"></script>
+
+<script src="../site_libs/reactwidget-1.0.0/react-tools.js"></script>
+
+<link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="../site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+
+<script src="../site_libs/reactable-binding-0.4.4/reactable.js"></script>
+
 
 
 </head>
@@ -97,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-repertoire-level-exploration">    
         <li>
-    <a class="dropdown-item" href="../qmd/public_clonotypes.qmd">
+    <a class="dropdown-item" href="../qmd/clonality.html">
  <span class="dropdown-text">Clonality</span></a>
   </li>  
         <li>
@@ -179,14 +229,21 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#table-data-format" id="toc-table-data-format" class="nav-link active" data-scroll-target="#table-data-format">Table (Data format)</a></li>
+  <li><a href="#bubble-plot" id="toc-bubble-plot" class="nav-link" data-scroll-target="#bubble-plot">Bubble plot</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Clonotype evolution</h1>
+<h1 class="title">Bubble plot</h1>
 </div>
 
 
@@ -203,8 +260,93 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="table-data-format" class="level2">
+<h2 class="anchored" data-anchor-id="table-data-format">Table (Data format)</h2>
+<p>This is an example of a data format containing the necessary information for motif visualizations. The table includes mock data specifically generated for this purpose.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reactable)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">"../inst/data/bubble_plot.txt"</span>) </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">reactable</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  df, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">defaultPageSize =</span> <span class="dv">3</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">theme =</span> <span class="fu">reactableTheme</span>(</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundColor  =</span> <span class="st">"#d9e3f1"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="reactable html-widget html-fill-item" id="htmlwidget-77a626793f555551185a" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-77a626793f555551185a">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Description":["Activation of NF-kappaB in B cells","Apoptosis","B cell receptor signaling pathway","Dectin-1 mediated noncanonical NF-kB signaling","Degradation of beta-catenin by the destruction complex","Depurination","Depyrimidination","Downstream signaling events of B Cell Receptor (BCR)","GOBP_B_CELL_ACTIVATION","GOBP_B_CELL_ACTIVATION_INVOLVED_IN_IMMUNE_RESPONSE","GOBP_B_CELL_DIFFERENTIATION","GOBP_B_CELL_PROLIFERATION","GOBP_B_CELL_RECEPTOR_SIGNALING_PATHWAY","Oxidative phosphorylation","Antigen activates B Cell Receptor (BCR) leading to generation of second messengers","antigen binding","Antigen processing and presentation","Antigen processing-Cross presentation","GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION","GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_ENDOGENOUS_ANTIGEN","GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_EXOGENOUS_ANTIGEN","GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_EXOGENOUS_PEPTIDE_ANTIGEN","GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_EXOGENOUS_PEPTIDE_ANTIGEN_VIA_MHC_CLASS_II","GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_PEPTIDE_ANTIGEN","GOBP_ANTIGEN_PROCESSING_AND_PRESENTATION_OF_PEPTIDE_OR_POLYSACCHARIDE_ANTIGEN_VIA_MHC_CLASS_II","GOBP_ANTIGEN_RECEPTOR_MEDIATED_SIGNALING_PATHWAY","GOBP_IMMUNOGLOBULIN_PRODUCTION","GOBP_IMMUNOGLOBULIN_PRODUCTION_INVOLVED_IN_IMMUNOGLOBULIN_MEDIATED_IMMUNE_RESPONSE","GOBP_INFLAMMATORY_RESPONSE_TO_ANTIGENIC_STIMULUS","GOBP_INNATE_IMMUNE_RESPONSE_ACTIVATING_SIGNAL_TRANSDUCTION","GOBP_INTERFERON_GAMMA_PRODUCTION","GOBP_INTERLEUKIN_1_PRODUCTION","GOBP_INTERLEUKIN_10_PRODUCTION","GOBP_LYMPHOCYTE_ACTIVATION_INVOLVED_IN_IMMUNE_RESPONSE","GOBP_LYMPHOCYTE_MEDIATED_IMMUNITY","GOBP_MACROPHAGE_ACTIVATION","GOBP_MATURE_B_CELL_DIFFERENTIATION","Cap-dependent Translation Initiation","DNA Damage/Telomere Stress Induced Senescence","DNA Double Strand Break Response","DNA methylation","DNA Repair","DNA Replication","DNA Replication Pre-Initiation","Eukaryotic Translation Elongation","Eukaryotic Translation Initiation","Eukaryotic Translation Termination","Formation of a pool of free 40S subunits","GOBP_CYTOPLASMIC_TRANSLATION","GOCC_CYTOSOLIC_LARGE_RIBOSOMAL_SUBUNIT","GOCC_CYTOSOLIC_RIBOSOME","GOCC_RIBOSOMAL_SUBUNIT","GOCC_RIBOSOME","GOMF_STRUCTURAL_CONSTITUENT_OF_RIBOSOME","Major pathway of rRNA processing in the nucleolus and cytosol","Mitochondrial protein import","Mitochondrial translation","Mitochondrial translation elongation","Mitochondrial translation initiation","Mitochondrial translation termination","Translation","Translation initiation complex formation","translation initiation factor activity","translation regulator activity, nucleic acid binding","Cellular response to chemical stress","Cellular response to hypoxia","Cellular response to starvation","Cellular Senescence"],"enrichmentScore":[0.593789493399968,0.325650242000783,0.490260284897416,0.568004099543526,0.367931496499863,0.485497759393599,0.478838312175498,0.534732660604465,0.430303966888616,0.457115525671689,0.439564794417995,0.51202501634518,0.489655561497653,0.535589627567843,0.577517087889252,0.579417086746057,0.598880474530107,0.481230871630665,0.483453196697655,0.729810755374088,0.63568818012072,0.586484308557316,0.665764281055172,0.538110321086645,0.604439251739651,0.371253531736094,0.472251999968438,0.47223291631199,0.514637243012579,0.735087741751542,0.414875497800402,0.434202843745083,0.483581639008368,0.413320160849218,0.409356075585491,0.421901604223164,0.665249726749987,0.786725171120935,0.447426670445008,0.448709887528303,0.499861717988151,0.264739117765701,0.367764208923111,0.400403571162348,0.853478467126272,0.786725171120935,0.846342095344874,0.825483190020495,0.704144861777617,0.870543653224358,0.838106972817257,0.719199953891259,0.686656005471475,0.731114793469888,0.641681015938999,0.435200542794808,0.573999204104539,0.584649506449194,0.572864274554509,0.577733632744759,0.646897346665286,0.74794192864214,0.566981675291182,0.40471840344005,0.377460879071847,0.425622462054715,0.688683320144885,0.380488229060842],"NES":[2.30809212556237,1.4335610649128,1.92007263850436,2.1376005730965,1.46123361037445,1.75116412926597,1.74893441391982,2.1337851721557,1.9875427575961,1.83517500478257,1.85728291804471,2.03045997200681,1.80666970933873,2.30128274005533,1.95861547930922,2.10366596919417,2.20150848232373,1.94631349814145,2.00572920719925,2.19070452467244,2.17871937343187,1.92752351398967,2.05638400513721,1.99496264834916,1.99298701428499,1.6341562245929,1.98464223855998,1.8208495022274,1.92086420597768,2.20654468302664,1.72360878397015,1.73012014411581,1.74349786770798,1.85715249170383,1.89172617985666,1.70108125561414,2.1475011212592,3.27573441537946,1.76598061816139,1.77176966323999,1.83114241669679,1.23383984694336,1.61534633336917,1.7333014388595,3.44534124473658,3.27573441537946,3.37153699168337,3.36179570396954,3.03309584806216,3.18289652243826,3.38624286337676,3.18049664332107,3.14234749583557,3.14278917777745,2.83542107975561,1.6298412885117,2.31713301333325,2.32192545960173,2.27512061382366,2.29445918612919,2.99823320358977,2.77579428077489,2.05361246421298,1.64897370425473,1.67950906968796,1.67630902403761,2.98123162653231,1.67980373987586],"rank":[6280,5151,3973,6446,6545,4115,4115,6280,3286,3674,1766,3233,3257,5585,4397,3568,4351,5941,3279,4324,3102,3102,3102,4351,3279,3599,3233,3599,3956,2410,3279,3427,3909,3921,3278,3281,2146,2435,3411,4296,3393,5756,6083,4765,2435,2435,2435,2435,2417,2080,2435,4199,4199,4199,4515,5087,6394,6394,6394,6394,5175,3047,6161,6313,5093,6083,2435,1993],"Count":[40,60,22,38,44,21,23,46,57,21,16,30,18,77,12,25,33,55,34,13,24,20,17,30,18,42,33,23,27,6,34,28,23,58,73,26,9,77,23,24,23,104,85,57,76,77,73,76,75,41,74,105,112,103,106,31,56,53,53,52,166,38,29,48,70,38,81,30],"Group":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4],"log_padj":[5.17995763813006,1.88794773671126,3.21361306858045,3.84643691303906,1.34431825479697,1.98980780395734,1.79991644718653,4.49888597408029,6.51686801163385,2.24973199837179,2.86262140767956,3.27612569946907,1.86819859526374,6.52798429483689,2.22129148084128,2.39896257135119,4.0813278169018,4.07601105225088,3.02404165249836,2.22139179059405,2.91692844364662,1.78085855035193,2.06901034678715,2.41810870390669,2.00013843987121,2.0961419470373,3.69188022980805,1.86819859526374,2.05982765432314,2.2848067652482,1.63386693438164,1.79083473784352,1.47416465993269,3.97333723230721,5.41951552241838,1.86819859526374,2.31896505224597,27.267873303649,2.16330640190307,2.14432339202639,2.41779395376554,1.57951434982206,3.1194513101602,3.46914872398515,30.189548365196,27.267873303649,29.5035862109749,27.6427180414572,19.8985783372735,18.9980535314497,30.0895261287038,28.9346662833338,28.2073039498178,28.1457667302864,21.190706228849,1.56938272086711,6.30852906722932,5.92150596642787,5.51027490344874,5.69115153271988,33.1710418543917,10.2951025130426,1.95407732368698,1.47855974551721,3.5191362665872,1.8464693655034,21.4534069893863,3.46371880603181]},"columns":[{"id":"Description","name":"Description","type":"character"},{"id":"enrichmentScore","name":"enrichmentScore","type":"numeric"},{"id":"NES","name":"NES","type":"numeric"},{"id":"rank","name":"rank","type":"numeric"},{"id":"Count","name":"Count","type":"numeric"},{"id":"Group","name":"Group","type":"numeric"},{"id":"log_padj","name":"log_padj","type":"numeric"}],"defaultPageSize":3,"theme":{"backgroundColor":"#d9e3f1"},"dataKey":"2675e37b7cde0f1dbde0b12a9687a51f"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="bubble-plot" class="level2">
+<h2 class="anchored" data-anchor-id="bubble-plot">Bubble plot</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># libraries -------</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> NES, <span class="at">y =</span> Description,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="st">`</span><span class="at">Count</span><span class="st">`</span>, </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill =</span> log_padj</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">stroke =</span> .<span class="dv">25</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">7</span>)) <span class="sc">+</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">low =</span> <span class="st">"grey"</span>, <span class="at">high =</span> <span class="st">"#f30000"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">guide =</span> <span class="fu">guide_colorbar</span>(</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"-log10(p.adj)"</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">barheight =</span> <span class="fu">unit</span>(<span class="dv">10</span>, <span class="st">"lines"</span>),</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">barwidth =</span> <span class="fu">unit</span>(.<span class="dv">75</span>, <span class="st">"lines"</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">4</span>),</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">linewidth =</span> .<span class="dv">4</span>),</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.ticks =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">4</span>),</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">rows =</span> <span class="fu">vars</span>(Group),</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">scales =</span> <span class="st">"free_y"</span>,</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">space =</span> <span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="bubble_plot_files/figure-html/unnamed-chunk-2-1.svg" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -14,7 +14,7 @@ website:
       - text: Repertoire-level exploration
         menu:
           - text: Clonality
-            href: qmd/public_clonotypes.qmd
+            href: qmd/clonality.qmd
           - text: Diversity estimation
             href: qmd/diversity.qmd
           - text: Gene repertoire

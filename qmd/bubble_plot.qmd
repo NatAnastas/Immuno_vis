@@ -1,4 +1,84 @@
 ---
-title: "Clonotype evolution"
+title: "Bubble plot"
+format:
+  html:
+   fig-width: 11
+   fig-height: 11
+execute: 
+  warning: false
+
 ---
 
+## Table (Data format)
+
+This is an example of a data format containing the necessary information for motif visualizations. The table includes mock data specifically generated for this purpose.
+
+
+```{r}
+
+library(data.table)
+library(reactable)
+
+df <- fread("../inst/data/bubble_plot.txt") 
+
+
+reactable(
+  
+  df, 
+  defaultPageSize = 3,
+  theme = reactableTheme(
+    backgroundColor  = "#d9e3f1"
+  )
+)
+```
+
+## Bubble plot
+
+
+```{r}
+
+# libraries -------
+library(ggplot2)
+
+ggplot(data = df) +
+  
+  geom_point(
+    aes(x = NES, y = Description,
+        size = `Count`, 
+        fill = log_padj
+        ),
+    
+    shape = 21, stroke = .25
+  ) +
+  
+  scale_size_continuous(range = c(2, 7)) +
+  
+  scale_fill_gradient(
+    low = "grey", high = "#f30000",
+    guide = guide_colorbar(
+      title = "-log10(p.adj)",
+      barheight = unit(10, "lines"),
+      barwidth = unit(.75, "lines")
+    )
+  ) +
+  
+  theme_minimal() +
+  
+  theme(
+    axis.title.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    
+    panel.grid.major = element_line(linewidth = .4),
+    
+    panel.border = element_rect(fill = NA, linewidth = .4),
+    axis.ticks = element_line(linewidth = .4),
+    
+    plot.margin = margin(20, 20, 20, 20)
+  ) +
+  
+  facet_grid(
+    rows = vars(Group),
+    scales = "free_y",
+    space = "free_y")
+
+```
