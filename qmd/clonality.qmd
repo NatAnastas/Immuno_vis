@@ -6,6 +6,7 @@ format:
     fig-height: 8
 ---
 
+Clonality in immune cells refers to the proliferation of genetically identical cells derived from a single ancestor cell.
 
 
 ## Table (Data format)
@@ -34,10 +35,15 @@ reactable(
 
 ## Circular Packing
 
+The `packcircles` package is the optimal choice for constructing circular packing charts in R. 
+
+It efficiently calculates the position of each bubble, facilitating the creation of these charts using `ggplot2`.
+
 
 ```{r}
 
 # libraries -------
+
 library(packcircles)
 library(ggplot2)
 library(shadowtext)

@@ -42,7 +42,7 @@ Motif plots can be constructed using the `geom_richtext()` and `geom_col()` func
 
 ### Motif plot 1
 
-This motif  illustrates the sequence motifs at specific regions.
+This plot illustrates the different sequence motifs at specific regions.
 
 ```{r}
 

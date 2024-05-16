@@ -1,3 +1,100 @@
 ---
 title: "Heatmap"
+format:
+  html:
+   fig-width: 13
+   fig-height: 15
+execute: 
+  warning: false
+
 ---
+
+A heatmap is a graphical representation of data where the individual values contained in a matrix are represented as colors.
+
+
+## Table 1 (Data format)
+
+This is an example of a data format containing the necessary information for heatmap visualizations. The table includes mock data specifically generated for this purpose.
+
+
+```{r}
+
+library(data.table)
+library(reactable)
+
+ann <- fread("../inst/data/ann.txt") 
+
+
+reactable(
+  
+  ann, 
+  defaultPageSize = 5,
+  theme = reactableTheme(
+    backgroundColor  = "#d9e3f1"
+  )
+)
+```
+
+
+## Table 2 (Data format)
+
+This is an example of a data format containing the necessary information for heatmap visualizations. The table includes mock data specifically generated for this purpose.
+
+
+```{r}
+
+library(data.table)
+library(reactable)
+
+df <- fread("../inst/data/gene_counts.txt") 
+
+mm = df[, ann$Sample, with = FALSE] |> setDF(rownames = df$GeneID) |> as.matrix()
+
+zmat = mm |> t() |> scale(scale = TRUE, center = TRUE) |> t()
+
+reactable(
+  
+  zmat, 
+  defaultPageSize = 5,
+  theme = reactableTheme(
+    backgroundColor  = "#d9e3f1"
+  )
+)
+```
+
+## Heatmap plot
+
+The heatmap() function is a built-in feature of R, providing a powerful tool for generating high-quality heatmaps from matrices. It includes statistical functionalities to normalize input data, perform clustering algorithms and visualize the results
+
+
+```{r}
+
+# libraries -------
+library(ComplexHeatmap)
+library(ggplotify)
+library(ggplot2)
+
+ht = Heatmap(
+    zmat, name = "Z-score",
+    
+    border = TRUE,
+    
+    clustering_distance_columns = "euclidean",
+    clustering_distance_rows = "euclidean",
+    
+    clustering_method_columns = "ward.D2",
+    clustering_method_rows = "ward.D2",
+    
+    column_split = ann$Group1,
+    row_split = 2,
+    
+    row_names_gp = gpar(fontsize = 4)
+)
+
+
+ht |> 
+    draw(merge_legends = TRUE, background = "transparent") |>
+    grid.grabExpr() |>
+    as.ggplot()
+
+```

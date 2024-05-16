@@ -4,6 +4,8 @@ format:
   html:
    fig-width: 11
    fig-height: 11
+execute: 
+  warning: false
     
 ---
 The typical Ig repertoire comprises one immunoglobulin heavy chain (IGH) and two light chains, κ (IGK) and λ (IGL). Immunoglobulins undergo diversification through somatic recombination, randomly combining variable (V), diversity (D), and joining (J) gene segments.
@@ -82,7 +84,7 @@ The `heatmap()` function is a built-in feature of R, providing a powerful tool f
 
 ```{r}
 
-suppressPackageStartupMessages(library(ComplexHeatmap))
+library(ComplexHeatmap)
 
 library(data.table)
 library(stringr)

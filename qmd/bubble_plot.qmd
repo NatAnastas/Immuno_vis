@@ -25,7 +25,7 @@ df <- fread("../inst/data/bubble_plot.txt")
 reactable(
   
   df, 
-  defaultPageSize = 3,
+  defaultPageSize = 5,
   theme = reactableTheme(
     backgroundColor  = "#d9e3f1"
   )
