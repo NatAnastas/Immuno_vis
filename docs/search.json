@@ -452,21 +452,21 @@
     "href": "qmd/bubble_plot.html",
     "title": "Bubble plot",
     "section": "",
-    "text": "This is an example of a data format containing the necessary information for bubble plot visualizations. The table includes mock data specifically generated for this purpose.\n\n\nCode\nlibrary(data.table)\nlibrary(reactable)\n\ndf &lt;- fread(\"../inst/data/bubble_plot.txt\") \n\n\nreactable(\n  \n  df, \n  defaultPageSize = 5,\n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
+    "text": "A bubble plot is essentially a scatterplot where a third numeric variable determines the size of the circles.\nA scatterplot illustrates the relationship between two numeric variables. Each dot represents an observation, with its position on the X (horizontal) and Y (vertical) axes indicating the values of the two variables."
   },
   {
     "objectID": "qmd/bubble_plot.html#table-data-format",
     "href": "qmd/bubble_plot.html#table-data-format",
     "title": "Bubble plot",
-    "section": "",
-    "text": "This is an example of a data format containing the necessary information for bubble plot visualizations. The table includes mock data specifically generated for this purpose.\n\n\nCode\nlibrary(data.table)\nlibrary(reactable)\n\ndf &lt;- fread(\"../inst/data/bubble_plot.txt\") \n\n\nreactable(\n  \n  df, \n  defaultPageSize = 5,\n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
+    "section": "Table (Data format)",
+    "text": "Table (Data format)\nThis is an example of a data format containing the necessary information for bubble plot visualizations. The table includes mock data specifically generated for this purpose.\n\n\nCode\nlibrary(data.table)\nlibrary(reactable)\n\ndf &lt;- fread(\"../inst/data/bubble_plot.txt\") \n\n\nreactable(\n  \n  df, \n  defaultPageSize = 5,\n  theme = reactableTheme(\n    backgroundColor  = \"#d9e3f1\"\n  )\n)"
   },
   {
     "objectID": "qmd/bubble_plot.html#bubble-plot",
     "href": "qmd/bubble_plot.html#bubble-plot",
     "title": "Bubble plot",
     "section": "Bubble plot",
-    "text": "Bubble plot\n\n\nCode\n# libraries -------\nlibrary(ggplot2)\n\nggplot(data = df) +\n  \n  geom_point(\n    aes(x = NES, y = Description,\n        size = `Count`, \n        fill = log_padj\n        ),\n    \n    shape = 21, stroke = .25\n  ) +\n  \n  scale_size_continuous(range = c(2, 7)) +\n  \n  scale_fill_gradient(\n    low = \"grey\", high = \"#f30000\",\n    guide = guide_colorbar(\n      title = \"-log10(p.adj)\",\n      barheight = unit(10, \"lines\"),\n      barwidth = unit(.75, \"lines\")\n    )\n  ) +\n  \n  theme_minimal() +\n  \n  theme(\n    axis.title.y = element_blank(),\n    panel.grid.minor = element_blank(),\n    \n    panel.grid.major = element_line(linewidth = .4),\n    \n    panel.border = element_rect(fill = NA, linewidth = .4),\n    axis.ticks = element_line(linewidth = .4),\n    \n    plot.margin = margin(20, 20, 20, 20)\n  ) +\n  \n  facet_grid(\n    rows = vars(Group),\n    scales = \"free_y\",\n    space = \"free_y\")"
+    "text": "Bubble plot\nThe ggplot2 package enables the creation of bubble charts using the geom_point() function.\nThis plot contains different pathways. The size of the bubble depends on the count and the color of the bubble depends on the -log(p.adj).\n\n\nCode\n# libraries -------\nlibrary(ggplot2)\n\nggplot(data = df) +\n  \n  geom_point(\n    aes(x = NES, y = Description,\n        size = `Count`, \n        fill = log_padj\n        ),\n    \n    shape = 21, stroke = .25\n  ) +\n  \n  scale_size_continuous(range = c(2, 7)) +\n  \n  scale_fill_gradient(\n    low = \"grey\", high = \"#f30000\",\n    guide = guide_colorbar(\n      title = \"-log10(p.adj)\",\n      barheight = unit(10, \"lines\"),\n      barwidth = unit(.75, \"lines\")\n    )\n  ) +\n  \n  theme_minimal() +\n  \n  theme(\n    axis.title.y = element_blank(),\n    panel.grid.minor = element_blank(),\n    \n    panel.grid.major = element_line(linewidth = .4),\n    \n    panel.border = element_rect(fill = NA, linewidth = .4),\n    axis.ticks = element_line(linewidth = .4),\n    \n    plot.margin = margin(20, 20, 20, 20)\n  ) +\n  \n  facet_grid(\n    rows = vars(Group),\n    scales = \"free_y\",\n    space = \"free_y\")"
   },
   {
     "objectID": "qmd/heatmap.html",

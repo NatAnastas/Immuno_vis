@@ -9,6 +9,11 @@ execute:
 
 ---
 
+A bubble plot is essentially a scatterplot where a third numeric variable determines the size of the circles.
+
+A scatterplot illustrates the relationship between two numeric variables. Each dot represents an observation, with its position on the X (horizontal) and Y (vertical) axes indicating the values of the two variables.
+
+
 ## Table (Data format)
 
 This is an example of a data format containing the necessary information for bubble plot visualizations. The table includes mock data specifically generated for this purpose.
@@ -32,8 +37,12 @@ reactable(
 )
 ```
 
+
 ## Bubble plot
 
+The `ggplot2` package enables the creation of bubble charts using the `geom_point()` function.
+
+This plot contains different pathways. The size of the bubble depends on the count and the color of the bubble depends on the -log(p.adj).
 
 ```{r}
 
