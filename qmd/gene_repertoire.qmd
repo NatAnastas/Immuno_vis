@@ -30,7 +30,7 @@ reactable(
   c_s,
   defaultPageSize = 5,
   theme = reactableTheme(
-    backgroundColor  = "#d9e3f1"
+    backgroundColor  = "transparent"
   )
 )
 
@@ -49,7 +49,7 @@ reactable(
   m,
   defaultPageSize = 5,
   theme = reactableTheme(
-    backgroundColor  = "#d9e3f1"
+    backgroundColor  = "transparent"
   )
 )
 
@@ -67,7 +67,7 @@ reactable(
   r_s,
   defaultPageSize = 5,
   theme = reactableTheme(
-    backgroundColor  = "#d9e3f1"
+    backgroundColor  = "transparent"
   )
 )
 

@@ -2,8 +2,8 @@
 title: "Bubble plot"
 format:
   html:
-   fig-width: 11
-   fig-height: 11
+   fig-width: 10
+   fig-height: 10
 execute: 
   warning: false
 
@@ -32,7 +32,7 @@ reactable(
   df, 
   defaultPageSize = 5,
   theme = reactableTheme(
-    backgroundColor  = "#d9e3f1"
+    backgroundColor  = "transparent"
   )
 )
 ```

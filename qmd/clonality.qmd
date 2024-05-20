@@ -27,7 +27,7 @@ reactable(
   
   df1, 
   theme = reactableTheme(
-    backgroundColor  = "#d9e3f1"
+    backgroundColor  = "transparent"
   )
 )
 

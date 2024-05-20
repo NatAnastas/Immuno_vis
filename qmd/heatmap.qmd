@@ -30,7 +30,7 @@ reactable(
   ann, 
   defaultPageSize = 5,
   theme = reactableTheme(
-    backgroundColor  = "#d9e3f1"
+    backgroundColor  = "transparent"
   )
 )
 ```
@@ -57,7 +57,7 @@ reactable(
   zmat, 
   defaultPageSize = 5,
   theme = reactableTheme(
-    backgroundColor  = "#d9e3f1"
+    backgroundColor  = "transparent"
   )
 )
 ```

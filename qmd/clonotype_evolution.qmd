@@ -1,5 +1,9 @@
 ---
 title: "Clonotype evolution"
+format:
+  html:
+    fig-width: 11
+    fig-height: 8
 ---
 
 Clonotype evolution refers to the dynamic changes that occur in the composition and characteristics of clonotypes over time or in response to selective pressures within a biological system, such as the immune repertoire.
@@ -34,7 +38,7 @@ reactable(
   d1,
   defaultPageSize = 5,
   theme = reactableTheme(
-    backgroundColor  = "#d9e3f1"
+    backgroundColor  = "transparent"
   )
 )
 

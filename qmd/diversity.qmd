@@ -1,6 +1,9 @@
 ---
 title: "Diversity estimation"
-
+format:
+  html:
+    fig-width: 10
+    fig-height: 8
 ---
 
 Diversity estimation within immune cell populations is a fundamental analysis in immunoinformatics. Diversity estimation refers to the process of analyzing and quantifying the diversity of immune cells, such as T cells or B cells.
@@ -35,7 +38,7 @@ reactable(
   
   df, 
   theme = reactableTheme(
-    backgroundColor  = "#d9e3f1"
+    backgroundColor  = "transparent"
   )
 )
 ```

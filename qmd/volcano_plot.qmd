@@ -33,7 +33,7 @@ reactable(
   df,
   defaultPageSize = 5,
   theme = reactableTheme(
-    backgroundColor  = "#d9e3f1"
+    backgroundColor  = "transparent"
   )
 )
 

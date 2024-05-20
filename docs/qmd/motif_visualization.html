@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -79,13 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -94,28 +88,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
+
 <script src="../site_libs/core-js-2.5.3/shim.min.js"></script>
-
 <script src="../site_libs/react-18.2.0/react.min.js"></script>
-
 <script src="../site_libs/react-18.2.0/react-dom.min.js"></script>
-
 <script src="../site_libs/reactwidget-1.0.0/react-tools.js"></script>
-
 <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-
 <link href="../site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
-
 <script src="../site_libs/reactable-binding-0.4.4/reactable.js"></script>
-
 
 
 </head>
@@ -124,9 +110,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Immunoinformatics visualizations</span>
     </a>
@@ -138,89 +124,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Welcome</span></a>
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Welcome</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-repertoire-level-exploration" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-repertoire-level-exploration" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Repertoire-level exploration</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-repertoire-level-exploration">    
         <li>
-    <a class="dropdown-item" href="../qmd/clonality.html">
+    <a class="dropdown-item" href="../qmd/clonality.html" rel="" target="">
  <span class="dropdown-text">Clonality</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/diversity.html">
+    <a class="dropdown-item" href="../qmd/diversity.html" rel="" target="">
  <span class="dropdown-text">Diversity estimation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/gene_repertoire.html">
+    <a class="dropdown-item" href="../qmd/gene_repertoire.html" rel="" target="">
  <span class="dropdown-text">Gene repertoire</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/V(D)J_recombination.html">
+    <a class="dropdown-item" href="../qmd/V(D)J_recombination.html" rel="" target="">
  <span class="dropdown-text">V(D)J recombination</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-clonotype-level-exploration" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-clonotype-level-exploration" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Clonotype-level exploration</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-clonotype-level-exploration">    
         <li>
-    <a class="dropdown-item" href="../qmd/clonotype_evolution.html">
+    <a class="dropdown-item" href="../qmd/clonotype_evolution.html" rel="" target="">
  <span class="dropdown-text">Clonotype evolution</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/motif_visualization.html">
+    <a class="dropdown-item" href="../qmd/motif_visualization.html" rel="" target="">
  <span class="dropdown-text">Motif visualization</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rnaseq" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rnaseq" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">RNAseq</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rnaseq">    
         <li>
-    <a class="dropdown-item" href="../qmd/bubble_plot.html">
+    <a class="dropdown-item" href="../qmd/bubble_plot.html" rel="" target="">
  <span class="dropdown-text">Bubble plot</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/heatmap.html">
+    <a class="dropdown-item" href="../qmd/heatmap.html" rel="" target="">
  <span class="dropdown-text">Heatmap</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/pathway_diagram.html">
+    <a class="dropdown-item" href="../qmd/pathway_diagram.html" rel="" target="">
  <span class="dropdown-text">Pathway diagram</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/PCA.html">
+    <a class="dropdown-item" href="../qmd/PCA.html" rel="" target="">
  <span class="dropdown-text">PCA</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/volcano_plot.html">
+    <a class="dropdown-item" href="../qmd/volcano_plot.html" rel="" target="">
  <span class="dropdown-text">Volcano plots</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../qmd/color_palette.html"> 
-<span class="menu-text">Color paletters</span></a>
+    <a class="nav-link" href="../qmd/color_palette.html" rel="" target="">
+ <span class="menu-text">Color paletters</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/NatAnastas/immunovisual"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/NatAnastas/immunovisual" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
-<span class="menu-text"></span></a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -260,9 +246,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
-
 
 <p>Visualization of motifs aids in identifying distinct patterns and discerning those that are more often, providing valuable insights into immune system dynamics.</p>
 <section id="table-data-format" class="level2">
@@ -270,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This is an example of a data format containing the necessary information for motif visualizations. The table includes mock data specifically generated for this purpose.</p>
 <p>The “Sample” column contains unique identifiers for each sample, while the “position” column provides information about the position of each amino acids. The “refAA” column corresponds to the reference amino acid and the “altAA” contains the alterations. “Freq. (clonotypes)” column indicates how often changes occur and “region” column refers to the spot where alteration happend. In “altChemical” column there are information about the alternative chemical properties of each amino acid and “hotspot” column notes if an amino acid is in a highly mutable area.</p>
 <div class="cell">
-<details class="code-fold">
+<details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reactable)</span>
@@ -283,13 +267,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  df, </span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">defaultPageSize =</span> <span class="dv">5</span>,</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">theme =</span> <span class="fu">reactableTheme</span>(</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundColor  =</span> <span class="st">"#d9e3f1"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">backgroundColor  =</span> <span class="st">"transparent"</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div class="reactable html-widget html-fill-item" id="htmlwidget-275624c0ed5fd33f356f" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-275624c0ed5fd33f356f">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Sample":["Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination"],"position":[1,1,2,2,2,2,3,3,4,4,5,5,6,6,6,7,7,7,8,9,11,11,11,12,12,12,13,13,13,14,14,14,15,15,16,16,17,17,17,18,18,18,20,20,20,20,20,21,21,21,22,22,23,24,24,24,24,24,25,25,26,26,27,27,27,28,28,28,29,29,29,29,30,30,35,35,35,35,35,35,36,36,36,36,36,36,36,36,36,36,37,37,37,37,37,38,38,38,38,38,38,38,38,38,38,38,39,39,39,39,40,40,40,40,40,41,42,42,42,44,45,45,48,48,50,51,51,51,51,51,52,53,53,53,53,54,55,55,55,56,56,56,57,57,57,57,57,58,58,58,58,58,58,58,59,59,59,62,62,62,63,63,63,63,63,63,64,64,64,64,64,64,64,65,65,65,65,65,65,65,66,66,66,66,66,66,66,67,68,68,68,68,69,69,69,69,70,72,72,72,76,76,76,77,77,78,78,81,82,83,83,84,84,84,85,85,85,85,86,86,86,87,87,88,88,88,89,90,91,92,92,92,92,93,93,95,95,95,96,96,96,96,96,97,98,99,99,99,101,102,103,103,1,2,2,2,2,3,3,3,4,4,5,5,5,5,6,6,6,7,7,7,8,8,9,9,11,11,11,12,12,12,13,13,14,14,14,15,17,17,17,17,17,18,18,19,20,20,20,20,20,21,21,21,21,22,22,22,23,23,23,24,24,24,24,24,25,25,25,26,26,26,27,27,27,28,28,29,29,29,29,29,30,30,30,30,35,35,35,35,35,36,36,36,36,36,36,36,36,37,37,37,37,37,37,37,38,38,38,38,38,38,38,38,38,38,39,39,39,40,40,40,40,40,41,42,42,43,44,45,46,46,48,49,50,51,51,53,53,53,54,54,55,55,55,55,55,56,56,57,57,58,58,58,58,58,59,59,62,63,63,63,63,63,63,63,64,64,64,65,65,65,65,65,66,66,66,66,66,67,67,68,68,69,69,69,69,69,70,70,71,72,74,76,76,77,78,78,79,79,79,81,82,82,83,83,83,83,84,84,84,84,85,85,85,85,85,86,86,86,87,88,88,88,88,89,89,90,90,91,91,91,92,93,93,94,95,95,95,95,96,96,96,97,97,99,99,100,101,102,102,103,103],"refAA":["Q","Q","V","V","V","V","Q","Q","L","L","V","V","E","E","E","S","S","S","G","G","G","G","G","V","V","V","V","V","V","Q","Q","Q","P","P","G","G","R","R","R","S","S","S","R","R","R","R","R","L","L","L","S","S","C","A","A","A","A","A","A","A","S","S","G","G","G","F","F","F","T","T","T","T","F","F","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","Y","Y","Y","Y","Y","A","G","G","G","G","A","G","A","G","G","A","M","M","M","M","H","H","H","H","H","W","V","V","V","Q","A","A","K","K","L","E","E","E","E","E","W","V","V","V","V","A","V","V","V","I","I","I","S","S","S","S","S","Y","Y","Y","Y","Y","Y","Y","D","D","D","G","G","G","S","S","S","S","S","S","N","N","N","N","N","N","N","K","K","K","K","K","K","K","Y","Y","Y","Y","Y","Y","Y","Y","A","A","A","A","D","D","D","D","S","K","K","K","F","F","F","T","T","I","I","D","N","S","S","K","K","K","N","N","N","N","T","T","T","L","L","Y","Y","Y","L","Q","M","N","N","N","N","S","S","R","R","R","A","A","A","A","A","E","D","T","T","T","V","Y","Y","Y","Q","V","V","V","V","Q","Q","Q","L","L","V","V","V","V","E","E","E","S","S","S","G","G","G","G","G","G","G","V","V","V","V","V","Q","Q","Q","P","R","R","R","R","R","S","S","L","R","R","R","R","R","L","L","L","L","S","S","S","C","C","C","A","A","A","A","A","A","A","A","S","S","S","G","G","G","F","F","T","T","T","T","T","F","F","F","F","S","S","S","S","S","S","S","S","S","S","S","S","S","Y","Y","Y","Y","Y","Y","Y","G","G","G","G","A","A","A","A","G","A","M","M","M","H","H","H","H","H","W","V","V","R","Q","A","P","P","K","G","L","E","E","V","V","V","A","A","V","V","V","V","V","I","I","S","S","Y","Y","Y","Y","Y","D","D","G","S","S","S","S","S","S","S","N","N","N","K","K","K","K","K","Y","Y","Y","Y","Y","Y","Y","A","A","D","D","D","D","D","S","S","V","K","G","F","F","T","I","I","S","S","S","D","N","N","S","S","S","S","K","K","K","K","N","N","N","N","N","T","T","T","L","Y","Y","Y","Y","L","L","Q","Q","M","M","M","N","S","S","L","R","R","R","R","A","A","A","E","E","T","T","A","V","Y","Y","Y","Y"],"altAA":["E","R","A","E","G","M","H","R","V","W","A","L","A","V","K","T","W","A","E","V","D","S","V","L","A","M","I","A","F","K","R","H","A","S","V","R","G","K","W","P","A","Y","S","G","I","K","T","P","V","R","A","P","W","V","S","E","G","T","T","G","P","T","E","A","R","I","L","Y","S","I","N","A","V","L","R","I","T","G","D","N","I","N","T","D","R","G","P","A","Y","K","F","S","N","H","A","S","W","Y","A","S","E","D","T","P","V","W","I","V","L","T","Y","S","N","R","Q","C","I","A","G","L","T","P","R","Q","P","D","Q","A","G","V","C","L","E","A","M","G","L","I","F","T","V","M","W","L","A","P","Y","F","H","A","P","W","S","N","G","N","S","R","A","T","R","D","I","N","G","T","K","T","D","I","G","S","H","R","E","T","N","A","D","Q","D","N","W","R","A","F","C","V","T","S","G","V","E","A","N","G","F","R","E","Q","L","V","Y","A","V","F","V","N","S","A","Y","R","E","M","H","D","K","S","S","M","A","V","P","F","S","C","P","E","V","S","D","G","I","N","G","T","G","S","V","D","P","T","S","D","N","A","M","R","L","F","F","H","E","G","L","A","E","H","K","R","V","P","A","E","G","L","A","V","G","P","A","F","E","V","R","E","V","D","T","L","E","G","I","A","K","R","L","R","G","K","S","T","E","P","F","P","I","K","S","G","T","R","P","I","F","A","P","F","W","R","G","V","S","T","K","G","V","T","D","A","P","C","E","V","R","S","I","I","A","S","P","N","V","L","S","I","N","R","T","G","I","N","D","T","G","R","A","Q","K","H","S","N","C","D","A","F","S","Y","W","D","V","T","G","P","A","S","I","L","V","N","S","R","F","Y","R","G","I","C","R","T","T","A","R","R","P","D","Q","A","M","E","T","S","L","I","A","G","F","V","T","W","A","H","F","D","S","N","E","H","R","L","R","T","N","I","G","K","D","A","Q","E","T","Q","N","R","H","D","S","I","F","I","H","T","I","T","G","E","A","I","P","A","A","R","D","L","S","S","M","V","P","A","L","E","D","S","A","P","G","F","N","E","R","D","T","S","I","D","Y","S","K","M","V","F","N","D","S","V","P","R","D","L","T","V","D","N","R","P","K","G","I","S","T","V","I","K","G","M","A","S","F","C","N","F","H"],"Freq. (clonotypes)":[0.291666666666667,0.0104166666666667,0.0506329113924051,0.0253164556962025,0.0253164556962025,0.0253164556962025,0.0506329113924051,0.0632911392405063,0.0266666666666667,0.0266666666666667,0.0649350649350649,0.025974025974026,0.0131578947368421,0.0263157894736842,0.0263157894736842,0.051948051948052,0.012987012987013,0.025974025974026,0.0277777777777778,0.0410958904109589,0.0625,0.05,0.025,0.25,0.03125,0.0208333333333333,0.0886075949367089,0.0126582278481013,0.0253164556962025,0.157894736842105,0.105263157894737,0.0315789473684211,0.027027027027027,0.027027027027027,0.0266666666666667,0.0266666666666667,0.271028037383178,0.0467289719626168,0.0280373831775701,0.0263157894736842,0.0263157894736842,0.0263157894736842,0.0617283950617284,0.0246913580246914,0.0123456790123457,0.0246913580246914,0.0246913580246914,0.0384615384615385,0.0384615384615385,0.0256410256410256,0.027027027027027,0.0405405405405405,0.0547945205479452,0.0823529411764706,0.0352941176470588,0.0235294117647059,0.0470588235294118,0.0235294117647059,0.0410958904109589,0.0273972602739726,0.0273972602739726,0.0273972602739726,0.0277777777777778,0.0277777777777778,0.0277777777777778,0.038961038961039,0.038961038961039,0.025974025974026,0.114942528735632,0.0574712643678161,0.0229885057471264,0.0229885057471264,0.075,0.075,0.0869565217391304,0.0326086956521739,0.0434782608695652,0.0434782608695652,0.0326086956521739,0.0326086956521739,0.008,0.16,0.064,0.08,0.056,0.04,0.024,0.016,0.024,0.016,0.0989010989010989,0.0659340659340659,0.0659340659340659,0.021978021978022,0.032967032967033,0.0300751879699248,0.0526315789473684,0.0451127819548872,0.0225563909774436,0.0451127819548872,0.0150375939849624,0.0225563909774436,0.0225563909774436,0.0075187969924812,0.0225563909774436,0.0150375939849624,0.0930232558139535,0.0581395348837209,0.0348837209302326,0.0581395348837209,0.087378640776699,0.116504854368932,0.0970873786407767,0.029126213592233,0.0194174757281553,0.0289855072463768,0.0625,0.05,0.0125,0.0147058823529412,0.0675675675675676,0.0540540540540541,0.04,0.0266666666666667,0.0285714285714286,0.0263157894736842,0.0394736842105263,0.0131578947368421,0.0263157894736842,0.0131578947368421,0.0294117647058824,0.0512820512820513,0.0256410256410256,0.0256410256410256,0.0256410256410256,0.0142857142857143,0.0813953488372093,0.0581395348837209,0.0348837209302326,0.075,0.05,0.0375,0.104651162790698,0.0232558139534884,0.0232558139534884,0.0232558139534884,0.0116279069767442,0.0595238095238095,0.0714285714285714,0.0119047619047619,0.0119047619047619,0.0238095238095238,0.0357142857142857,0.0238095238095238,0.027027027027027,0.027027027027027,0.027027027027027,0.0410958904109589,0.0273972602739726,0.0136986301369863,0.115789473684211,0.0421052631578947,0.0315789473684211,0.0526315789473684,0.0526315789473684,0.0421052631578947,0.0891089108910891,0.0792079207920792,0.0396039603960396,0.0297029702970297,0.0297029702970297,0.0396039603960396,0.0297029702970297,0.0444444444444444,0.1,0.0666666666666667,0.0333333333333333,0.0111111111111111,0.0111111111111111,0.0222222222222222,0.0487804878048781,0.0365853658536585,0.024390243902439,0.0121951219512195,0.0121951219512195,0.0121951219512195,0.024390243902439,0.0140845070422535,0.0731707317073171,0.0365853658536585,0.0365853658536585,0.0365853658536585,0.038961038961039,0.038961038961039,0.025974025974026,0.025974025974026,0.028169014084507,0.0897435897435897,0.0384615384615385,0.0128205128205128,0.04,0.0266666666666667,0.0266666666666667,0.025974025974026,0.025974025974026,0.027027027027027,0.0675675675675676,0.0147058823529412,0.0140845070422535,0.178571428571429,0.0119047619047619,0.0833333333333333,0.0714285714285714,0.0357142857142857,0.0405405405405405,0.0405405405405405,0.0135135135135135,0.027027027027027,0.154761904761905,0.0238095238095238,0.0119047619047619,0.08,0.0266666666666667,0.0625,0.05,0.0375,0.0289855072463768,0.0294117647058824,0.0277777777777778,0.0526315789473684,0.0394736842105263,0.0263157894736842,0.0263157894736842,0.04,0.04,0.0140845070422535,0.028169014084507,0.028169014084507,0.0864197530864198,0.0246913580246914,0.0617283950617284,0.037037037037037,0.0246913580246914,0.0833333333333333,0.0277777777777778,0.0540540540540541,0.0405405405405405,0.027027027027027,0.0428571428571429,0.0289855072463768,0.0277777777777778,0.0277777777777778,0.205128205128205,0.0142857142857143,0.0285714285714286,0.0428571428571429,0.0142857142857143,0.0441176470588235,0.0294117647058824,0.0294117647058824,0.0149253731343284,0.0298507462686567,0.0441176470588235,0.0147058823529412,0.0147058823529412,0.0147058823529412,0.0289855072463768,0.0289855072463768,0.0289855072463768,0.0294117647058824,0.0294117647058824,0.0294117647058824,0.0303030303030303,0.0151515151515152,0.0303030303030303,0.0151515151515152,0.0294117647058824,0.0147058823529412,0.0147058823529412,0.209876543209877,0.0246913580246914,0.0246913580246914,0.0298507462686567,0.0298507462686567,0.0933333333333333,0.04,0.0266666666666667,0.0307692307692308,0.181818181818182,0.0340909090909091,0.0227272727272727,0.0227272727272727,0.0227272727272727,0.0151515151515152,0.0303030303030303,0.0303030303030303,0.0263157894736842,0.0526315789473684,0.0394736842105263,0.0263157894736842,0.0263157894736842,0.0147058823529412,0.0147058823529412,0.0147058823529412,0.0294117647058824,0.0289855072463768,0.0434782608695652,0.0289855072463768,0.0149253731343284,0.0298507462686567,0.0149253731343284,0.0273972602739726,0.0410958904109589,0.0273972602739726,0.0136986301369863,0.0273972602739726,0.0294117647058824,0.0294117647058824,0.0147058823529412,0.0285714285714286,0.0285714285714286,0.0142857142857143,0.0147058823529412,0.0294117647058824,0.0294117647058824,0.0303030303030303,0.0303030303030303,0.0540540540540541,0.027027027027027,0.0405405405405405,0.027027027027027,0.0135135135135135,0.0428571428571429,0.0285714285714286,0.0142857142857143,0.0142857142857143,0.04,0.0266666666666667,0.0266666666666667,0.04,0.0266666666666667,0.0454545454545455,0.0681818181818182,0.0340909090909091,0.0227272727272727,0.0681818181818182,0.0227272727272727,0.0113636363636364,0.0340909090909091,0.0641025641025641,0.0256410256410256,0.0256410256410256,0.0256410256410256,0.0128205128205128,0.0128205128205128,0.0256410256410256,0.0404040404040404,0.0404040404040404,0.0202020202020202,0.0303030303030303,0.0202020202020202,0.0202020202020202,0.0202020202020202,0.0202020202020202,0.0202020202020202,0.0101010101010101,0.0289855072463768,0.0289855072463768,0.0289855072463768,0.0533333333333333,0.0533333333333333,0.0266666666666667,0.0133333333333333,0.0133333333333333,0.03125,0.0147058823529412,0.0588235294117647,0.0303030303030303,0.03125,0.0307692307692308,0.0303030303030303,0.0151515151515152,0.0461538461538462,0.0158730158730159,0.0454545454545455,0.159420289855072,0.0144927536231884,0.0307692307692308,0.0153846153846154,0.0153846153846154,0.0597014925373134,0.0149253731343284,0.181818181818182,0.038961038961039,0.051948051948052,0.012987012987013,0.025974025974026,0.0597014925373134,0.0149253731343284,0.0845070422535211,0.028169014084507,0.0540540540540541,0.0540540540540541,0.0135135135135135,0.0405405405405405,0.0135135135135135,0.0303030303030303,0.0151515151515152,0.03125,0.157894736842105,0.0394736842105263,0.0394736842105263,0.0394736842105263,0.0131578947368421,0.0263157894736842,0.0263157894736842,0.0422535211267606,0.0140845070422535,0.028169014084507,0.0821917808219178,0.0410958904109589,0.0136986301369863,0.0273972602739726,0.0136986301369863,0.0410958904109589,0.0273972602739726,0.0273972602739726,0.0273972602739726,0.0273972602739726,0.0149253731343284,0.0447761194029851,0.194029850746269,0.0149253731343284,0.171428571428571,0.0142857142857143,0.0285714285714286,0.0285714285714286,0.0142857142857143,0.0303030303030303,0.0454545454545455,0.0307692307692308,0.0882352941176471,0.0161290322580645,0.0461538461538462,0.0153846153846154,0.205882352941176,0.0151515151515152,0.0303030303030303,0.0147058823529412,0.0294117647058824,0.0294117647058824,0.03125,0.0307692307692308,0.0153846153846154,0.0704225352112676,0.0422535211267606,0.0140845070422535,0.0140845070422535,0.188405797101449,0.0434782608695652,0.0289855072463768,0.0144927536231884,0.0294117647058824,0.0294117647058824,0.0147058823529412,0.0294117647058824,0.0294117647058824,0.0434782608695652,0.0289855072463768,0.0144927536231884,0.0895522388059701,0.0606060606060606,0.0151515151515152,0.0151515151515152,0.0151515151515152,0.03125,0.046875,0.0307692307692308,0.0153846153846154,0.0298507462686567,0.0298507462686567,0.0298507462686567,0.03125,0.015625,0.015625,0.0158730158730159,0.0298507462686567,0.0298507462686567,0.0149253731343284,0.0149253731343284,0.0298507462686567,0.0149253731343284,0.0149253731343284,0.0303030303030303,0.0303030303030303,0.0158730158730159,0.0158730158730159,0.19047619047619,0.0161290322580645,0.0149253731343284,0.0298507462686567,0.0597014925373134,0.0447761194029851],"region":["FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3"],"altChemical":["Acidic","Basic","Aliphatic","Acidic","Aliphatic","Sulfur","Basic","Basic","Aliphatic","Aromatic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Basic","Hydroxyl","Aromatic","Aliphatic","Acidic","Aliphatic","Acidic","Hydroxyl","Aliphatic","Aliphatic","Aliphatic","Sulfur","Aliphatic","Aliphatic","Aromatic","Basic","Basic","Basic","Aliphatic","Hydroxyl","Aliphatic","Basic","Aliphatic","Basic","Aromatic","Aliphatic","Aliphatic","Aromatic","Hydroxyl","Aliphatic","Aliphatic","Basic","Hydroxyl","Aliphatic","Aliphatic","Basic","Aliphatic","Aliphatic","Aromatic","Aliphatic","Hydroxyl","Acidic","Aliphatic","Hydroxyl","Hydroxyl","Aliphatic","Aliphatic","Hydroxyl","Acidic","Aliphatic","Basic","Aliphatic","Aliphatic","Aromatic","Hydroxyl","Aliphatic","Amide","Aliphatic","Aliphatic","Aliphatic","Basic","Aliphatic","Hydroxyl","Aliphatic","Acidic","Amide","Aliphatic","Amide","Hydroxyl","Acidic","Basic","Aliphatic","Aliphatic","Aliphatic","Aromatic","Basic","Aromatic","Hydroxyl","Amide","Basic","Aliphatic","Hydroxyl","Aromatic","Aromatic","Aliphatic","Hydroxyl","Acidic","Acidic","Hydroxyl","Aliphatic","Aliphatic","Aromatic","Aliphatic","Aliphatic","Aliphatic","Hydroxyl","Aromatic","Hydroxyl","Amide","Basic","Amide","Sulfur","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Hydroxyl","Aliphatic","Basic","Amide","Aliphatic","Acidic","Amide","Aliphatic","Aliphatic","Aliphatic","Sulfur","Aliphatic","Acidic","Aliphatic","Sulfur","Aliphatic","Aliphatic","Aliphatic","Aromatic","Hydroxyl","Aliphatic","Sulfur","Aromatic","Aliphatic","Aliphatic","Aliphatic","Aromatic","Aromatic","Basic","Aliphatic","Aliphatic","Aromatic","Hydroxyl","Amide","Aliphatic","Amide","Hydroxyl","Basic","Aliphatic","Hydroxyl","Basic","Acidic","Aliphatic","Amide","Aliphatic","Hydroxyl","Basic","Hydroxyl","Acidic","Aliphatic","Aliphatic","Hydroxyl","Basic","Basic","Acidic","Hydroxyl","Amide","Aliphatic","Acidic","Amide","Acidic","Amide","Aromatic","Basic","Aliphatic","Aromatic","Sulfur","Aliphatic","Hydroxyl","Hydroxyl","Aliphatic","Aliphatic","Acidic","Aliphatic","Amide","Aliphatic","Aromatic","Basic","Acidic","Amide","Aliphatic","Aliphatic","Aromatic","Aliphatic","Aliphatic","Aromatic","Aliphatic","Amide","Hydroxyl","Aliphatic","Aromatic","Basic","Acidic","Sulfur","Basic","Acidic","Basic","Hydroxyl","Hydroxyl","Sulfur","Aliphatic","Aliphatic","Aliphatic","Aromatic","Hydroxyl","Sulfur","Aliphatic","Acidic","Aliphatic","Hydroxyl","Acidic","Aliphatic","Aliphatic","Amide","Aliphatic","Hydroxyl","Aliphatic","Hydroxyl","Aliphatic","Acidic","Aliphatic","Hydroxyl","Hydroxyl","Acidic","Amide","Aliphatic","Sulfur","Basic","Aliphatic","Aromatic","Aromatic","Basic","Acidic","Aliphatic","Aliphatic","Aliphatic","Acidic","Basic","Basic","Basic","Aliphatic","Aliphatic","Aliphatic","Acidic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Aromatic","Acidic","Aliphatic","Basic","Acidic","Aliphatic","Acidic","Hydroxyl","Aliphatic","Acidic","Aliphatic","Aliphatic","Aliphatic","Basic","Basic","Aliphatic","Basic","Aliphatic","Basic","Hydroxyl","Hydroxyl","Acidic","Aliphatic","Aromatic","Aliphatic","Aliphatic","Basic","Hydroxyl","Aliphatic","Hydroxyl","Basic","Aliphatic","Aliphatic","Aromatic","Aliphatic","Aliphatic","Aromatic","Aromatic","Basic","Aliphatic","Aliphatic","Hydroxyl","Hydroxyl","Basic","Aliphatic","Aliphatic","Hydroxyl","Acidic","Aliphatic","Aliphatic","Sulfur","Acidic","Aliphatic","Basic","Hydroxyl","Aliphatic","Aliphatic","Aliphatic","Hydroxyl","Aliphatic","Amide","Aliphatic","Aliphatic","Hydroxyl","Aliphatic","Amide","Basic","Hydroxyl","Aliphatic","Aliphatic","Amide","Acidic","Hydroxyl","Aliphatic","Basic","Aliphatic","Amide","Basic","Basic","Hydroxyl","Amide","Sulfur","Acidic","Aliphatic","Aromatic","Hydroxyl","Aromatic","Aromatic","Acidic","Aliphatic","Hydroxyl","Aliphatic","Aliphatic","Aliphatic","Hydroxyl","Aliphatic","Aliphatic","Aliphatic","Amide","Hydroxyl","Basic","Aromatic","Aromatic","Basic","Aliphatic","Aliphatic","Sulfur","Basic","Hydroxyl","Hydroxyl","Aliphatic","Basic","Basic","Aliphatic","Acidic","Amide","Aliphatic","Sulfur","Acidic","Hydroxyl","Hydroxyl","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Aromatic","Aliphatic","Hydroxyl","Aromatic","Aliphatic","Basic","Aromatic","Acidic","Hydroxyl","Amide","Acidic","Basic","Basic","Aliphatic","Basic","Hydroxyl","Amide","Aliphatic","Aliphatic","Basic","Acidic","Aliphatic","Amide","Acidic","Hydroxyl","Amide","Amide","Basic","Basic","Acidic","Hydroxyl","Aliphatic","Aromatic","Aliphatic","Basic","Hydroxyl","Aliphatic","Hydroxyl","Aliphatic","Acidic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Basic","Acidic","Aliphatic","Hydroxyl","Hydroxyl","Sulfur","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Acidic","Acidic","Hydroxyl","Aliphatic","Aliphatic","Aliphatic","Aromatic","Amide","Acidic","Basic","Acidic","Hydroxyl","Hydroxyl","Aliphatic","Acidic","Aromatic","Hydroxyl","Basic","Sulfur","Aliphatic","Aromatic","Amide","Acidic","Hydroxyl","Aliphatic","Aliphatic","Basic","Acidic","Aliphatic","Hydroxyl","Aliphatic","Acidic","Amide","Basic","Aliphatic","Basic","Aliphatic","Aliphatic","Hydroxyl","Hydroxyl","Aliphatic","Aliphatic","Basic","Aliphatic","Sulfur","Aliphatic","Hydroxyl","Aromatic","Sulfur","Amide","Aromatic","Basic"],"hotspot":["nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot"]},"columns":[{"id":"Sample","name":"Sample","type":"character"},{"id":"position","name":"position","type":"numeric"},{"id":"refAA","name":"refAA","type":"character"},{"id":"altAA","name":"altAA","type":"character"},{"id":"Freq. (clonotypes)","name":"Freq. (clonotypes)","type":"numeric"},{"id":"region","name":"region","type":"character"},{"id":"altChemical","name":"altChemical","type":"character"},{"id":"hotspot","name":"hotspot","type":"character"}],"defaultPageSize":5,"theme":{"backgroundColor":"#d9e3f1"},"dataKey":"f4aeeab1796069db4c13dced1f668247"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+
+<div class="reactable html-widget html-fill-item" id="htmlwidget-90e4d11c9ec78628a4d7" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-90e4d11c9ec78628a4d7">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Sample":["Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-infection","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination","Post-vaccination"],"position":[1,1,2,2,2,2,3,3,4,4,5,5,6,6,6,7,7,7,8,9,11,11,11,12,12,12,13,13,13,14,14,14,15,15,16,16,17,17,17,18,18,18,20,20,20,20,20,21,21,21,22,22,23,24,24,24,24,24,25,25,26,26,27,27,27,28,28,28,29,29,29,29,30,30,35,35,35,35,35,35,36,36,36,36,36,36,36,36,36,36,37,37,37,37,37,38,38,38,38,38,38,38,38,38,38,38,39,39,39,39,40,40,40,40,40,41,42,42,42,44,45,45,48,48,50,51,51,51,51,51,52,53,53,53,53,54,55,55,55,56,56,56,57,57,57,57,57,58,58,58,58,58,58,58,59,59,59,62,62,62,63,63,63,63,63,63,64,64,64,64,64,64,64,65,65,65,65,65,65,65,66,66,66,66,66,66,66,67,68,68,68,68,69,69,69,69,70,72,72,72,76,76,76,77,77,78,78,81,82,83,83,84,84,84,85,85,85,85,86,86,86,87,87,88,88,88,89,90,91,92,92,92,92,93,93,95,95,95,96,96,96,96,96,97,98,99,99,99,101,102,103,103,1,2,2,2,2,3,3,3,4,4,5,5,5,5,6,6,6,7,7,7,8,8,9,9,11,11,11,12,12,12,13,13,14,14,14,15,17,17,17,17,17,18,18,19,20,20,20,20,20,21,21,21,21,22,22,22,23,23,23,24,24,24,24,24,25,25,25,26,26,26,27,27,27,28,28,29,29,29,29,29,30,30,30,30,35,35,35,35,35,36,36,36,36,36,36,36,36,37,37,37,37,37,37,37,38,38,38,38,38,38,38,38,38,38,39,39,39,40,40,40,40,40,41,42,42,43,44,45,46,46,48,49,50,51,51,53,53,53,54,54,55,55,55,55,55,56,56,57,57,58,58,58,58,58,59,59,62,63,63,63,63,63,63,63,64,64,64,65,65,65,65,65,66,66,66,66,66,67,67,68,68,69,69,69,69,69,70,70,71,72,74,76,76,77,78,78,79,79,79,81,82,82,83,83,83,83,84,84,84,84,85,85,85,85,85,86,86,86,87,88,88,88,88,89,89,90,90,91,91,91,92,93,93,94,95,95,95,95,96,96,96,97,97,99,99,100,101,102,102,103,103],"refAA":["Q","Q","V","V","V","V","Q","Q","L","L","V","V","E","E","E","S","S","S","G","G","G","G","G","V","V","V","V","V","V","Q","Q","Q","P","P","G","G","R","R","R","S","S","S","R","R","R","R","R","L","L","L","S","S","C","A","A","A","A","A","A","A","S","S","G","G","G","F","F","F","T","T","T","T","F","F","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","S","Y","Y","Y","Y","Y","A","G","G","G","G","A","G","A","G","G","A","M","M","M","M","H","H","H","H","H","W","V","V","V","Q","A","A","K","K","L","E","E","E","E","E","W","V","V","V","V","A","V","V","V","I","I","I","S","S","S","S","S","Y","Y","Y","Y","Y","Y","Y","D","D","D","G","G","G","S","S","S","S","S","S","N","N","N","N","N","N","N","K","K","K","K","K","K","K","Y","Y","Y","Y","Y","Y","Y","Y","A","A","A","A","D","D","D","D","S","K","K","K","F","F","F","T","T","I","I","D","N","S","S","K","K","K","N","N","N","N","T","T","T","L","L","Y","Y","Y","L","Q","M","N","N","N","N","S","S","R","R","R","A","A","A","A","A","E","D","T","T","T","V","Y","Y","Y","Q","V","V","V","V","Q","Q","Q","L","L","V","V","V","V","E","E","E","S","S","S","G","G","G","G","G","G","G","V","V","V","V","V","Q","Q","Q","P","R","R","R","R","R","S","S","L","R","R","R","R","R","L","L","L","L","S","S","S","C","C","C","A","A","A","A","A","A","A","A","S","S","S","G","G","G","F","F","T","T","T","T","T","F","F","F","F","S","S","S","S","S","S","S","S","S","S","S","S","S","Y","Y","Y","Y","Y","Y","Y","G","G","G","G","A","A","A","A","G","A","M","M","M","H","H","H","H","H","W","V","V","R","Q","A","P","P","K","G","L","E","E","V","V","V","A","A","V","V","V","V","V","I","I","S","S","Y","Y","Y","Y","Y","D","D","G","S","S","S","S","S","S","S","N","N","N","K","K","K","K","K","Y","Y","Y","Y","Y","Y","Y","A","A","D","D","D","D","D","S","S","V","K","G","F","F","T","I","I","S","S","S","D","N","N","S","S","S","S","K","K","K","K","N","N","N","N","N","T","T","T","L","Y","Y","Y","Y","L","L","Q","Q","M","M","M","N","S","S","L","R","R","R","R","A","A","A","E","E","T","T","A","V","Y","Y","Y","Y"],"altAA":["E","R","A","E","G","M","H","R","V","W","A","L","A","V","K","T","W","A","E","V","D","S","V","L","A","M","I","A","F","K","R","H","A","S","V","R","G","K","W","P","A","Y","S","G","I","K","T","P","V","R","A","P","W","V","S","E","G","T","T","G","P","T","E","A","R","I","L","Y","S","I","N","A","V","L","R","I","T","G","D","N","I","N","T","D","R","G","P","A","Y","K","F","S","N","H","A","S","W","Y","A","S","E","D","T","P","V","W","I","V","L","T","Y","S","N","R","Q","C","I","A","G","L","T","P","R","Q","P","D","Q","A","G","V","C","L","E","A","M","G","L","I","F","T","V","M","W","L","A","P","Y","F","H","A","P","W","S","N","G","N","S","R","A","T","R","D","I","N","G","T","K","T","D","I","G","S","H","R","E","T","N","A","D","Q","D","N","W","R","A","F","C","V","T","S","G","V","E","A","N","G","F","R","E","Q","L","V","Y","A","V","F","V","N","S","A","Y","R","E","M","H","D","K","S","S","M","A","V","P","F","S","C","P","E","V","S","D","G","I","N","G","T","G","S","V","D","P","T","S","D","N","A","M","R","L","F","F","H","E","G","L","A","E","H","K","R","V","P","A","E","G","L","A","V","G","P","A","F","E","V","R","E","V","D","T","L","E","G","I","A","K","R","L","R","G","K","S","T","E","P","F","P","I","K","S","G","T","R","P","I","F","A","P","F","W","R","G","V","S","T","K","G","V","T","D","A","P","C","E","V","R","S","I","I","A","S","P","N","V","L","S","I","N","R","T","G","I","N","D","T","G","R","A","Q","K","H","S","N","C","D","A","F","S","Y","W","D","V","T","G","P","A","S","I","L","V","N","S","R","F","Y","R","G","I","C","R","T","T","A","R","R","P","D","Q","A","M","E","T","S","L","I","A","G","F","V","T","W","A","H","F","D","S","N","E","H","R","L","R","T","N","I","G","K","D","A","Q","E","T","Q","N","R","H","D","S","I","F","I","H","T","I","T","G","E","A","I","P","A","A","R","D","L","S","S","M","V","P","A","L","E","D","S","A","P","G","F","N","E","R","D","T","S","I","D","Y","S","K","M","V","F","N","D","S","V","P","R","D","L","T","V","D","N","R","P","K","G","I","S","T","V","I","K","G","M","A","S","F","C","N","F","H"],"Freq. (clonotypes)":[0.291666666666667,0.0104166666666667,0.0506329113924051,0.0253164556962025,0.0253164556962025,0.0253164556962025,0.0506329113924051,0.0632911392405063,0.0266666666666667,0.0266666666666667,0.0649350649350649,0.025974025974026,0.0131578947368421,0.0263157894736842,0.0263157894736842,0.051948051948052,0.012987012987013,0.025974025974026,0.0277777777777778,0.0410958904109589,0.0625,0.05,0.025,0.25,0.03125,0.0208333333333333,0.0886075949367089,0.0126582278481013,0.0253164556962025,0.157894736842105,0.105263157894737,0.0315789473684211,0.027027027027027,0.027027027027027,0.0266666666666667,0.0266666666666667,0.271028037383178,0.0467289719626168,0.0280373831775701,0.0263157894736842,0.0263157894736842,0.0263157894736842,0.0617283950617284,0.0246913580246914,0.0123456790123457,0.0246913580246914,0.0246913580246914,0.0384615384615385,0.0384615384615385,0.0256410256410256,0.027027027027027,0.0405405405405405,0.0547945205479452,0.0823529411764706,0.0352941176470588,0.0235294117647059,0.0470588235294118,0.0235294117647059,0.0410958904109589,0.0273972602739726,0.0273972602739726,0.0273972602739726,0.0277777777777778,0.0277777777777778,0.0277777777777778,0.038961038961039,0.038961038961039,0.025974025974026,0.114942528735632,0.0574712643678161,0.0229885057471264,0.0229885057471264,0.075,0.075,0.0869565217391304,0.0326086956521739,0.0434782608695652,0.0434782608695652,0.0326086956521739,0.0326086956521739,0.008,0.16,0.064,0.08,0.056,0.04,0.024,0.016,0.024,0.016,0.0989010989010989,0.0659340659340659,0.0659340659340659,0.021978021978022,0.032967032967033,0.0300751879699248,0.0526315789473684,0.0451127819548872,0.0225563909774436,0.0451127819548872,0.0150375939849624,0.0225563909774436,0.0225563909774436,0.0075187969924812,0.0225563909774436,0.0150375939849624,0.0930232558139535,0.0581395348837209,0.0348837209302326,0.0581395348837209,0.087378640776699,0.116504854368932,0.0970873786407767,0.029126213592233,0.0194174757281553,0.0289855072463768,0.0625,0.05,0.0125,0.0147058823529412,0.0675675675675676,0.0540540540540541,0.04,0.0266666666666667,0.0285714285714286,0.0263157894736842,0.0394736842105263,0.0131578947368421,0.0263157894736842,0.0131578947368421,0.0294117647058824,0.0512820512820513,0.0256410256410256,0.0256410256410256,0.0256410256410256,0.0142857142857143,0.0813953488372093,0.0581395348837209,0.0348837209302326,0.075,0.05,0.0375,0.104651162790698,0.0232558139534884,0.0232558139534884,0.0232558139534884,0.0116279069767442,0.0595238095238095,0.0714285714285714,0.0119047619047619,0.0119047619047619,0.0238095238095238,0.0357142857142857,0.0238095238095238,0.027027027027027,0.027027027027027,0.027027027027027,0.0410958904109589,0.0273972602739726,0.0136986301369863,0.115789473684211,0.0421052631578947,0.0315789473684211,0.0526315789473684,0.0526315789473684,0.0421052631578947,0.0891089108910891,0.0792079207920792,0.0396039603960396,0.0297029702970297,0.0297029702970297,0.0396039603960396,0.0297029702970297,0.0444444444444444,0.1,0.0666666666666667,0.0333333333333333,0.0111111111111111,0.0111111111111111,0.0222222222222222,0.0487804878048781,0.0365853658536585,0.024390243902439,0.0121951219512195,0.0121951219512195,0.0121951219512195,0.024390243902439,0.0140845070422535,0.0731707317073171,0.0365853658536585,0.0365853658536585,0.0365853658536585,0.038961038961039,0.038961038961039,0.025974025974026,0.025974025974026,0.028169014084507,0.0897435897435897,0.0384615384615385,0.0128205128205128,0.04,0.0266666666666667,0.0266666666666667,0.025974025974026,0.025974025974026,0.027027027027027,0.0675675675675676,0.0147058823529412,0.0140845070422535,0.178571428571429,0.0119047619047619,0.0833333333333333,0.0714285714285714,0.0357142857142857,0.0405405405405405,0.0405405405405405,0.0135135135135135,0.027027027027027,0.154761904761905,0.0238095238095238,0.0119047619047619,0.08,0.0266666666666667,0.0625,0.05,0.0375,0.0289855072463768,0.0294117647058824,0.0277777777777778,0.0526315789473684,0.0394736842105263,0.0263157894736842,0.0263157894736842,0.04,0.04,0.0140845070422535,0.028169014084507,0.028169014084507,0.0864197530864198,0.0246913580246914,0.0617283950617284,0.037037037037037,0.0246913580246914,0.0833333333333333,0.0277777777777778,0.0540540540540541,0.0405405405405405,0.027027027027027,0.0428571428571429,0.0289855072463768,0.0277777777777778,0.0277777777777778,0.205128205128205,0.0142857142857143,0.0285714285714286,0.0428571428571429,0.0142857142857143,0.0441176470588235,0.0294117647058824,0.0294117647058824,0.0149253731343284,0.0298507462686567,0.0441176470588235,0.0147058823529412,0.0147058823529412,0.0147058823529412,0.0289855072463768,0.0289855072463768,0.0289855072463768,0.0294117647058824,0.0294117647058824,0.0294117647058824,0.0303030303030303,0.0151515151515152,0.0303030303030303,0.0151515151515152,0.0294117647058824,0.0147058823529412,0.0147058823529412,0.209876543209877,0.0246913580246914,0.0246913580246914,0.0298507462686567,0.0298507462686567,0.0933333333333333,0.04,0.0266666666666667,0.0307692307692308,0.181818181818182,0.0340909090909091,0.0227272727272727,0.0227272727272727,0.0227272727272727,0.0151515151515152,0.0303030303030303,0.0303030303030303,0.0263157894736842,0.0526315789473684,0.0394736842105263,0.0263157894736842,0.0263157894736842,0.0147058823529412,0.0147058823529412,0.0147058823529412,0.0294117647058824,0.0289855072463768,0.0434782608695652,0.0289855072463768,0.0149253731343284,0.0298507462686567,0.0149253731343284,0.0273972602739726,0.0410958904109589,0.0273972602739726,0.0136986301369863,0.0273972602739726,0.0294117647058824,0.0294117647058824,0.0147058823529412,0.0285714285714286,0.0285714285714286,0.0142857142857143,0.0147058823529412,0.0294117647058824,0.0294117647058824,0.0303030303030303,0.0303030303030303,0.0540540540540541,0.027027027027027,0.0405405405405405,0.027027027027027,0.0135135135135135,0.0428571428571429,0.0285714285714286,0.0142857142857143,0.0142857142857143,0.04,0.0266666666666667,0.0266666666666667,0.04,0.0266666666666667,0.0454545454545455,0.0681818181818182,0.0340909090909091,0.0227272727272727,0.0681818181818182,0.0227272727272727,0.0113636363636364,0.0340909090909091,0.0641025641025641,0.0256410256410256,0.0256410256410256,0.0256410256410256,0.0128205128205128,0.0128205128205128,0.0256410256410256,0.0404040404040404,0.0404040404040404,0.0202020202020202,0.0303030303030303,0.0202020202020202,0.0202020202020202,0.0202020202020202,0.0202020202020202,0.0202020202020202,0.0101010101010101,0.0289855072463768,0.0289855072463768,0.0289855072463768,0.0533333333333333,0.0533333333333333,0.0266666666666667,0.0133333333333333,0.0133333333333333,0.03125,0.0147058823529412,0.0588235294117647,0.0303030303030303,0.03125,0.0307692307692308,0.0303030303030303,0.0151515151515152,0.0461538461538462,0.0158730158730159,0.0454545454545455,0.159420289855072,0.0144927536231884,0.0307692307692308,0.0153846153846154,0.0153846153846154,0.0597014925373134,0.0149253731343284,0.181818181818182,0.038961038961039,0.051948051948052,0.012987012987013,0.025974025974026,0.0597014925373134,0.0149253731343284,0.0845070422535211,0.028169014084507,0.0540540540540541,0.0540540540540541,0.0135135135135135,0.0405405405405405,0.0135135135135135,0.0303030303030303,0.0151515151515152,0.03125,0.157894736842105,0.0394736842105263,0.0394736842105263,0.0394736842105263,0.0131578947368421,0.0263157894736842,0.0263157894736842,0.0422535211267606,0.0140845070422535,0.028169014084507,0.0821917808219178,0.0410958904109589,0.0136986301369863,0.0273972602739726,0.0136986301369863,0.0410958904109589,0.0273972602739726,0.0273972602739726,0.0273972602739726,0.0273972602739726,0.0149253731343284,0.0447761194029851,0.194029850746269,0.0149253731343284,0.171428571428571,0.0142857142857143,0.0285714285714286,0.0285714285714286,0.0142857142857143,0.0303030303030303,0.0454545454545455,0.0307692307692308,0.0882352941176471,0.0161290322580645,0.0461538461538462,0.0153846153846154,0.205882352941176,0.0151515151515152,0.0303030303030303,0.0147058823529412,0.0294117647058824,0.0294117647058824,0.03125,0.0307692307692308,0.0153846153846154,0.0704225352112676,0.0422535211267606,0.0140845070422535,0.0140845070422535,0.188405797101449,0.0434782608695652,0.0289855072463768,0.0144927536231884,0.0294117647058824,0.0294117647058824,0.0147058823529412,0.0294117647058824,0.0294117647058824,0.0434782608695652,0.0289855072463768,0.0144927536231884,0.0895522388059701,0.0606060606060606,0.0151515151515152,0.0151515151515152,0.0151515151515152,0.03125,0.046875,0.0307692307692308,0.0153846153846154,0.0298507462686567,0.0298507462686567,0.0298507462686567,0.03125,0.015625,0.015625,0.0158730158730159,0.0298507462686567,0.0298507462686567,0.0149253731343284,0.0149253731343284,0.0298507462686567,0.0149253731343284,0.0149253731343284,0.0303030303030303,0.0303030303030303,0.0158730158730159,0.0158730158730159,0.19047619047619,0.0161290322580645,0.0149253731343284,0.0298507462686567,0.0597014925373134,0.0447761194029851],"region":["FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","FR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","CDR1","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","FR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","CDR2","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3","FR3"],"altChemical":["Acidic","Basic","Aliphatic","Acidic","Aliphatic","Sulfur","Basic","Basic","Aliphatic","Aromatic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Basic","Hydroxyl","Aromatic","Aliphatic","Acidic","Aliphatic","Acidic","Hydroxyl","Aliphatic","Aliphatic","Aliphatic","Sulfur","Aliphatic","Aliphatic","Aromatic","Basic","Basic","Basic","Aliphatic","Hydroxyl","Aliphatic","Basic","Aliphatic","Basic","Aromatic","Aliphatic","Aliphatic","Aromatic","Hydroxyl","Aliphatic","Aliphatic","Basic","Hydroxyl","Aliphatic","Aliphatic","Basic","Aliphatic","Aliphatic","Aromatic","Aliphatic","Hydroxyl","Acidic","Aliphatic","Hydroxyl","Hydroxyl","Aliphatic","Aliphatic","Hydroxyl","Acidic","Aliphatic","Basic","Aliphatic","Aliphatic","Aromatic","Hydroxyl","Aliphatic","Amide","Aliphatic","Aliphatic","Aliphatic","Basic","Aliphatic","Hydroxyl","Aliphatic","Acidic","Amide","Aliphatic","Amide","Hydroxyl","Acidic","Basic","Aliphatic","Aliphatic","Aliphatic","Aromatic","Basic","Aromatic","Hydroxyl","Amide","Basic","Aliphatic","Hydroxyl","Aromatic","Aromatic","Aliphatic","Hydroxyl","Acidic","Acidic","Hydroxyl","Aliphatic","Aliphatic","Aromatic","Aliphatic","Aliphatic","Aliphatic","Hydroxyl","Aromatic","Hydroxyl","Amide","Basic","Amide","Sulfur","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Hydroxyl","Aliphatic","Basic","Amide","Aliphatic","Acidic","Amide","Aliphatic","Aliphatic","Aliphatic","Sulfur","Aliphatic","Acidic","Aliphatic","Sulfur","Aliphatic","Aliphatic","Aliphatic","Aromatic","Hydroxyl","Aliphatic","Sulfur","Aromatic","Aliphatic","Aliphatic","Aliphatic","Aromatic","Aromatic","Basic","Aliphatic","Aliphatic","Aromatic","Hydroxyl","Amide","Aliphatic","Amide","Hydroxyl","Basic","Aliphatic","Hydroxyl","Basic","Acidic","Aliphatic","Amide","Aliphatic","Hydroxyl","Basic","Hydroxyl","Acidic","Aliphatic","Aliphatic","Hydroxyl","Basic","Basic","Acidic","Hydroxyl","Amide","Aliphatic","Acidic","Amide","Acidic","Amide","Aromatic","Basic","Aliphatic","Aromatic","Sulfur","Aliphatic","Hydroxyl","Hydroxyl","Aliphatic","Aliphatic","Acidic","Aliphatic","Amide","Aliphatic","Aromatic","Basic","Acidic","Amide","Aliphatic","Aliphatic","Aromatic","Aliphatic","Aliphatic","Aromatic","Aliphatic","Amide","Hydroxyl","Aliphatic","Aromatic","Basic","Acidic","Sulfur","Basic","Acidic","Basic","Hydroxyl","Hydroxyl","Sulfur","Aliphatic","Aliphatic","Aliphatic","Aromatic","Hydroxyl","Sulfur","Aliphatic","Acidic","Aliphatic","Hydroxyl","Acidic","Aliphatic","Aliphatic","Amide","Aliphatic","Hydroxyl","Aliphatic","Hydroxyl","Aliphatic","Acidic","Aliphatic","Hydroxyl","Hydroxyl","Acidic","Amide","Aliphatic","Sulfur","Basic","Aliphatic","Aromatic","Aromatic","Basic","Acidic","Aliphatic","Aliphatic","Aliphatic","Acidic","Basic","Basic","Basic","Aliphatic","Aliphatic","Aliphatic","Acidic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Aromatic","Acidic","Aliphatic","Basic","Acidic","Aliphatic","Acidic","Hydroxyl","Aliphatic","Acidic","Aliphatic","Aliphatic","Aliphatic","Basic","Basic","Aliphatic","Basic","Aliphatic","Basic","Hydroxyl","Hydroxyl","Acidic","Aliphatic","Aromatic","Aliphatic","Aliphatic","Basic","Hydroxyl","Aliphatic","Hydroxyl","Basic","Aliphatic","Aliphatic","Aromatic","Aliphatic","Aliphatic","Aromatic","Aromatic","Basic","Aliphatic","Aliphatic","Hydroxyl","Hydroxyl","Basic","Aliphatic","Aliphatic","Hydroxyl","Acidic","Aliphatic","Aliphatic","Sulfur","Acidic","Aliphatic","Basic","Hydroxyl","Aliphatic","Aliphatic","Aliphatic","Hydroxyl","Aliphatic","Amide","Aliphatic","Aliphatic","Hydroxyl","Aliphatic","Amide","Basic","Hydroxyl","Aliphatic","Aliphatic","Amide","Acidic","Hydroxyl","Aliphatic","Basic","Aliphatic","Amide","Basic","Basic","Hydroxyl","Amide","Sulfur","Acidic","Aliphatic","Aromatic","Hydroxyl","Aromatic","Aromatic","Acidic","Aliphatic","Hydroxyl","Aliphatic","Aliphatic","Aliphatic","Hydroxyl","Aliphatic","Aliphatic","Aliphatic","Amide","Hydroxyl","Basic","Aromatic","Aromatic","Basic","Aliphatic","Aliphatic","Sulfur","Basic","Hydroxyl","Hydroxyl","Aliphatic","Basic","Basic","Aliphatic","Acidic","Amide","Aliphatic","Sulfur","Acidic","Hydroxyl","Hydroxyl","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Aromatic","Aliphatic","Hydroxyl","Aromatic","Aliphatic","Basic","Aromatic","Acidic","Hydroxyl","Amide","Acidic","Basic","Basic","Aliphatic","Basic","Hydroxyl","Amide","Aliphatic","Aliphatic","Basic","Acidic","Aliphatic","Amide","Acidic","Hydroxyl","Amide","Amide","Basic","Basic","Acidic","Hydroxyl","Aliphatic","Aromatic","Aliphatic","Basic","Hydroxyl","Aliphatic","Hydroxyl","Aliphatic","Acidic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Basic","Acidic","Aliphatic","Hydroxyl","Hydroxyl","Sulfur","Aliphatic","Aliphatic","Aliphatic","Aliphatic","Acidic","Acidic","Hydroxyl","Aliphatic","Aliphatic","Aliphatic","Aromatic","Amide","Acidic","Basic","Acidic","Hydroxyl","Hydroxyl","Aliphatic","Acidic","Aromatic","Hydroxyl","Basic","Sulfur","Aliphatic","Aromatic","Amide","Acidic","Hydroxyl","Aliphatic","Aliphatic","Basic","Acidic","Aliphatic","Hydroxyl","Aliphatic","Acidic","Amide","Basic","Aliphatic","Basic","Aliphatic","Aliphatic","Hydroxyl","Hydroxyl","Aliphatic","Aliphatic","Basic","Aliphatic","Sulfur","Aliphatic","Hydroxyl","Aromatic","Sulfur","Amide","Aromatic","Basic"],"hotspot":["nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","nonhotspot","hotspot","hotspot","hotspot","hotspot","hotspot","hotspot"]},"columns":[{"id":"Sample","name":"Sample","type":"character"},{"id":"position","name":"position","type":"numeric"},{"id":"refAA","name":"refAA","type":"character"},{"id":"altAA","name":"altAA","type":"character"},{"id":"Freq. (clonotypes)","name":"Freq. (clonotypes)","type":"numeric"},{"id":"region","name":"region","type":"character"},{"id":"altChemical","name":"altChemical","type":"character"},{"id":"hotspot","name":"hotspot","type":"character"}],"defaultPageSize":5,"theme":{"backgroundColor":"transparent"},"dataKey":"f4aeeab1796069db4c13dced1f668247"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -300,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="motif-plot-1">Motif plot 1</h3>
 <p>This plot illustrates the different sequence motifs at specific regions.</p>
 <div class="cell">
-<details class="code-fold">
+<details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -333,71 +318,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_richtext</span>(</span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        <span class="at">data =</span> q_r, <span class="fu">aes</span>(position, <span class="sc">-</span>.<span class="dv">01</span>, <span class="at">label =</span> refAA),</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        <span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        <span class="at">vjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>, </span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">label.size =</span> <span class="cn">NA</span>,  <span class="at">fontface =</span> <span class="st">"bold"</span></span>
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
 <span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">"grey75"</span>, <span class="at">linewidth =</span> .<span class="dv">15</span>, <span class="at">width =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">"grey75"</span>, <span class="at">linewidth =</span> .<span class="dv">15</span>, <span class="at">width =</span> <span class="fl">1.1</span>) <span class="sc">+</span></span>
 <span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_shadowtext</span>(</span>
 <span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">label =</span> altAA_l),</span>
 <span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> .<span class="dv">25</span>),</span>
 <span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>        <span class="at">bg.color =</span> <span class="st">"grey96"</span>, <span class="at">color =</span> <span class="st">"grey10"</span>,</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        <span class="at">fontface =</span> <span class="st">"bold"</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">108</span>, <span class="at">by =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>        <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), </span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">06</span>, .<span class="dv">6</span>),</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>        <span class="at">breaks =</span> <span class="fu">c</span>(.<span class="dv">05</span>, .<span class="dv">15</span>, .<span class="dv">25</span>, .<span class="dv">5</span>, .<span class="dv">75</span>, .<span class="dv">95</span>), </span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>        <span class="at">minor_breaks =</span> <span class="fu">c</span>(.<span class="dv">1</span>, .<span class="dv">2</span>, .<span class="dv">3</span>, .<span class="dv">35</span>, .<span class="dv">8</span>),</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>        <span class="at">labels =</span> scales<span class="sc">::</span>percent</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>        <span class="at">values =</span> <span class="fu">paletteer_d</span>(<span class="st">"ggsci::hallmarks_light_cosmic"</span>),</span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>        <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">1</span>)</span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_grid2</span>(<span class="at">cols =</span> <span class="fu">vars</span>(region), <span class="at">rows =</span> <span class="fu">vars</span>(Sample),</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>                <span class="at">space =</span> <span class="st">"free_x"</span>, <span class="at">scales =</span> <span class="st">"free_x"</span>,</span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>                <span class="at">axes =</span> <span class="st">"x"</span>) <span class="sc">+</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.justification =</span> <span class="st">"left"</span>,</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">15</span>),</span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">15</span>),</span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">35</span>),</span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">35</span>),</span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">15</span>),</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>        <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>        <span class="at">size =</span> <span class="fl">4.5</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">108</span>, <span class="at">by =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>), </span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>        <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span>.<span class="dv">06</span>, .<span class="dv">6</span>),</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>        <span class="at">breaks =</span> <span class="fu">c</span>(.<span class="dv">05</span>, .<span class="dv">15</span>, .<span class="dv">25</span>, .<span class="dv">5</span>, .<span class="dv">75</span>, .<span class="dv">95</span>), </span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>        <span class="at">minor_breaks =</span> <span class="fu">c</span>(.<span class="dv">1</span>, .<span class="dv">2</span>, .<span class="dv">3</span>, .<span class="dv">35</span>, .<span class="dv">8</span>),</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>        <span class="at">labels =</span> scales<span class="sc">::</span>percent</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>        <span class="at">values =</span> <span class="fu">paletteer_d</span>(<span class="st">"ggsci::hallmarks_light_cosmic"</span>),</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>        <span class="at">guide =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">1</span>)</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_grid2</span>(<span class="at">cols =</span> <span class="fu">vars</span>(region), <span class="at">rows =</span> <span class="fu">vars</span>(Sample),</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>                <span class="at">space =</span> <span class="st">"free_x"</span>, <span class="at">scales =</span> <span class="st">"free_x"</span>,</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>                <span class="at">axes =</span> <span class="st">"x"</span>) <span class="sc">+</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.justification =</span> <span class="st">"left"</span>,</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">35</span>),</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">35</span>),</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
 <span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"lines"</span>),</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">17</span>),</span>
 <span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">35</span>, <span class="at">color =</span> <span class="st">"grey80"</span>),</span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor.y =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">3</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey80"</span>),</span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>)</span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"lines"</span>),</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">35</span>, <span class="at">color =</span> <span class="st">"grey80"</span>),</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor.y =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">3</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey80"</span>),</span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>)</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="motif_visualization_files/figure-html/unnamed-chunk-2-1.svg" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="motif_visualization_files/figure-html/unnamed-chunk-2-1.svg" class="img-fluid"></p>
 </div>
 </div>
 </section>
@@ -405,7 +388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="motif-plot-2">Motif plot 2</h3>
 <p>An alternative method for creating sequence logos involves using the <code>ggplot()</code> function with <code>geom_logo()</code>.</p>
 <div class="cell">
-<details class="code-fold">
+<details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the required packages</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -431,11 +414,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="motif_visualization_files/figure-html/unnamed-chunk-3-1.svg" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="motif_visualization_files/figure-html/unnamed-chunk-3-1.svg" class="img-fluid"></p>
 </div>
 </div>
 
@@ -523,27 +502,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -553,17 +515,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -575,130 +528,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -742,7 +572,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -768,32 +597,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -856,18 +659,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a></p>
-</div>   
+    <div class="nav-footer-left">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a></div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">
-<p><a href="https://github.com/NatAnastas/immunovisual/blob/main/LICENSE">License</a></p>
-</div>
+    <div class="nav-footer-right"><a href="https://github.com/NatAnastas/immunovisual/blob/main/LICENSE">License</a></div>
   </div>
 </footer>
-
 
 
 
