@@ -2,7 +2,7 @@
 title: "Bubble plot"
 format:
   html:
-   fig-width: 10
+   fig-width: 9
    fig-height: 10
 execute: 
   warning: false
