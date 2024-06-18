@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -79,7 +79,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,20 +94,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
-
 <script src="../site_libs/core-js-2.5.3/shim.min.js"></script>
+
 <script src="../site_libs/react-18.2.0/react.min.js"></script>
+
 <script src="../site_libs/react-18.2.0/react-dom.min.js"></script>
+
 <script src="../site_libs/reactwidget-1.0.0/react-tools.js"></script>
+
 <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
 <link href="../site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+
 <script src="../site_libs/reactable-binding-0.4.4/reactable.js"></script>
+
 
 
 </head>
@@ -110,9 +124,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Immunoinformatics visualizations</span>
     </a>
@@ -124,89 +138,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Welcome</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Welcome</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-repertoire-level-exploration" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-repertoire-level-exploration" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Repertoire-level exploration</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-repertoire-level-exploration">    
         <li>
-    <a class="dropdown-item" href="../qmd/clonality.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/clonality.html">
  <span class="dropdown-text">Clonality</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/diversity.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/diversity.html">
  <span class="dropdown-text">Diversity estimation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/gene_repertoire.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/gene_repertoire.html">
  <span class="dropdown-text">Gene repertoire</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/V(D)J_recombination.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/V(D)J_recombination.html">
  <span class="dropdown-text">V(D)J recombination</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-clonotype-level-exploration" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-clonotype-level-exploration" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Clonotype-level exploration</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-clonotype-level-exploration">    
         <li>
-    <a class="dropdown-item" href="../qmd/clonotype_evolution.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/clonotype_evolution.html">
  <span class="dropdown-text">Clonotype evolution</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/motif_visualization.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/motif_visualization.html">
  <span class="dropdown-text">Motif visualization</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rnaseq" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rnaseq" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">RNAseq</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rnaseq">    
         <li>
-    <a class="dropdown-item" href="../qmd/bubble_plot.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/bubble_plot.html">
  <span class="dropdown-text">Bubble plot</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/heatmap.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/heatmap.html">
  <span class="dropdown-text">Heatmap</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/pathway_diagram.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/pathway_diagram.html">
  <span class="dropdown-text">Pathway diagram</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/PCA.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/PCA.html">
  <span class="dropdown-text">PCA</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/volcano_plot.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/volcano_plot.html">
  <span class="dropdown-text">Volcano plots</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../qmd/color_palette.html" rel="" target="">
- <span class="menu-text">Color paletters</span></a>
+    <a class="nav-link" href="../qmd/color_palette.html"> 
+<span class="menu-text">Color paletters</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/NatAnastas/immunovisual" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/NatAnastas/immunovisual"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -242,14 +256,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <p>Clonality in immune cells refers to the proliferation of genetically identical cells derived from a single ancestor cell.</p>
 <section id="table-data-format" class="level2">
 <h2 class="anchored" data-anchor-id="table-data-format">Table (Data format)</h2>
 <p>This is an example of a data format containing the necessary information for clonality visualizations. The table includes mock data specifically generated for this purpose.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
@@ -267,9 +283,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
-<div class="reactable html-widget html-fill-item" id="htmlwidget-12a47a8d9b681fddaa79" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-12a47a8d9b681fddaa79">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"sample":["1766PBCD4","1951PBCD4","2124PBCD4","2231PBCD4","1197PBCD4","1575PBCD4","1672PBCD4","1818PBCD4","2052PBCD4","2121PBCD4","2239PBCD4","2382PBCD4","3598PBCD4","710PBCD4","719PBCD4","IN003008CD4","IN003104PBCD4","IN003277CD4","IN003315CD4","IN003606CD4","IN000719CD4","IN001197CD4","IN002121CD4","IN002124CD4","IN002382CD4","IN003008CD4","IN003598CD4","IN003606CD4","IN000710CD4","IN001575CD4","IN001672CD4","IN001766CD4","IN001818CD4","IN001951CD4","IN002052CD4","IN002231CD4","IN002239CD4","IN003104CD4","IN003277CD4","IN003315CD4","1197PBCD8","1575PBCD8","1672PBCD8","1766PBCD8","1818PBCD8","1951PBCD8","2052PBCD8","2121PBCD8","2124PBCD8","2231PBCD8","2239PBCD8","2382PBCD8","710PBCD8","719PBCD8","IN003008PBCD8","IN003104PBCD8","IN003277CD8","IN003315CD8","IN003598CD8","IN003606CD8","IN000719CD8","IN001197CD8","IN002121CD8","IN002124CD8","IN002382CD8","IN003008CD8","IN003598CD8","IN003606CD8","IN000710CD8","IN001575CD8","IN001672CD8","IN001766CD8","IN001818CD8","IN001951CD8","IN002052CD8","IN002231CD8","IN002239CD8","IN003104CD8","IN003277CD8","IN003315CD8"],"group1":["cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8"],"group2":["PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ"],"clonality":[11.605957912,2.823214847,17.164601751,42.013369252,30.380377491,10.671756952,21.292947557,12.6734459367625,13.5483042550118,19.9655010916959,2.450162599,5.111027575,52.7996089822987,3.500273399,31.534384435,2.048200452,3.160633384,34.414554372,3.10561119,5.017918221,34.071209233,35.324541521,16.241733803,37.638257786,23.867964451,4.897739504,17.643117549,20.090882921,28.6582795629195,12.076753389,18.774883071,11.199454519,12.094356067,14.766561118,19.377895908,26.502694136,19.483944795,5.675701603,23.990822398,2.98297887,69.3623851483657,61.382693407,65.539157879,39.265208493,55.711086600488,30.365572366,61.9066021234187,90.1334773665597,42.458919486,83.109494264,36.899131799,27.269609049,32.226757772,17.89912138,42.630742095,48.942330698,67.192508939,28.076583717,39.448814658,68.861643991,34.379855971,79.32941353,62.745542031,59.394078846,31.708242264,31.393565752,60.733184787,59.063174343,48.207326578332,64.799796755,47.314774224,40.389328973,53.8342223735483,38.321321261,20.898504245,55.878669818,54.606389051,40.213206985,40.834352026,17.05690878]},"columns":[{"id":"sample","name":"sample","type":"character"},{"id":"group1","name":"group1","type":"character"},{"id":"group2","name":"group2","type":"character"},{"id":"clonality","name":"clonality","type":"numeric"}],"theme":{"backgroundColor":"transparent"},"dataKey":"98a644c52840abca737ff397f6f3a6e2"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-5b492fcda2de4bde4c23" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-5b492fcda2de4bde4c23">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"sample":["1766PBCD4","1951PBCD4","2124PBCD4","2231PBCD4","1197PBCD4","1575PBCD4","1672PBCD4","1818PBCD4","2052PBCD4","2121PBCD4","2239PBCD4","2382PBCD4","3598PBCD4","710PBCD4","719PBCD4","IN003008CD4","IN003104PBCD4","IN003277CD4","IN003315CD4","IN003606CD4","IN000719CD4","IN001197CD4","IN002121CD4","IN002124CD4","IN002382CD4","IN003008CD4","IN003598CD4","IN003606CD4","IN000710CD4","IN001575CD4","IN001672CD4","IN001766CD4","IN001818CD4","IN001951CD4","IN002052CD4","IN002231CD4","IN002239CD4","IN003104CD4","IN003277CD4","IN003315CD4","1197PBCD8","1575PBCD8","1672PBCD8","1766PBCD8","1818PBCD8","1951PBCD8","2052PBCD8","2121PBCD8","2124PBCD8","2231PBCD8","2239PBCD8","2382PBCD8","710PBCD8","719PBCD8","IN003008PBCD8","IN003104PBCD8","IN003277CD8","IN003315CD8","IN003598CD8","IN003606CD8","IN000719CD8","IN001197CD8","IN002121CD8","IN002124CD8","IN002382CD8","IN003008CD8","IN003598CD8","IN003606CD8","IN000710CD8","IN001575CD8","IN001672CD8","IN001766CD8","IN001818CD8","IN001951CD8","IN002052CD8","IN002231CD8","IN002239CD8","IN003104CD8","IN003277CD8","IN003315CD8"],"group1":["cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd4","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8","cd8"],"group2":["PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","PB","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ","ΒΜ"],"clonality":[11.605957912,2.823214847,17.164601751,42.013369252,30.380377491,10.671756952,21.292947557,12.6734459367625,13.5483042550118,19.9655010916959,2.450162599,5.111027575,52.7996089822987,3.500273399,31.534384435,2.048200452,3.160633384,34.414554372,3.10561119,5.017918221,34.071209233,35.324541521,16.241733803,37.638257786,23.867964451,4.897739504,17.643117549,20.090882921,28.6582795629195,12.076753389,18.774883071,11.199454519,12.094356067,14.766561118,19.377895908,26.502694136,19.483944795,5.675701603,23.990822398,2.98297887,69.3623851483657,61.382693407,65.539157879,39.265208493,55.711086600488,30.365572366,61.9066021234187,90.1334773665597,42.458919486,83.109494264,36.899131799,27.269609049,32.226757772,17.89912138,42.630742095,48.942330698,67.192508939,28.076583717,39.448814658,68.861643991,34.379855971,79.32941353,62.745542031,59.394078846,31.708242264,31.393565752,60.733184787,59.063174343,48.207326578332,64.799796755,47.314774224,40.389328973,53.8342223735483,38.321321261,20.898504245,55.878669818,54.606389051,40.213206985,40.834352026,17.05690878]},"columns":[{"id":"sample","name":"sample","type":"character"},{"id":"group1","name":"group1","type":"character"},{"id":"group2","name":"group2","type":"character"},{"id":"clonality","name":"clonality","type":"numeric"}],"theme":{"backgroundColor":"transparent"},"dataKey":"98a644c52840abca737ff397f6f3a6e2"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -278,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The <code>packcircles</code> package is the optimal choice for constructing circular packing charts in R.</p>
 <p>It efficiently calculates the position of each bubble, facilitating the creation of these charts using <code>ggplot2</code>.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># libraries -------</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -322,53 +337,58 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>df_plot <span class="sc">|&gt;</span></span>
 <span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x, y, <span class="at">group =</span> id)) <span class="sc">+</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> clonality), <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">linewidth =</span> .<span class="dv">25</span>) <span class="sc">+</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_shadowtext</span>(</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df_plot_l[<span class="fu">which</span>(clonality <span class="sc">&gt;=</span> <span class="dv">10</span>)], <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(x, y, <span class="at">label =</span> lbl, <span class="at">size =</span> clonality),  </span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"grey1"</span>, <span class="at">bg.color =</span> <span class="st">"#d9e3f1"</span>, <span class="at">bg.r =</span> .<span class="dv">15</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_stepsn</span>(</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">colors =</span> <span class="fu">c</span>(<span class="st">'#00429d'</span>, <span class="st">'#73a2c6'</span>, <span class="st">'#ffffe0'</span>, <span class="st">'#f4777f'</span>, <span class="st">'#93003a'</span>),</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),</span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">guide =</span> <span class="fu">guide_colorbar</span>(</span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>      <span class="at">title.position =</span> <span class="st">"left"</span>,</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>      <span class="at">title.theme =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">0</span>),</span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>      <span class="at">barheight =</span> <span class="fu">unit</span>(<span class="dv">10</span>, <span class="st">"lines"</span>),</span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">barwidth =</span> <span class="fu">unit</span>(.<span class="dv">5</span>, <span class="st">"lines"</span>)</span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">guide =</span> <span class="st">"none"</span>, <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)) <span class="sc">+</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(group2), <span class="at">cols =</span> <span class="fu">vars</span>(group1), <span class="at">switch =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text.x.top =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">10</span>)),</span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text.y.left =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">10</span>)),</span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"lines"</span>),</span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">35</span>),</span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">25</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>),</span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>),</span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">color =</span> <span class="cn">NA</span>)</span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">fill =</span> clonality), <span class="at">color =</span> <span class="st">"grey30"</span>, <span class="at">linewidth =</span> .<span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_shadowtext</span>(</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df_plot_l[<span class="fu">which</span>(clonality <span class="sc">&gt;=</span> <span class="dv">10</span>)], <span class="at">inherit.aes =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(x, y, <span class="at">label =</span> lbl, <span class="at">size =</span> clonality),  </span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"grey1"</span>, <span class="at">bg.color =</span> <span class="st">"#d9e3f1"</span>, <span class="at">bg.r =</span> .<span class="dv">15</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_stepsn</span>(</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">colors =</span> <span class="fu">c</span>(<span class="st">'#00429d'</span>, <span class="st">'#73a2c6'</span>, <span class="st">'#ffffe0'</span>, <span class="st">'#f4777f'</span>, <span class="st">'#93003a'</span>),</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>),</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">guide =</span> <span class="fu">guide_colorbar</span>(</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>      <span class="at">title.position =</span> <span class="st">"left"</span>,</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>      <span class="at">title.theme =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">barheight =</span> <span class="fu">unit</span>(<span class="dv">7</span>, <span class="st">"lines"</span>),</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>      <span class="at">barwidth =</span> <span class="fu">unit</span>(<span class="fl">1.5</span>, <span class="st">"lines"</span>)</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">guide =</span> <span class="st">"none"</span>, <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(group2), <span class="at">cols =</span> <span class="fu">vars</span>(group1), <span class="at">switch =</span> <span class="st">"y"</span>) <span class="sc">+</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_equal</span>() <span class="sc">+</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text.x.top =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">b =</span> <span class="dv">10</span>)),</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text.y.left =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">r =</span> <span class="dv">10</span>)),</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.spacing =</span> <span class="fu">unit</span>(<span class="dv">1</span>, <span class="st">"lines"</span>),</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">35</span>),</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_line</span>(<span class="at">linewidth =</span> .<span class="dv">25</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>),</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">20</span>),</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"transparent"</span>, <span class="at">color =</span> <span class="cn">NA</span>)</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="clonality_files/figure-html/unnamed-chunk-2-1.svg" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="clonality_files/figure-html/unnamed-chunk-2-1.svg" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 
@@ -455,10 +475,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -468,8 +505,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -481,7 +527,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -525,6 +694,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -550,6 +720,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -612,13 +808,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a></div>   
+    <div class="nav-footer-left">
+<p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right"><a href="https://github.com/NatAnastas/immunovisual/blob/main/LICENSE">License</a></div>
+    <div class="nav-footer-right">
+<p><a href="https://github.com/NatAnastas/immunovisual/blob/main/LICENSE">License</a></p>
+</div>
   </div>
 </footer>
+
 
 
 

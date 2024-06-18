@@ -2,7 +2,7 @@
 title: "Clonality"
 format:
   html:
-    fig-width: 11
+    fig-width: 12
     fig-height: 8
 ---
 
@@ -84,6 +84,7 @@ df_plot_l$lbl = df_plot_l$clonality |> round(digits = 2) |> paste0("%")
 
 df_plot |>
   ggplot(aes(x, y, group = id)) +
+  
   geom_polygon(aes(fill = clonality), color = "grey30", linewidth = .25) +
   
   geom_shadowtext(
@@ -98,8 +99,8 @@ df_plot |>
     guide = guide_colorbar(
       title.position = "left",
       title.theme = element_text(angle = 90, hjust = 0),
-      barheight = unit(10, "lines"),
-      barwidth = unit(.5, "lines")
+      barheight = unit(7, "lines"),
+      barwidth = unit(1.5, "lines")
     )
   ) +
   

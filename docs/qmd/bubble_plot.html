@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -79,7 +79,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,20 +94,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
-
 <script src="../site_libs/core-js-2.5.3/shim.min.js"></script>
+
 <script src="../site_libs/react-18.2.0/react.min.js"></script>
+
 <script src="../site_libs/react-18.2.0/react-dom.min.js"></script>
+
 <script src="../site_libs/reactwidget-1.0.0/react-tools.js"></script>
+
 <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
 <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
 <link href="../site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+
 <script src="../site_libs/reactable-binding-0.4.4/reactable.js"></script>
+
 
 
 </head>
@@ -110,9 +124,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Immunoinformatics visualizations</span>
     </a>
@@ -124,89 +138,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
- <span class="menu-text">Welcome</span></a>
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Welcome</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-repertoire-level-exploration" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-repertoire-level-exploration" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Repertoire-level exploration</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-repertoire-level-exploration">    
         <li>
-    <a class="dropdown-item" href="../qmd/clonality.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/clonality.html">
  <span class="dropdown-text">Clonality</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/diversity.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/diversity.html">
  <span class="dropdown-text">Diversity estimation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/gene_repertoire.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/gene_repertoire.html">
  <span class="dropdown-text">Gene repertoire</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/V(D)J_recombination.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/V(D)J_recombination.html">
  <span class="dropdown-text">V(D)J recombination</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-clonotype-level-exploration" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-clonotype-level-exploration" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Clonotype-level exploration</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-clonotype-level-exploration">    
         <li>
-    <a class="dropdown-item" href="../qmd/clonotype_evolution.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/clonotype_evolution.html">
  <span class="dropdown-text">Clonotype evolution</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/motif_visualization.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/motif_visualization.html">
  <span class="dropdown-text">Motif visualization</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rnaseq" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rnaseq" role="button" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">RNAseq</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rnaseq">    
         <li>
-    <a class="dropdown-item" href="../qmd/bubble_plot.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/bubble_plot.html">
  <span class="dropdown-text">Bubble plot</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/heatmap.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/heatmap.html">
  <span class="dropdown-text">Heatmap</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/pathway_diagram.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/pathway_diagram.html">
  <span class="dropdown-text">Pathway diagram</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/PCA.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/PCA.html">
  <span class="dropdown-text">PCA</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../qmd/volcano_plot.html" rel="" target="">
+    <a class="dropdown-item" href="../qmd/volcano_plot.html">
  <span class="dropdown-text">Volcano plots</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../qmd/color_palette.html" rel="" target="">
- <span class="menu-text">Color paletters</span></a>
+    <a class="nav-link" href="../qmd/color_palette.html"> 
+<span class="menu-text">Color paletters</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/NatAnastas/immunovisual" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/NatAnastas/immunovisual"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -242,7 +256,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <p>A bubble plot is essentially a scatterplot where a third numeric variable determines the size of the circles.</p>
 <p>A scatterplot illustrates the relationship between two numeric variables. Each dot represents an observation, with its position on the X (horizontal) and Y (vertical) axes indicating the values of the two variables.</p>
@@ -250,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="table-data-format">Table (Data format)</h2>
 <p>This is an example of a data format containing the necessary information for bubble plot visualizations. The table includes mock data specifically generated for this purpose.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reactable)</span>
@@ -268,9 +284,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
-<div class="reactable html-widget html-fill-item" id="htmlwidget-c456d7dd42d411f57fba" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-c456d7dd42d411f57fba">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Description":["Activation of NF-kappaB in B cells","Apoptosis","B cell receptor signaling pathway","Dectin-1 mediated noncanonical NF-kB signaling","Degradation of beta-catenin by the destruction complex","Depurination","Depyrimidination","Downstream signaling events of B Cell Receptor (BCR)","GOBP_B_CELL_ACTIVATION","GOBP_B_CELL_ACTIVATION_INVOLVED_IN_IMMUNE_RESPONSE","GOBP_B_CELL_DIFFERENTIATION","GOBP_B_CELL_PROLIFERATION","GOBP_B_CELL_RECEPTOR_SIGNALING_PATHWAY","Oxidative phosphorylation","Cap-dependent Translation Initiation","DNA Damage/Telomere Stress Induced Senescence","DNA Double Strand Break Response","DNA methylation","DNA Repair","DNA Replication","DNA Replication Pre-Initiation","Eukaryotic Translation Elongation","Eukaryotic Translation Initiation","Eukaryotic Translation Termination","Formation of a pool of free 40S subunits","GOBP_CYTOPLASMIC_TRANSLATION","GOCC_CYTOSOLIC_LARGE_RIBOSOMAL_SUBUNIT","GOCC_CYTOSOLIC_RIBOSOME","GOCC_RIBOSOMAL_SUBUNIT","GOCC_RIBOSOME","GOMF_STRUCTURAL_CONSTITUENT_OF_RIBOSOME","Major pathway of rRNA processing in the nucleolus and cytosol","Mitochondrial protein import","Mitochondrial translation","Mitochondrial translation elongation","Mitochondrial translation initiation","Mitochondrial translation termination","Translation","Translation initiation complex formation","translation initiation factor activity","translation regulator activity, nucleic acid binding","Cellular response to chemical stress","Cellular response to hypoxia","Cellular response to starvation","Cellular Senescence"],"enrichmentScore":[0.593789493399968,0.325650242000783,0.490260284897416,0.568004099543526,0.367931496499863,0.485497759393599,0.478838312175498,0.534732660604465,0.430303966888616,0.457115525671689,0.439564794417995,0.51202501634518,0.489655561497653,0.535589627567843,0.786725171120935,0.447426670445008,0.448709887528303,0.499861717988151,0.264739117765701,0.367764208923111,0.400403571162348,0.853478467126272,0.786725171120935,0.846342095344874,0.825483190020495,0.704144861777617,0.870543653224358,0.838106972817257,0.719199953891259,0.686656005471475,0.731114793469888,0.641681015938999,0.435200542794808,0.573999204104539,0.584649506449194,0.572864274554509,0.577733632744759,0.646897346665286,0.74794192864214,0.566981675291182,0.40471840344005,0.377460879071847,0.425622462054715,0.688683320144885,0.380488229060842],"NES":[2.30809212556237,1.4335610649128,1.92007263850436,2.1376005730965,1.46123361037445,1.75116412926597,1.74893441391982,2.1337851721557,1.9875427575961,1.83517500478257,1.85728291804471,2.03045997200681,1.80666970933873,2.30128274005533,3.27573441537946,1.76598061816139,1.77176966323999,1.83114241669679,1.23383984694336,1.61534633336917,1.7333014388595,3.44534124473658,3.27573441537946,3.37153699168337,3.36179570396954,3.03309584806216,3.18289652243826,3.38624286337676,3.18049664332107,3.14234749583557,3.14278917777745,2.83542107975561,1.6298412885117,2.31713301333325,2.32192545960173,2.27512061382366,2.29445918612919,2.99823320358977,2.77579428077489,2.05361246421298,1.64897370425473,1.67950906968796,1.67630902403761,2.98123162653231,1.67980373987586],"rank":[6280,5151,3973,6446,6545,4115,4115,6280,3286,3674,1766,3233,3257,5585,2435,3411,4296,3393,5756,6083,4765,2435,2435,2435,2435,2417,2080,2435,4199,4199,4199,4515,5087,6394,6394,6394,6394,5175,3047,6161,6313,5093,6083,2435,1993],"Count":[40,60,22,38,44,21,23,46,57,21,16,30,18,77,77,23,24,23,104,85,57,76,77,73,76,75,41,74,105,112,103,106,31,56,53,53,52,166,38,29,48,70,38,81,30],"Group":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3],"log_padj":[5.17995763813006,1.88794773671126,3.21361306858045,3.84643691303906,1.34431825479697,1.98980780395734,1.79991644718653,4.49888597408029,6.51686801163385,2.24973199837179,2.86262140767956,3.27612569946907,1.86819859526374,6.52798429483689,27.267873303649,2.16330640190307,2.14432339202639,2.41779395376554,1.57951434982206,3.1194513101602,3.46914872398515,30.189548365196,27.267873303649,29.5035862109749,27.6427180414572,19.8985783372735,18.9980535314497,30.0895261287038,28.9346662833338,28.2073039498178,28.1457667302864,21.190706228849,1.56938272086711,6.30852906722932,5.92150596642787,5.51027490344874,5.69115153271988,33.1710418543917,10.2951025130426,1.95407732368698,1.47855974551721,3.5191362665872,1.8464693655034,21.4534069893863,3.46371880603181]},"columns":[{"id":"Description","name":"Description","type":"character"},{"id":"enrichmentScore","name":"enrichmentScore","type":"numeric"},{"id":"NES","name":"NES","type":"numeric"},{"id":"rank","name":"rank","type":"numeric"},{"id":"Count","name":"Count","type":"numeric"},{"id":"Group","name":"Group","type":"numeric"},{"id":"log_padj","name":"log_padj","type":"numeric"}],"defaultPageSize":5,"theme":{"backgroundColor":"transparent"},"dataKey":"2f96f7aa352d86a0de775b8961ce8bb4"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<div class="reactable html-widget html-fill-item" id="htmlwidget-c8e23b1d5b3e0949fb29" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-c8e23b1d5b3e0949fb29">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"Description":["Activation of NF-kappaB in B cells","Apoptosis","B cell receptor signaling pathway","Dectin-1 mediated noncanonical NF-kB signaling","Degradation of beta-catenin by the destruction complex","Depurination","Depyrimidination","Downstream signaling events of B Cell Receptor (BCR)","GOBP_B_CELL_ACTIVATION","GOBP_B_CELL_ACTIVATION_INVOLVED_IN_IMMUNE_RESPONSE","GOBP_B_CELL_DIFFERENTIATION","GOBP_B_CELL_PROLIFERATION","GOBP_B_CELL_RECEPTOR_SIGNALING_PATHWAY","Oxidative phosphorylation","Cap-dependent Translation Initiation","DNA Damage/Telomere Stress Induced Senescence","DNA Double Strand Break Response","DNA methylation","DNA Repair","DNA Replication","DNA Replication Pre-Initiation","Eukaryotic Translation Elongation","Eukaryotic Translation Initiation","Eukaryotic Translation Termination","Formation of a pool of free 40S subunits","GOBP_CYTOPLASMIC_TRANSLATION","GOCC_CYTOSOLIC_LARGE_RIBOSOMAL_SUBUNIT","GOCC_CYTOSOLIC_RIBOSOME","GOCC_RIBOSOMAL_SUBUNIT","GOCC_RIBOSOME","GOMF_STRUCTURAL_CONSTITUENT_OF_RIBOSOME","Major pathway of rRNA processing in the nucleolus and cytosol","Mitochondrial protein import","Mitochondrial translation","Mitochondrial translation elongation","Mitochondrial translation initiation","Mitochondrial translation termination","Translation","Translation initiation complex formation","translation initiation factor activity","translation regulator activity, nucleic acid binding","Cellular response to chemical stress","Cellular response to hypoxia","Cellular response to starvation","Cellular Senescence"],"enrichmentScore":[0.593789493399968,0.325650242000783,0.490260284897416,0.568004099543526,0.367931496499863,0.485497759393599,0.478838312175498,0.534732660604465,0.430303966888616,0.457115525671689,0.439564794417995,0.51202501634518,0.489655561497653,0.535589627567843,0.786725171120935,0.447426670445008,0.448709887528303,0.499861717988151,0.264739117765701,0.367764208923111,0.400403571162348,0.853478467126272,0.786725171120935,0.846342095344874,0.825483190020495,0.704144861777617,0.870543653224358,0.838106972817257,0.719199953891259,0.686656005471475,0.731114793469888,0.641681015938999,0.435200542794808,0.573999204104539,0.584649506449194,0.572864274554509,0.577733632744759,0.646897346665286,0.74794192864214,0.566981675291182,0.40471840344005,0.377460879071847,0.425622462054715,0.688683320144885,0.380488229060842],"NES":[2.30809212556237,1.4335610649128,1.92007263850436,2.1376005730965,1.46123361037445,1.75116412926597,1.74893441391982,2.1337851721557,1.9875427575961,1.83517500478257,1.85728291804471,2.03045997200681,1.80666970933873,2.30128274005533,3.27573441537946,1.76598061816139,1.77176966323999,1.83114241669679,1.23383984694336,1.61534633336917,1.7333014388595,3.44534124473658,3.27573441537946,3.37153699168337,3.36179570396954,3.03309584806216,3.18289652243826,3.38624286337676,3.18049664332107,3.14234749583557,3.14278917777745,2.83542107975561,1.6298412885117,2.31713301333325,2.32192545960173,2.27512061382366,2.29445918612919,2.99823320358977,2.77579428077489,2.05361246421298,1.64897370425473,1.67950906968796,1.67630902403761,2.98123162653231,1.67980373987586],"rank":[6280,5151,3973,6446,6545,4115,4115,6280,3286,3674,1766,3233,3257,5585,2435,3411,4296,3393,5756,6083,4765,2435,2435,2435,2435,2417,2080,2435,4199,4199,4199,4515,5087,6394,6394,6394,6394,5175,3047,6161,6313,5093,6083,2435,1993],"Count":[40,60,22,38,44,21,23,46,57,21,16,30,18,77,77,23,24,23,104,85,57,76,77,73,76,75,41,74,105,112,103,106,31,56,53,53,52,166,38,29,48,70,38,81,30],"Group":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3],"log_padj":[5.17995763813006,1.88794773671126,3.21361306858045,3.84643691303906,1.34431825479697,1.98980780395734,1.79991644718653,4.49888597408029,6.51686801163385,2.24973199837179,2.86262140767956,3.27612569946907,1.86819859526374,6.52798429483689,27.267873303649,2.16330640190307,2.14432339202639,2.41779395376554,1.57951434982206,3.1194513101602,3.46914872398515,30.189548365196,27.267873303649,29.5035862109749,27.6427180414572,19.8985783372735,18.9980535314497,30.0895261287038,28.9346662833338,28.2073039498178,28.1457667302864,21.190706228849,1.56938272086711,6.30852906722932,5.92150596642787,5.51027490344874,5.69115153271988,33.1710418543917,10.2951025130426,1.95407732368698,1.47855974551721,3.5191362665872,1.8464693655034,21.4534069893863,3.46371880603181]},"columns":[{"id":"Description","name":"Description","type":"character"},{"id":"enrichmentScore","name":"enrichmentScore","type":"numeric"},{"id":"NES","name":"NES","type":"numeric"},{"id":"rank","name":"rank","type":"numeric"},{"id":"Count","name":"Count","type":"numeric"},{"id":"Group","name":"Group","type":"numeric"},{"id":"log_padj","name":"log_padj","type":"numeric"}],"defaultPageSize":5,"theme":{"backgroundColor":"transparent"},"dataKey":"2f96f7aa352d86a0de775b8961ce8bb4"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -279,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The <code>ggplot2</code> package enables the creation of bubble charts using the <code>geom_point()</code> function.</p>
 <p>This plot contains different pathways. The size of the bubble depends on the count and the color of the bubble depends on the -log(p.adj).</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># libraries -------</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
@@ -326,7 +341,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">space =</span> <span class="st">"free_y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="bubble_plot_files/figure-html/unnamed-chunk-2-1.svg" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="bubble_plot_files/figure-html/unnamed-chunk-2-1.svg" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 
@@ -413,10 +432,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -426,8 +462,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -439,7 +484,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -483,6 +651,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -508,6 +677,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -570,13 +765,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a></div>   
+    <div class="nav-footer-left">
+<p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a></p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right"><a href="https://github.com/NatAnastas/immunovisual/blob/main/LICENSE">License</a></div>
+    <div class="nav-footer-right">
+<p><a href="https://github.com/NatAnastas/immunovisual/blob/main/LICENSE">License</a></p>
+</div>
   </div>
 </footer>
+
 
 
 
