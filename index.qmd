@@ -19,11 +19,11 @@ Welcome to `immunovisual`, a collection of charts made with the [R programming l
 
 Your input is invaluable - whether it's suggesting a new chart or reporting a bug, we welcome and greatly appreciate your feedback!
 
-Feel free to open a [GitHub issue](https://github.com/NatAnastas/immunovisual/issues) or contact us via `inab.bioinformatics@lists.certh.gr`.
+Feel free to open a [GitHub issue](https://github.com/natanast/immunovisual/issues) or contact us via `inab.bioinformatics@lists.certh.gr`.
 
 ## License
 
-This work, as a whole, is licensed under the [MIT license](https://github.com/NatAnastas/immunovisual/blob/main/LICENSE).
+This work, as a whole, is licensed under the [MIT license](https://github.com/natanast/immunovisual/blob/main/LICENSE).
 
 The code contained in this website is simultaneously available under the MIT license; this means that you are free to use it in your own packages, as long as you cite the source.
 
@@ -33,4 +33,4 @@ The code contained in this website is simultaneously available under the MIT lic
 
 ```
 
-`r fontawesome::fa("github", "black")` [Natasa Anastasiadou](https://github.com/NatAnastas)   `r fontawesome::fa("github", "black")` [Nikos Pechlivanis](https://github.com/npechl)
+`r fontawesome::fa("github", "black")` [Natasa Anastasiadou](https://github.com/natanast)   `r fontawesome::fa("github", "black")` [Nikos Pechlivanis](https://github.com/npechl)
