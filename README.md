@@ -1,6 +1,6 @@
 # Immunovisual
 
-Immunovisual is a collection of charts made with the R programming language, focusing on immunogenetics analyses. 
+Immunovisual is a collection of charts made with the R programming language, focusing on immunogenetics analyses. Different charts types are being organized into multiple sections, each accompanied by its reproducible code. The gallery spotlights the utilization of prominent R packages such as tidyverse, data.table, and ggplot2.
 
 ## Table of Contents
 
